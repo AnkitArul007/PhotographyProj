@@ -1,8 +1,10 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
 import React from "react"
 import { Link } from "react-router-dom"
 import "./navbar.css"
 
-const Navbar = () => {
+const Navbar = ({name}) => {
   return (
     <React.Fragment>
       <div className="d-flex justify-content-between align-items-center navbar-container px-5">
@@ -13,7 +15,7 @@ const Navbar = () => {
         </div>
 
         <div className="navigation-tabs-container">
-          <p>hello</p>
+          <p>{name}</p>
         </div>
       </div>
     </React.Fragment>
