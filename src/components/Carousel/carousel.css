@@ -1,0 +1,25 @@
+
+.carousel-div {
+    overflow: hidden;
+}
+
+.inner-div {
+    white-space: nowrap;
+    transition: transform 1s;
+}
+
+.carouselItem {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.control {
+    display: flex;
+    justify-content: center;
+}
+
+.control button {
+    margin: 5px;
+}
