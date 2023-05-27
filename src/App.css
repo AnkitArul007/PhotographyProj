@@ -1,5 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Bad+Script&family=Dancing+Script:wght@400;500&family=Julius+Sans+One&family=Monoton&family=Nothing+You+Could+Do&family=VT323&display=swap');
+
+
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    background-color: #090909;
+    /* font-family: 'Bad Script', cursive;
+    font-family: 'Dancing Script', cursive;
+    font-family: 'Julius Sans One', sans-serif;
+    font-family: 'Monoton', cursive;
+    font-family: 'Nothing You Could Do', cursive;
+    font-family: 'VT323', monospace; */
+    font-weight: 400;
+    color: #999999;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    background-color: #282828;
+}
+
+:root{
+    --whiteColor:#fff;
+    --backgroundBlackShade:#090909;
+    --grayShade: #999999;
+    --btnBlackShade: linear-gradient(#1f1f1f, #000000 60%, #1f1f1f);
+    --moving-grad: linear-gradient(45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab, #f81ce5, #7928ca, #eb367f);
+    --golden-bg: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0));
+    --golden-box-shadow: rgb(255 255 255 / 15%) 0px 0px 0px 0.1rem;
+    --text-n-border-gradient: linear-gradient(90deg, #f81ce5, #7928ca, #eb367f, #d4d4d4 93%);
+    --h1-size:4rem;
+    --mid-text: 2rem;
+    --small-text: 1.6rem;
+    --xs-text: 1.1rem;
+}
+
+
+/* h1 > span{
+    width: 100%;
+    background: linear-gradient(180deg, #fff, #505050);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+} */
+
+.neon-grad{
+    width: fit-content;
+    background: linear-gradient(90deg, #f81ce5, #7928ca, #eb367f, #d4d4d4 93%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+.metallic-text-grad{
+    width: 100%;
+    background: linear-gradient(180deg, #fff, #505050);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
 }

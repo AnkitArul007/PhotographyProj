@@ -85,7 +85,7 @@ export default function About () {
             `}
           >
             <div>
-              <h3>
+              <h3 className="metallic-text-grad">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
                 sed sapien sed risus ultrices ultrices sed sed sapien sed risus
                 ultrices.
