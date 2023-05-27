@@ -90,11 +90,6 @@ export default function About () {
                 sed sapien sed risus ultrices ultrices sed sed sapien sed risus
                 ultrices.
               </h3>
-              {/* <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id
-                odit ab velit dolorum facere, voluptatem ea totam dicta,
-                reiciendis aliquam.
-              </p> */}
             </div>
           </div>
         </div>
