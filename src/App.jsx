@@ -5,18 +5,21 @@ import Categories from './components/Categories';
 import Footer from './components/Footer';
 import './App.css'
 import Navbar from './components/Navabar/Navbar'
+// import { fontStyles } from "./utilities/Theme/index"
 
 
 function App() {
 
   return (
     <>
-      <h1 style={{textAlign: "center"}}>Rushal Creation</h1>
-      <Carousel></Carousel>
-      <About></About>
-      <Categories></Categories>
-      <Footer></Footer>
-      <Navbar name={"ankit"}/>
+      <div className="container">
+        <h1 style={{textAlign: "center", fontSize:"var(--h1-size)"}} className={`metallic-text-grad`}>Rushal Creation</h1>
+        <Carousel></Carousel>
+        <div><About /></div>
+        <Categories></Categories>
+        <Footer></Footer>
+        <Navbar name={"ankit"}/>
+      </div>
     </>
   )
 }

@@ -21,6 +21,7 @@ export default function Categories() {
         css={css`
           display: block;
           padding: 60px;
+          
         `}
       >
         <div css={css`
@@ -38,6 +39,7 @@ export default function Categories() {
                 css={css`
                   max-width: 270px;
                 `}
+                style={{background:"var(--golden-bg)", boxShadow:"var(--golden-box-shadow)"}}
               >
                 <div className="category">
                   <div className="cat-image">
