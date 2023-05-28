@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import './App.css'
 import Navbar from './components/Navabar/Navbar'
 // import { fontStyles } from "./utilities/Theme/index"
+import Images from './components/Images';
 
 
 function App() {
@@ -13,12 +14,13 @@ function App() {
   return (
     <>
       <div className="container">
-        <h1 style={{textAlign: "center", fontSize:"var(--h1-size)"}} className={`metallic-text-grad`}>Rushal Creation</h1>
+        {/* <h1 style={{textAlign: "center", fontSize:"var(--h1-size)"}} className={`metallic-text-grad`}>Rushal Creation</h1>
         <Carousel></Carousel>
         <div><About /></div>
         <Categories></Categories>
         <Footer></Footer>
-        <Navbar name={"ankit"}/>
+        <Navbar name={"ankit"}/> */}
+        <Images />
       </div>
     </>
   )
