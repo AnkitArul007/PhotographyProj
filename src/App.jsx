@@ -7,6 +7,7 @@ import './App.css'
 import Navbar from './components/Navabar/Navbar'
 // import { fontStyles } from "./utilities/Theme/index"
 import Images from './components/Images';
+import Story from './components/Stories/Story';
 
 
 function App() {
@@ -20,7 +21,8 @@ function App() {
         <Categories></Categories>
         <Footer></Footer>
         <Navbar name={"ankit"}/> */}
-        <Images />
+        {/* <Images /> */}
+        <Story />
       </div>
     </>
   )
