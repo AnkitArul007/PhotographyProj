@@ -33,10 +33,10 @@ body{
     --golden-bg: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0));
     --golden-box-shadow: rgb(255 255 255 / 15%) 0px 0px 0px 0.1rem;
     --text-n-border-gradient: linear-gradient(90deg, #f81ce5, #7928ca, #eb367f, #d4d4d4 93%);
-    --h1-size:4rem;
+    --large-text:4rem;
     --mid-text: 2rem;
     --small-text: 1.6rem;
-    --xs-text: 1.1rem;
+    --xs-text: 1.3rem;
 }
 
 
