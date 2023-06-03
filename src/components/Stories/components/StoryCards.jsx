@@ -2,15 +2,16 @@
 import React from 'react'
 import { css } from '@emotion/react'
 
-const StoryCards = ({title, clientName, story, url}) => {
+const StoryCards = ({title, clientName, story, url, id, setIsActiveCard}) => {
   return (
     <React.Fragment>
         <div className="p-0 position-relative" css={css`
         border-radius: 5px;
-        width:24rem;
+        width:30rem;
         height: fit-content;
         background:var(--golden-bg);
         box-shadow:var(--golden-box-shadow);
+        cursor:pointer;
         
         // &::after{
         //     content:"";
@@ -22,15 +23,17 @@ const StoryCards = ({title, clientName, story, url}) => {
         //     background:red;
         //     z-index:-10;
         // }
-        `}>
+        `}
+        onClick={()=>setIsActiveCard(id)}
+        >
             <div className="imgCont" css={css`
-            width:24rem;
-            height:24rem;
+            width:30rem;
+            height:30rem;
             border-radius: 5px;
             `}>
                 <img src={url} alt={"image"}  css={css`
-                width:24rem;
-                height:24rem;
+                width:30rem;
+                height:30rem;
                 object-fit:cover;
                 object-position: center;
                 border-radius: 5px;
