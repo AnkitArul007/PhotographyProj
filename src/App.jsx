@@ -9,6 +9,7 @@ import Stories from './components/Stories';
 // import { fontStyles } from "./utilities/Theme/index"
 import Images from './components/Images';
 import Story from './components/Stories/Story';
+import ContactUs from './components/contact';
 
 
 function App() {
@@ -25,7 +26,7 @@ function App() {
         <Stories />
         <Categories />
         <Story />
-        
+        <ContactUs />
       </div>
     </>
   )
