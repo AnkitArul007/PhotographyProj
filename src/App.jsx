@@ -5,6 +5,7 @@ import Categories from './components/Categories';
 import Footer from './components/Footer';
 import './App.css'
 import Navbar from './components/Navabar/Navbar'
+import Stories from './components/Stories';
 // import { fontStyles } from "./utilities/Theme/index"
 import Images from './components/Images';
 import Story from './components/Stories/Story';
@@ -21,8 +22,10 @@ function App() {
         <Categories></Categories>
         <Footer></Footer>
         <Navbar name={"ankit"}/> */}
-        {/* <Images /> */}
+        <Stories />
+        <Categories />
         <Story />
+        
       </div>
     </>
   )
