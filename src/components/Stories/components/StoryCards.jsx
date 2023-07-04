@@ -2,7 +2,7 @@
 import React from 'react'
 import { css } from '@emotion/react'
 
-const StoryCards = ({title, clientName, story, url, id, setIsActiveCard}) => {
+const StoryCards = ({title, clientName, story, url, id}) => {
   return (
     <React.Fragment>
         <div className="p-0 position-relative" css={css`
@@ -24,7 +24,7 @@ const StoryCards = ({title, clientName, story, url, id, setIsActiveCard}) => {
         //     z-index:-10;
         // }
         `}
-        onClick={()=>setIsActiveCard(id)}
+        // onClick={()=>setIsActiveCard(id)}
         >
             <div className="imgCont" css={css`
             width:30rem;

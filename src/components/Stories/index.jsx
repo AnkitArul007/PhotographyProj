@@ -10,7 +10,7 @@ import StoryData from "./data/stories.json";
 
 export default function Stories() {
   // using states to set the active card
-  const [isActiveCard, setIsActiveCard] = useState(0);
+  // const [isActiveCard, setIsActiveCard] = useState(0);
 
   // getting reference if the element inside which scroll will occur
   const cardsContainer = useRef();
@@ -30,7 +30,7 @@ export default function Stories() {
       <div className="container">
         <SectionHeaders pagetitle={"stories"} />
         <div className="cardsWrapper  position-relative">
-          <div ref={cardsContainer} className="cardsContainer row d-flex gap-5 justify-content-start flex-nowrap overflow-x-hidden" css={css`
+          <div ref={cardsContainer} className="cardsContainer row d-flex gap-5 justify-content-start" css={css`
           scroll-behavior: smooth;
           `}>
             {StoryData.map((item, id) => (
@@ -41,8 +41,6 @@ export default function Stories() {
                 story={item.story}
                 url={item.url}
                 id={id}
-                isActiveCard={isActiveCard}
-                setIsActiveCard={setIsActiveCard}
               />
             ))}
           </div>
