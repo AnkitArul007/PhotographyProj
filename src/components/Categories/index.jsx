@@ -7,12 +7,16 @@ const style = {
   margin-top: 4px;
   `,
   categoryName: css`
+  font-family: 'Bad Script', cursive;
   text-align: center;
   font-size: 16px;
   font-weight: 600;
   margin-top: 18px;
+  // font-family: 'Julius Sans One', sans-serif !important;
+  // font-family: 'Dancing Script', cursive;
   `,
   categoryAboutText: css`
+  font-family: 'Bad Script', cursive;
   text-align: center;
   font-size: 12px;
   `,
@@ -39,7 +43,7 @@ export default function Categories() {
         css={css`
           display: block;
           padding: 60px;
-          
+          font-family: 'Julius Sans One', sans-serif !important;
         `}
       >
         <div css={css`
