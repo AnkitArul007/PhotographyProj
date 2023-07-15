@@ -56,11 +56,11 @@ export const categoryData = [
         about: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta recusandae vero, id quae nihil iusto, odio porro suscipit consequatur hic similique ex provident corporis incidunt magni quidem.",
     },
 
-    // {
-    //     id: "05",
-    //     name: "Abstract Photography",
-    //     image: "/images/abstract.png",
-    //     imageAlt: "Fashion",
-    //     about: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta recusandae vero, id quae nihil iusto, odio porro suscipit consequatur hic similique ex provident corporis incidunt magni quidem, illo illum assumenda",
-    // }
+    {
+        id: "09",
+        name: "Wedding Photography",
+        image: "/images/wedding.png",
+        imageAlt: "Fashion",
+        about: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta recusandae vero, id quae nihil iusto, odio porro suscipit consequatur hic similique ex provident corporis incidunt magni quidem.",
+    },
 ]

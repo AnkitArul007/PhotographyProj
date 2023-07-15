@@ -40,8 +40,23 @@ const Root = () => {
 
   return (
     <>
+<<<<<<< Updated upstream
       <Navbar />
       <Outlet />
+=======
+      <div className="container">
+        <h1 style={{textAlign: "center", fontSize:"var(--h1-size)"}} className={`metallic-text-grad`}>Rushal Creation</h1>
+        <Carousel></Carousel>
+        <div><About /></div>
+        <Categories></Categories>
+        <Navbar name={"ankit"}/>
+        <Stories />
+        <Categories />
+        <Story />
+        <Footer></Footer>
+        {/* <ContactUs /> */}
+      </div>
+>>>>>>> Stashed changes
     </>
   );
 };
