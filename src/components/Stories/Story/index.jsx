@@ -19,7 +19,7 @@ export default function Story() {
               letterSpacing: "2px",
             }}
           >
-            SIDDHARTH & RED WALI
+            SIDDHARTH & AKKI
           </p>
           <p style={{ fontSize: `var(--xs-text)`, letterSpacing: "1px" }}>
             Dec 2050 | Gwalior, India

@@ -6,9 +6,13 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import "./App.css";
-import Navbar from './components/Navabar/Navbar'
+import Navbar from './components/Navabar/Navbar';
 import Home from "./pages/index";
-import Stories from "./components/Stories/index"
+import Stories from "./components/Stories/index";
+// import About from "./components/About";
+// import Carousel from "./components/Carousel";
+// import Categories from "./components/Categories";
+// import Footer from "./components/Footer";
 
 function App() {
   const router = createBrowserRouter(

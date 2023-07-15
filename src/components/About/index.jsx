@@ -1,6 +1,21 @@
 /* eslint-disable react/no-unknown-property */
 import { css } from "@emotion/react";
 
+
+const style = {
+  profileImageDiv: css`
+  width: 200px;
+  height: 200px;
+  // border-radius: 50%;
+  object-fit: contain; 
+  `,
+  profileImage: css`
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  `,
+}
+
 export default function About () {
   return (
     <>
@@ -17,7 +32,6 @@ export default function About () {
           About
         </h1>
         <div
-          className="testimonial-container"
           css={css`
             display: flex;
             flex-direction: row;
@@ -30,8 +44,9 @@ export default function About () {
             }
           `}
         >
+
+          {/* profile container */}
           <div
-            className="profile"
             css={css`
               display: flex;
               flex-direction: column;
@@ -39,31 +54,23 @@ export default function About () {
               justify-content: center;
               width: 50%;
             `}
-          >
+          > 
+          {/* profile image conatainer */}
             <div
-              className="profile-image"
-              css={css`
-                width: 200px;
-                height: 200px;
-                overflow: hidden;
-                border-radius: 50%;
-              `}
+              css={style.profileImageDiv}
             >
               <img
+              css={style.profileImage}
                 src="/images/profile.png"
                 width="100%"
                 height="100%"
                 alt="profile image"
               />
             </div>
-            <div className="profile-intro">
-              <h2
-                css={css`
-                  text-align: center;
-                `}
-              >
-                Raghu Rai
-              </h2>
+
+            {/* Progile intor div */}
+            <div>
+              <h2 css={css`text-align: center;`}>Raghu Rai</h2>
               <p
                 css={css`
                   text-align: center;
@@ -73,6 +80,8 @@ export default function About () {
               </p>
             </div>
           </div>
+
+          {/* About text container */}
           <div
             className="content"
             css={css`
