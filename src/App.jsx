@@ -9,7 +9,13 @@ import "./App.css";
 import Navbar from './components/Navabar/Navbar';
 import Home from "./pages/index";
 import Stories from "./components/Stories/index";
+<<<<<<< Updated upstream
 import Footer from "./components/Footer";
+=======
+import Story from "./components/Stories/Story/index";
+import Footer from "./components/Footer";
+
+>>>>>>> Stashed changes
 // import About from "./components/About";
 // import Carousel from "./components/Carousel";
 // import Categories from "./components/Categories";
@@ -32,6 +38,11 @@ function App() {
           index
           path="/stories"
           element={<Stories />}
+        />
+        <Route
+          index
+          path="story"
+          element={<Story/>}
         />
       </Route>
     )

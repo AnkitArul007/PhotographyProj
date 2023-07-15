@@ -1,13 +1,47 @@
+/* eslint-disable react/no-unknown-property */
 /* eslint-disable react/prop-types */
 import React, { useState, useEffect } from "react";
+import {css} from "@emotion/react";
 // import { Children } from 'react';
-import "./carousel.css";
+import { images } from "../../database/carousel_images";
+
+const style = {
+  carouselDiv: css`
+  width: 100vw;
+  height: calc(100vh-96px);
+  overflow: hidden;
+  `,
+  innerDiv: css`
+  white-space: nowrap;
+  transition: transform 1s;
+  `,
+  carouselItem: css`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+   img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+   }
+  `,
+  control: css`
+  display: flex;
+  justify-content: center;
+  z-index: 99;
+  button {
+    margin: 5px;
+  }
+  `,
+}
+
+
 
 export function CarouselItem(props) {
-  // console.log(props);
   return (
     <>
-      <div className="carouselItem">{props.children}</div>
+      <div css={style.carouselItem}>{props.children}</div>
     </>
   );
 }
@@ -27,8 +61,10 @@ export default function Carousel() {
     console.log(imageData);
   };
   useEffect(() => {
-    fetchCarouselImages();
+    // fetchCarouselImages();
+    setImageData(images);
   }, []);
+
   const handlePrev = () => {
     setCurrentIdx((prev) => (prev != 0 ? prev - 1 : 0));
   };
@@ -38,9 +74,9 @@ export default function Carousel() {
 
   return (
     <React.Fragment>
-      <div className="carousel-div">
-        <div className="inner-div" style={{ transform: `translateX(${-100 * currentIdx}%)` }}>
-          {imageData.slice(0, 11).map((image, index) => {
+      <div css={style.carouselDiv}>
+        <div css={style.innerDiv} style={{ transform: `translateX(${-100 * currentIdx}%)` }}>
+          {imageData.slice(0).map((image, index) => {
             return (
               <CarouselItem key={index}>
                 <img
@@ -51,11 +87,9 @@ export default function Carousel() {
             );
           })}
         </div>
-        <div>
-        <div className="control">
+        <div css={style.control}>
           <button onClick={handlePrev}>Prev</button>
           <button onClick={handleNext}>Next</button>
-        </div>
         </div>
       </div>
     </React.Fragment>
