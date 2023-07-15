@@ -16,21 +16,21 @@ export default function Stories() {
   const cardsContainer = useRef();
 
   // writing the navigation functions
-  const handleLeftNavigationClick = (e)=>{
-    const width = cardsContainer.current.clientWidth;
-    cardsContainer.current.scrollLeft = cardsContainer.current.scrollLeft - width;
+  // const handleLeftNavigationClick = (e)=>{
+  //   const width = cardsContainer.current.clientWidth;
+  //   cardsContainer.current.scrollLeft = cardsContainer.current.scrollLeft - width;
     
-  }
-  const handleRightNavigationClick = (e)=>{
-    const width = cardsContainer.current.clientWidth;
-    cardsContainer.current.scrollLeft = cardsContainer.current.scrollLeft + width;
-  }
+  // }
+  // const handleRightNavigationClick = (e)=>{
+  //   const width = cardsContainer.current.clientWidth;
+  //   cardsContainer.current.scrollLeft = cardsContainer.current.scrollLeft + width;
+  // }
   return (
     <>
-      <div className="container">
+      <div className="container d-flex flex-column align-content-center justify-content-center">
         <SectionHeaders pagetitle={"stories"} />
-        <div className="cardsWrapper  position-relative">
-          <div ref={cardsContainer} className="cardsContainer row d-flex gap-5 justify-content-start" css={css`
+        <div className="cardsWrapper  position-relative mt-5">
+          <div ref={cardsContainer} className="cardsContainer row d-flex gap-5 justify-content-around" css={css`
           scroll-behavior: smooth;
           `}>
             {StoryData.map((item, id) => (
@@ -44,7 +44,7 @@ export default function Stories() {
               />
             ))}
           </div>
-            <div className="leftArrow d-flex justify-content-center align-items-center" css={css`
+            {/* <div className="leftArrow d-flex justify-content-center align-items-center" css={css`
             position:absolute;
             top:calc(50% - 50px);
             left:0;
@@ -58,8 +58,8 @@ export default function Stories() {
             onClick={(e)=>handleLeftNavigationClick(e)}
             >
               <AiOutlineArrowLeft css={css`background:transparent; color:red`}/>
-            </div>
-            <div className="rightArrow d-flex justify-content-center align-items-cente" css={css`
+            </div> */}
+            {/* <div className="rightArrow d-flex justify-content-center align-items-cente" css={css`
             position:absolute;
             top:calc(50% - 50px);
             right:0;
@@ -73,7 +73,7 @@ export default function Stories() {
             onClick={(e)=>handleRightNavigationClick(e)}
             >
               <AiOutlineArrowRight css={css`background:transparent; color:#000`}/>
-            </div>
+            </div> */}
         </div>
       </div>
     </>

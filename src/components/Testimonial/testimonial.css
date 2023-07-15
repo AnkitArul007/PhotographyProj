@@ -1,0 +1,182 @@
+.section-4-wrapper{
+    height: 80vh;
+    width: 100%;
+    background: linear-gradient(180deg, #00243E 0%, #01ADEB 100%), linear-gradient(180deg, #1C5B4F 0%, #1C8E80 100%), #FFFFFF;;
+}
+
+.section-4-wrapper > h2{
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 39px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.testimonial-cont{
+    /* mix-blend-mode: overlay; */
+    /* opacity: 70%; */
+    border-radius: 9.67265px;
+    z-index: 11;
+}
+
+.testimonial-cont::after{
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background: url("../images/testimonialBackground.png");
+    opacity: 5%; */
+    background: radial-gradient(198.89% 50% at 50% 50%, #0A7ABF 0%, rgba(255, 255, 255, 0.7) 100%),
+    radial-gradient(0% 50% at 50% 50%, #0F0F0F 0%, rgba(21, 21, 21, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
+    radial-gradient(170.42% 50% at 50% 50%, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+    opacity: 60%;
+    /* mix-blend-mode: overlay; */
+    border-radius: 9.67265px;
+    z-index: -2;
+}
+
+.testimonial-cont:before{
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    border-radius: 9.67265px;
+    background: transparent;
+    -webkit-backdrop-filter: (5px);
+    backdrop-filter: blur(5px) brightness(95%);
+}
+
+.testimonial-cont:nth-child(2){
+    transform: scale(1.3);
+}
+
+
+
+.backgroundCover, .backgroundCover2, .backgroundCover3{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 9.67265px;
+    z-index: -10;
+    border: 1px solid white;
+}
+
+.backgroundCover:after{
+    position: absolute;
+    content: "";
+    width: 71.05px;
+    height: 71.05px;
+    left: -40px;
+    top: -20px;
+    border-radius: 50%;
+    background: linear-gradient(180deg, #E7F8FF 0%, #3ECCB7 100%);
+    transform: rotate(-62.97deg);
+    z-index: -20;
+    mix-blend-mode: overlay;
+    
+}
+
+.backgroundCover2:after{
+    position: absolute;
+    content: "";
+    width: 81.51px;
+    height: 81.51px;
+    bottom: -40px;
+    left: 30px;
+    border-radius: 50%;
+    background: linear-gradient(180deg, #015DB1 0%, #73FFFF 100%);
+    transform: rotate(-62.97deg);
+    z-index: -20;
+}
+
+.backgroundCover2:before    {
+    position: absolute;
+    content: "";
+    width: 120.2px;
+    height: 120.2px;
+    right: -20px;
+    top: -80px;
+    border-radius: 50%;
+    background: linear-gradient(180deg, #E7F8FF 0%, #3ECCB7 100%);
+    transform: rotate(-62.97deg);
+    z-index: -200;
+}
+
+.backgroundCover3:after{
+    position: absolute;
+    content: "";
+    width: 54.87px;
+    height: 54.87px;
+    bottom: -27px;
+    right: 20px;
+    border-radius: 50%;
+    background: linear-gradient(180deg, #015DB1 0%, #73FFFF 100%);
+    transform: rotate(-62.97deg);
+    z-index: -20;
+}
+
+.description > p{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #FFFFFF;
+    z-index: 20;
+    color: white;
+}
+
+.name{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12.9637px;
+    line-height: 19px;
+    text-align: justify;
+    color: #FFFFFF;
+    }
+
+.designation{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 9.72275px;
+    line-height: 15px;
+    text-align: justify;
+    color: #FFFFFF;
+}
+
+.company-name > p{
+    font-family: 'Poppins';
+    font-style: italic;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+    color: #FFFFFF;
+}
+
+.img-Cont{
+    border-radius: 50%;
+    top: -32.5px;
+    border-top: 2px solid transparent;
+    border-left: 2px solid transparent;
+    border-bottom:2px solid white;
+    border-right: 2px solid white;
+    transform: rotate(45deg);
+}
+
+.testimonial-cont:nth-child(2) >.img-Cont{
+    top: calc(33px * (-1.3));
+}
+
+.img-Cont > img{
+    transform: rotate(-45deg);
+}
