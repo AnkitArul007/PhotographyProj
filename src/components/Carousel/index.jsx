@@ -51,7 +51,6 @@ const style = {
   color: #fff;
   font-size: 64px;
   font-weight: 600;
-  z-index: 99;
   overflow: visible;
   white-space: wrap;
   display: flex;
