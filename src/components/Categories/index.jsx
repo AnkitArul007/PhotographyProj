@@ -51,6 +51,17 @@ const style = {
   border-radius: 5px;
   overflow: hidden;
   `,
+
+  textDiv: css`
+  margin-top: 4px;
+  cursor: pointer;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  // background: linear-gradient(180deg, #fff, #505050);
+  // background: linear-gradient(#1f1f1f, #000000 60%, #1f1f1f);
+  // background: linear-gradient(#1f1f1f, #000000 60%, #1f1f1f);
+  width: 100%;
+  `,
   categoryName: css`
   font-family: 'Bad Script', cursive;
   text-align: center;
@@ -59,14 +70,17 @@ const style = {
   margin-top: 18px;
   font-family: 'Julius Sans One', sans-serif !important;
   // font-family: 'Dancing Script', cursive;
-  `,
-  textDiv: css`
-  margin-top: 4px;
+  background: linear-gradient(#1f1f1f, #000000 60%, #1f1f1f);
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-radius: 1rem;
+
   `,
   categoryAboutText: css`
   font-family: 'Bad Script', cursive;
   text-align: center;
   font-size: 12px;
+  background: linear-gradient(180deg, #fff, #505050);
   `,
 }
 
@@ -88,10 +102,10 @@ export default function Categories() {
             return (
               <div 
                 css={style.card}
-                key={category.id}
+                key={category.id} 
               > 
                 {/* image card container */}
-                  <div css={css`display: flex; flex-direction: column; align-items: center; justify-content: center;`} >
+                  <div css={css`display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 5px;`} >
                     <div css={style.imageDiv}>
                       <img css={style.categoryImage}
                         src={category.image}
