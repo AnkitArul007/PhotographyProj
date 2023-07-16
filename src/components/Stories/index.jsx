@@ -19,7 +19,7 @@ export default function Stories() {
   // const handleLeftNavigationClick = (e)=>{
   //   const width = cardsContainer.current.clientWidth;
   //   cardsContainer.current.scrollLeft = cardsContainer.current.scrollLeft - width;
-    
+
   // }
   // const handleRightNavigationClick = (e)=>{
   //   const width = cardsContainer.current.clientWidth;
@@ -30,9 +30,12 @@ export default function Stories() {
       <div className="container d-flex flex-column align-content-center justify-content-center">
         <SectionHeaders pagetitle={"stories"} />
         <div className="cardsWrapper  position-relative mt-5">
-          <div ref={cardsContainer} className="cardsContainer row d-flex gap-5 justify-content-around" css={css`
-          scroll-behavior: smooth;
-          `}>
+          <div
+            ref={cardsContainer}
+            className="cardsContainer row d-flex gap-5 justify-content-around"
+            css={css`
+              scroll-behavior: smooth;
+            `}>
             {StoryData.map((item, id) => (
               <StoryCards
                 key={id}
@@ -44,36 +47,6 @@ export default function Stories() {
               />
             ))}
           </div>
-            {/* <div className="leftArrow d-flex justify-content-center align-items-center" css={css`
-            position:absolute;
-            top:calc(50% - 50px);
-            left:0;
-            width:fit-content;
-            height:fit-content;
-            padding:1rem;
-            border-radius:50%;
-            font-size:var(--large-text);
-            background:rgba(255,255,255,0.3);
-            `}
-            onClick={(e)=>handleLeftNavigationClick(e)}
-            >
-              <AiOutlineArrowLeft css={css`background:transparent; color:red`}/>
-            </div> */}
-            {/* <div className="rightArrow d-flex justify-content-center align-items-cente" css={css`
-            position:absolute;
-            top:calc(50% - 50px);
-            right:0;
-            width:fit-content;
-            height:fit-content;
-            padding:1rem;
-            border-radius:50%;
-            font-size:var(--large-text);
-            background:rgba(255,255,255,0.3)
-            `}
-            onClick={(e)=>handleRightNavigationClick(e)}
-            >
-              <AiOutlineArrowRight css={css`background:transparent; color:#000`}/>
-            </div> */}
         </div>
       </div>
     </>
