@@ -4,14 +4,19 @@ import React, { useState, useEffect } from "react";
 import {css} from "@emotion/react";
 // import { Children } from 'react';
 import { images } from "../../database/carousel_images";
+import Typewriter  from "typewriter-effect";
+import "./typewriter.css"
+
 
 const style = {
   carouselDiv: css`
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   overflow: hidden;
+  position: relative;
   `,
   innerDiv: css`
+  width: 100vw;
   height: calc(100vh-100px);
   white-space: nowrap;
   transition: transform 1s;
@@ -24,7 +29,7 @@ const style = {
   position: relative;
   `,
   carouseImage: css`
-  width: 100vw !important;
+  width: 100vw;
   height: 100vh;
   object-fit: cover;
   `,
@@ -36,9 +41,41 @@ const style = {
     margin: 5px;
   }
   `,
+  textOverlay: css`
+  background: transparent;
+  position: absolute;
+  top: 0;
+  laft: 0;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  font-size: 64px;
+  font-weight: 600;
+  z-index: 99;
+  overflow: visible;
+  white-space: wrap;
+  display: flex;
+  align-items:center;
+  justify-content: left;
+  `,
+  textOverlayInner: css`
+  width: 40%;
+  height: 50%;
+  margin-left: 36px;
+  padding-left: 14px;
+  // z-index: 100;
+  background:rgba(0,0,0,0);
+  color: #fff;
+  font-weight: 800;
+  white-space: wrap;
+  border-radius: 18px;
+  `,
+  overlayText: css`
+  background: transparent !important;
+  color: #fff;
+  font-weight: 800;
+  `,
 }
-
-
 
 export function CarouselItem(props) {
   return (
@@ -100,14 +137,28 @@ export default function Carousel() {
                   src={image.url}
                   alt="carousel image"
                 />
+
               </CarouselItem>
+              
             );
           })}
+
         </div>
         {/* <div css={style.control}>
           <button onClick={handlePrev}>Prev</button>
           <button onClick={handleNext}>Next</button>
         </div> */}
+          <div css={style.textOverlay}>
+            <div css={style.textOverlayInner}> 
+            <Typewriter style={{background: "transparent !important"}}
+              options={{
+                strings: ['Welcome to Rushal Creation', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. '],
+                autoStart: true,
+                loop: true,
+              }}
+            />
+            </div>
+          </div>
       </div>
     </React.Fragment>
   );

@@ -53,7 +53,7 @@ export default function Categories() {
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
-        gap: 12px;
+        gap: 18px;
         flex-wrap: wrap;
         `}>
           {categoryData.map((category, index) => {
