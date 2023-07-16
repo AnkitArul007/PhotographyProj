@@ -102,7 +102,7 @@ export default function Categories() {
             return (
               <div 
                 css={style.card}
-                key={category.id}
+                key={category.id} 
               > 
                 {/* image card container */}
                   <div css={css`display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 5px;`} >
