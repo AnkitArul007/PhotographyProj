@@ -43,7 +43,6 @@ export default TestimonialCard
 const style = {
     imagecont: css`
     top: -40px;
-    border: 2.5px solid #000;
     border-radius: 50%;
 
     `,
@@ -58,8 +57,8 @@ const style = {
     
     background: transparent;
     z-index: 1;
-    -webkit-backdrop-filter: saturate(180%) blur(10px);
-    backdrop-filter: saturate(180%) blur(10px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     perspective: 1000;

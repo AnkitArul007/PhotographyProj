@@ -1,12 +1,24 @@
 /* eslint-disable react/no-unknown-property */
 /* eslint-disable react/no-unknown-property */
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { css } from "@emotion/react";
 import SectionHeaders from "../../commonComponents/SectionHeaders";
 import TestimonialCard from "./components/TestimonialCard";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 
 const Testimonial = () => {
+    // laoder falg
+    const [flag, setFlag] = React.useState(false);
+
+    useEffect(()=>{
+        setTimeout(()=>{
+            setFlag(true)
+        }, 3000)
+        return ()=>{
+            console.log("hello")
+        }
+    })
+
   const cardsContainer = useRef(null);
 
   const handleLeftNavigationClick = () => {
@@ -162,9 +174,32 @@ const style = {
   section: css`
     min-height: 60vh;
     background: url("https://r4.wallpaperflare.com/wallpaper/242/181/187/abstract-lines-shapes-digital-art-wallpaper-b940c8bd111a1ddb569788cf00d1e6ed.jpg");
-    background-attachment: fixed;
+    background-attachment: scroll;
     background-position: center;
     background-size: contain;
   `,
+  spinner: css`
+  background-image: linear-gradient(rgb(186, 66, 255) 35%,rgb(0, 225, 255));
+  width: 100px;
+  height: 100px;
+  animation: spinning82341 1.7s linear infinite;
+  text-align: center;
+  border-radius: 50px;
+  filter: blur(1px);
+  box-shadow: 0px -5px 20px 0px rgb(186, 66, 255), 0px 5px 20px 0px rgb(0, 225, 255);
+  `,
+  spinner1:css`
+  background-color: rgb(36, 36, 36);
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  filter: blur(10px);
+
+  @keyframes spinning82341 {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  `
 };
 
