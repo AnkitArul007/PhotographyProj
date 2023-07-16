@@ -13,14 +13,21 @@ const TestimonialCard = () => {
 
             {/* description */}
             <div className='bg-transparent mt-5'>
-                <p className='bg-transparent'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur facilis at, voluptates corporis mollitia repellendus, nesciunt eligendi saepe tenetur, beatae dolor eos ullam non adipisci exercitationem molestiae quam aliquam culpa aspernatur officiis? Quam accusamus assumenda excepturi iusto facilis quasi nostrum, animi, libero doloremque delectus ab, officiis cupiditate. Ipsam, dolorem voluptate?</p>
+                <p 
+                className='bg-transparent' 
+                css={
+                css`color: #fff;
+                letter-spacing: 1px;
+                `}>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur facilis at, voluptates corporis mollitia repellendus, nesciunt eligendi saepe tenetur, beatae dolor eos ullam non adipisci exercitationem molestiae quam aliquam culpa aspernatur officiis? Quam accusamus assumenda excepturi iusto facilis quasi nostrum, animi, libero doloremque delectus ab, officiis cupiditate. Ipsam, dolorem voluptate?
+                </p>
             </div>
 
             {/* person details */}
             <div className='bg-transparent d-flex flex-wrap justify-content-between'>
                 <div className="name-details bg-transparent">
-                    <p className='bg-transparent' css={css`font-size: 12px;`}>Austin wade</p>
-                    <p className='bg-transparent' css={css`font-size: 8px;`}>photographer</p>
+                    <p className='bg-transparent' css={css`font-size: 12px; color: #fff;`}>Austin wade</p>
+                    <p className='bg-transparent' css={css`font-size: 8px; color:#fff;`}>photographer</p>
                 </div>
                 <div className='bg-transparent'>
                     <p className='neon-grad' css={css`font-size: 12px; font-weight: bold;`}>Rushal Creation</p>
@@ -38,9 +45,11 @@ const style = {
     top: -40px;
     border: 2.5px solid #000;
     border-radius: 50%;
+
     `,
     card: css`
-    width: 45rem;
+    min-width: 45rem;
+    max-height: 27rem;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -49,8 +58,8 @@ const style = {
     
     background: transparent;
     z-index: 1;
-    -webkit-backdrop-filter: saturate(180%) blur(5px);
-    backdrop-filter: saturate(180%) blur(5px);
+    -webkit-backdrop-filter: saturate(180%) blur(10px);
+    backdrop-filter: saturate(180%) blur(10px);
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     perspective: 1000;

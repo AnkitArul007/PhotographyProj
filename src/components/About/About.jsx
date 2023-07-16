@@ -4,7 +4,7 @@ import { css } from "@emotion/react";
 
 const style = {
   mainDiv: css`
-    width: calc(100vw-100px);
+    width: 100%;
     height: 480px;
     background: url("/images/about_image.jpg");
     background-attachment: fixed;
