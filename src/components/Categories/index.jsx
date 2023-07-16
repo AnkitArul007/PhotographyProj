@@ -11,6 +11,7 @@ const style = {
   justify-content: space-between;
   gap: 18px;
   flex-wrap: wrap;
+  border-radius: 5px;
   `,
 
   card: css`
@@ -20,6 +21,7 @@ const style = {
   height: auto;
   background: linear-gradient(0deg, rgb(0, 0, 0), rgb(44,43,43));
   z-index: 1;
+  border-radius: 5px;
   &:before {
     content: '';
     position: absolute;
@@ -31,12 +33,13 @@ const style = {
     height: calc(100% + 8px);
     z-index: -1;
     filter: blur(0.5rem);
+    border-radius: 5px;
   }
   `,
   imageDiv: css`
   height: 270px;
   width: 270px;
-  // border-radius: 50%;
+  border-radius: 5px;
   object-fit: contain;
   `,
   categoryImage: css`
@@ -45,6 +48,7 @@ const style = {
   width: 100%;
   height: 100%;
   // border-radius: 50%;
+  border-radius: 5px;
   overflow: hidden;
   `,
   categoryName: css`
@@ -53,7 +57,7 @@ const style = {
   font-size: 16px;
   font-weight: 600;
   margin-top: 18px;
-  // font-family: 'Julius Sans One', sans-serif !important;
+  font-family: 'Julius Sans One', sans-serif !important;
   // font-family: 'Dancing Script', cursive;
   `,
   textDiv: css`
@@ -71,6 +75,7 @@ export default function Categories() {
   return (
     <>
       <section
+      className="my-5"
         css={css`
           display: block;
           padding: 60px;
@@ -96,7 +101,7 @@ export default function Categories() {
 
                     <div css={style.textDiv}>
                       <p css={style.categoryName}>{category.name}</p>
-                      <p css={style.categoryAboutText}>{category.about}</p>
+                      {/* <p css={style.categoryAboutText}>{category.about}</p> */}
                     </div>
                   </div>
               </div>

@@ -16,7 +16,7 @@ const ImagesPage = () => {
     };
   }, []);
   return flag ? (
-    <div className="container">
+    <div className="container py-5">
       <Images />
     </div>
   ) : (

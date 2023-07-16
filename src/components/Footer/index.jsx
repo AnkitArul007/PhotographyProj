@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-duplicate-props */
 /* eslint-disable react/no-unknown-property */
 import React from "react";
 import "../../App.css";
@@ -13,7 +14,7 @@ import { FaFacebookF } from "react-icons/fa";
 const Footer = () => {
   return (
     <React.Fragment>
-      <section css={style.section} className="mt-5 py-3">
+      <section css={style.section} className="mt-5 pt-5 py-3">
         <div className="container position-relative" css={style.container}>
           <div className="col1">
             <h3 className="neon-grad fs-1">Rushal Creation</h3>

@@ -37,7 +37,7 @@ const Testimonial = () => {
 
   return (
     <React.Fragment>
-      <section css={style.section} className="mt-5 position-relative">
+      <section css={style.section} className="my-5 py-5 position-relative">
         <SectionHeaders pagetitle={"Testimonials"} />
         <div className="container d-flex align-items-center justify-content-center mt-5 bg-transparent">
           <div

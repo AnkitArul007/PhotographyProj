@@ -1,8 +1,11 @@
 /* eslint-disable react/no-unknown-property */
 import React from 'react'
+import { useNavigate } from 'react-router'
 import { css } from '@emotion/react'
 
 const StoryCards = ({title, clientName, story, url, id}) => {
+    const navigate = useNavigate();
+    
   return (
     <React.Fragment>
         <div className="p-0 position-relative" css={css`
@@ -62,7 +65,9 @@ const StoryCards = ({title, clientName, story, url, id}) => {
                 </div>
             </div>
 
-            <button type='button' css={css`
+            <button type='button'
+                onClick={()=> navigate("/story")}
+                 css={css`
                 width:100%;
                 border:none;
                 background: linear-gradient(#1f1f1f, #000000 60%, #1f1f1f);

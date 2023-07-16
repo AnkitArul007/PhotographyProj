@@ -18,7 +18,7 @@ export default function Stories() {
     React.useEffect(() => {
       setTimeout(() => {
         setFlag(true);
-      }, 10000);
+      }, 1000);
       return () => {
         console.log("hello");
       };
@@ -27,7 +27,7 @@ export default function Stories() {
   return (
     flag ? (
       <>
-      <div className="container d-flex flex-column align-content-center justify-content-center">
+      <div className="container py-5 d-flex flex-column align-content-center justify-content-center">
         <SectionHeaders pagetitle={"stories"} />
         <div className="cardsWrapper  position-relative mt-5">
           <div

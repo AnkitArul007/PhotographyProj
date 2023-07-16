@@ -23,7 +23,7 @@ const Images = () => {
   console.log(images);
   return (
     <React.Fragment>
-      <div className="container">
+      <div className="container my-5">
         <SectionHeaders pagetitle={"Images"} />
         <div className="container d-flex flex-wrap justify-content-center align-items-center gap-4">
           {images.slice(0, 101).map((item, id) => (
