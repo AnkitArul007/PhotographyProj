@@ -48,7 +48,7 @@
     height: 100%;
     z-index: -1;
     border-radius: 9.67265px;
-    background: transparent;
+    /* background: url("../../assets/"); */
     -webkit-backdrop-filter: (5px);
     backdrop-filter: blur(5px) brightness(95%);
 }
