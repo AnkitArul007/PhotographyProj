@@ -8,10 +8,11 @@ import { images } from "../../database/carousel_images";
 const style = {
   carouselDiv: css`
   width: 100vw;
-  height: calc(100vh-96px);
+  height: 100vh;
   overflow: hidden;
   `,
   innerDiv: css`
+  height: calc(100vh-100px);
   white-space: nowrap;
   transition: transform 1s;
   `,
@@ -19,12 +20,13 @@ const style = {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-   img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-   }
+  height: 100%;
+  position: relative;
+  `,
+  carouseImage: css`
+  width: 100vw !important;
+  height: 100vh;
+  object-fit: cover;
   `,
   control: css`
   display: flex;
@@ -49,7 +51,7 @@ export function CarouselItem(props) {
 export default function Carousel() {
   const [currentIdx, setCurrentIdx] = useState(0);
   const [imageData, setImageData] = useState([]);
-  let lastIdx = 10;
+  let lastIdx = images.length - 1;
 
   const fetchCarouselImages = async () => {
     const res = await fetch("https://jsonplaceholder.typicode.com/photos/");
@@ -72,6 +74,20 @@ export default function Carousel() {
     setCurrentIdx((prev) => prev != lastIdx ? prev + 1 : lastIdx);
   };
 
+  const controlCarousel = () => {
+    setCurrentIdx((prev) => prev != lastIdx ? prev + 1 : 0)
+  }
+
+  useEffect(() => {
+    const timeoutX = setTimeout(() => {
+      controlCarousel();
+    }, 3000);
+
+    return () => {
+      clearTimeout(timeoutX);
+    }
+  }, [currentIdx]);
+
   return (
     <React.Fragment>
       <div css={style.carouselDiv}>
@@ -80,6 +96,7 @@ export default function Carousel() {
             return (
               <CarouselItem key={index}>
                 <img
+                css={style.carouseImage}
                   src={image.url}
                   alt="carousel image"
                 />
@@ -87,10 +104,10 @@ export default function Carousel() {
             );
           })}
         </div>
-        <div css={style.control}>
+        {/* <div css={style.control}>
           <button onClick={handlePrev}>Prev</button>
           <button onClick={handleNext}>Next</button>
-        </div>
+        </div> */}
       </div>
     </React.Fragment>
   );

@@ -13,7 +13,7 @@ const Navbar = () => {
     <React.Fragment>
       <div className="d-flex justify-content-between align-items-center navbar-container"
       css={css`
-      position: sticky;
+      position: fixed;
       top: 0;
       left: 0;
       width: 100%;
