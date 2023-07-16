@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unknown-property */
 import { css } from "@emotion/react";
 import { categoryData } from "../../database/cataegories/categories";
+import SectionHeaders from "../../commonComponents/SectionHeaders";
 
 const style = {
   textDiv: css`
@@ -46,11 +47,13 @@ export default function Categories() {
           font-family: 'Julius Sans One', sans-serif !important;
         `}
       >
+        <SectionHeaders pagetitle={"Categories"} />
         <div css={css`
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
+        gap: 12px;
         flex-wrap: wrap;
         `}>
           {categoryData.map((category, index) => {

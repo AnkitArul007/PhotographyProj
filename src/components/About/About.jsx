@@ -11,6 +11,7 @@ const style = {
     background-repeat: no-repeat;
     background-size: cover;
     text-align: center;
+    margin: 18px 0;
   `,
   profileDiv: css`
     display: flex;
@@ -79,7 +80,7 @@ export default function About1() {
         <div css={style.profileDiv}>
           {/* profile image div */}
           <div css={style.profileImageDiv}>
-            <img css={style.profileImage} src="/images/profile.png" alt="propfile-image" srcset="" />
+            <img css={style.profileImage} src="/images/profile.png" alt="propfile-image" srcSet="" />
           </div>
           {/* profile info div */}
           <div css={style.aboutInfoDiv}>
