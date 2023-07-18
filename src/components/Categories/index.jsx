@@ -29,10 +29,10 @@ const style = {
     left: -2px;
     background: linear-gradient(45deg, #f81ce5, #7928ca, #eb367f, #d4d4d4 93%);
     background-size: 300%;
-    width: calc(100% + 8px);
-    height: calc(100% + 8px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
     z-index: -1;
-    filter: blur(0.5rem);
+    filter: blur(10px);
     border-radius: 5px;
   }
   `,

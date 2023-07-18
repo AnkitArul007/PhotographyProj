@@ -174,9 +174,12 @@ const style = {
   section: css`
     min-height: 60vh;
     background: url("https://r4.wallpaperflare.com/wallpaper/242/181/187/abstract-lines-shapes-digital-art-wallpaper-b940c8bd111a1ddb569788cf00d1e6ed.jpg");
+    background: url("https://c4.wallpaperflare.com/wallpaper/130/63/655/abstract-art-background-colorful-wallpaper-preview.jpg");
+    background: url("https://wallpapercrafter.com/th800/152721-yellow-blue-electric-waves-spectrum-colorful-black-black-background-green.jpg");
     background-attachment: scroll;
     background-position: center;
     background-size: contain;
+    background-repeat: no-repeat;
   `,
   spinner: css`
   background-image: linear-gradient(rgb(186, 66, 255) 35%,rgb(0, 225, 255));
