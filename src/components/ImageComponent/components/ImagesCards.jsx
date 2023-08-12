@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unknown-property */
 import React, { useState } from 'react'
 import { css } from '@emotion/react'
+import { IKImage, IKVideo, IKContext, IKUpload } from 'imagekitio-react'
 
 const ImagesCards = ({ url }) => {
   const [translateFlag, setTranslateFlag] = useState(false);
@@ -24,8 +25,9 @@ const ImagesCards = ({ url }) => {
         onMouseEnter={()=>setTranslateFlag(true)}
         onMouseLeave={()=>setTranslateFlag(false)}
         >
-           <div className="imageCont">
-              <img src={url} alt={"rc-images"} 
+           <IKContext className="imageCont" urlEndpoint={"https://ik.imagekit.io/7snzcosbh"}>
+              <IKImage src={url} alt={"rc-images"} 
+              lqip={{ active: true, quality: 20, blur: 10 }}
               width={"180px"}
               height={"180px"}
               css={css`
@@ -42,7 +44,7 @@ const ImagesCards = ({ url }) => {
               }
               `}
               />
-           </div>
+           </IKContext>
 
            <div className="position-absolute"
            css={css`

@@ -193,7 +193,7 @@ const Navbar = () => {
                       background: transparent;
                     `}>
                     <p
-                      className="metallic-text-grad"
+                      className="bg-transparent text-light"
                       css={css`
                         font-family: "Julius Sans One", sans-serif;
                         font-weight: bold;
@@ -218,7 +218,7 @@ const Navbar = () => {
                 `}
                 onClick={toggleDropdown}>
                 <p
-                  className="metallic-text-grad"
+                  className="text-light bg-transparent"
                   css={css`
                     font-family: "Julius Sans One", sans-serif;
                     font-weight: bold;
