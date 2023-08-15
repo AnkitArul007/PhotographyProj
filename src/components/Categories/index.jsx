@@ -16,7 +16,7 @@ const style = {
 
   card: css`
   position: relative !important;
-  margin: 20px auto 0;
+  margin: 20px;
   // padding: 0.1rem;
   // width: 270px;
   width: auto;
@@ -57,6 +57,8 @@ const style = {
 
   textDiv: css`
   margin-top: 4px;
+  margin-left: 10px;
+  margin-right: 10px;
   cursor: pointer;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
@@ -71,6 +73,8 @@ const style = {
   font-size: 16px;
   font-weight: 600;
   margin-top: 18px;
+  margin-left: 10px;
+  margin-right: 10px;
   font-family: 'Julius Sans One', sans-serif !important;
   // font-family: 'Dancing Script', cursive;
   background: linear-gradient(#1f1f1f, #000000 60%, #1f1f1f);
@@ -99,7 +103,9 @@ export default function Categories() {
           font-family: 'Julius Sans One', sans-serif !important;
         `}
       >
-        <SectionHeaders pagetitle={"Categories"} />
+        <div className="pb-5">
+          <SectionHeaders pagetitle={"Categories"} />
+        </div>
         <div css={style.mainDiv}>
           {categoryData.map((category, index) => {
             return (
