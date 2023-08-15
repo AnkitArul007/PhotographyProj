@@ -14,7 +14,7 @@ const style = {
     border-image-slice: 1;
     padding: 2rem;
     width: 100%;
-    transition: height 0.3s;
+    transition: all 5s ease-in;
   `,
   triangleIconDiv: css`
     cursor: pointer;
@@ -38,17 +38,18 @@ const QuesAnsComponent = ({ question, answer }) => {
       <div css={style.contentDiv}>
         {/* question container */}
         <div className="d-flex align-items-center justify-content-between">
-          <p className="fs-4">
-            <strong>{question}</strong>
+          <p className="fs-3">
+            <strong>&gt;&gt; {question}</strong>
           </p>
           <div css={style.triangleIconDiv} onMouseEnter={() => setShowAns(true)} onMouseLeave={() => setShowAns(false)} >
             <span><BsTriangle size={20} /></span>
           </div>
         </div>
         <p 
-        className="fs-5 answerParagraph"
+        className="fs-5"
         css={css`
         white-space: pre-wrap;
+        color: #ccc;
         display: ${showAns? "inline-block" : "none"};
         `}>
           {answer}

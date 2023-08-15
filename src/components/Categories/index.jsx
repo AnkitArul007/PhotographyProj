@@ -17,22 +17,25 @@ const style = {
   card: css`
   position: relative !important;
   margin: 20px auto 0;
-  width: 270px;
+  // padding: 0.1rem;
+  // width: 270px;
+  width: auto;
   height: auto;
   background: linear-gradient(0deg, rgb(0, 0, 0), rgb(44,43,43));
   z-index: 1;
   border-radius: 5px;
-  &:before {
+  position: realtive;
+  &:after {
     content: '';
     position: absolute;
     top: -2px;
     left: -2px;
-    background: linear-gradient(45deg, #f81ce5, #7928ca, #eb367f, #d4d4d4 93%);
-    background-size: 300%;
+    background: linear-gradient(90deg, #f81ce5, #7928ca, #eb367f, #d4d4d4 93%);
+    // background-size: 300%;
     width: calc(100% + 4px);
     height: calc(100% + 4px);
     z-index: -1;
-    filter: blur(10px);
+    filter: blur(0.5rem);
     border-radius: 5px;
   }
   `,
@@ -43,12 +46,12 @@ const style = {
   object-fit: contain;
   `,
   categoryImage: css`
-  // border-top-left-radius: 2rem;
-  // border-top-right-radius: 2rem;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
   width: 100%;
   height: 100%;
   // border-radius: 50%;
-  border-radius: 5px;
+  // border-radius: 2rem;
   overflow: hidden;
   `,
 
