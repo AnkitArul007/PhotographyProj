@@ -45,24 +45,20 @@ const style = {
   background: transparent;
   position: absolute;
   top: 0;
-  laft: 0;
+  // laft: 0;
   width: 100%;
   height: 100%;
   color: #fff;
   font-size: 64px;
-  font-weight: 600;
   overflow: visible;
-  white-space: wrap;
   display: flex;
   align-items:center;
-  justify-content: left;
+  justify-content: center;
   `,
   textOverlayInner: css`
   width: 40%;
   height: 50%;
-  margin-left: 36px;
-  padding-left: 14px;
-  // z-index: 100;
+  margin-left:  0 auto;
   background:rgba(0,0,0,0);
   color: #fff;
   font-weight: 800;
@@ -92,11 +88,7 @@ export default function Carousel() {
   const fetchCarouselImages = async () => {
     const res = await fetch("https://jsonplaceholder.typicode.com/photos/");
     const data = await res.json();
-    // console.log(data);
     setImageData([...data]);
-    // setImageData([data]);
-
-    console.log(imageData);
   };
   useEffect(() => {
     // fetchCarouselImages();
@@ -151,7 +143,7 @@ export default function Carousel() {
             <div css={style.textOverlayInner}> 
             <Typewriter style={{background: "transparent !important"}}
               options={{
-                strings: ['Welcome to Rushal Creation', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. '],
+                strings: ['Welcome to Rushal Creation', 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'],
                 autoStart: true,
                 loop: true,
               }}

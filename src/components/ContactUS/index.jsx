@@ -64,7 +64,7 @@ const ContactForm = () => {
                     <SectionHeaders pagetitle={"Contact Us"} />
                 </div>
                 {/* contact us form texts */}
-                <div css={styles.pageTitle} className="py-3 ms-5 me-5 text-center">
+                <div css={styles.pageTitle} className="py-3 mx-5 text-center">
                     <p className="fs-4">
                         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus blanditiis dolores hic corrupti ipsum obcaecati fugiat soluta voluptas laudantium quam!
                     </p>

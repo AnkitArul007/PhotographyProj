@@ -17,6 +17,7 @@ import Images from "./components/ImageComponent/Images";
 import ImagesPage from "./pages/ImagesPage";
 import Story from "./components/Stories/Story/index";
 import ContactForm from "./components/ContactUS";
+import Faqs from "./components/FAQs";
 // import About from "./components/About";
 // import Carousel from "./components/Carousel";
 // import Categories from "./components/Categories";
@@ -25,13 +26,14 @@ import ContactForm from "./components/ContactUS";
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route path="/" element={<Root />}>
+      <Route path="/" element={<Root />}> 
         <Route index path="/home" element={<Home />} />
         <Route index path="/stories" element={<Stories />} />
         <Route index path="/images" element={<ImagesPage />} />
         <Route index path="/story" element={<Story />} />
         <Route index path="/contact" element={<ContactForm />} />
-      </Route>
+        <Route index path="/faqs" element={<Faqs />} />
+      </Route>  
     )
   );
   return <RouterProvider router={router} />;

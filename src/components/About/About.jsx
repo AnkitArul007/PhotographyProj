@@ -16,6 +16,7 @@ const style = {
   profileDiv: css`
     display: flex;
     justify-content: between;
+    align-items: center;
     width: 100%;
     height: 100%;
     background: transparent;
@@ -27,6 +28,11 @@ const style = {
     h3 {
       background: transparent;
     }
+    @media (max-width: 600px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
   `,
   profileImageDiv: css`
     flex: 0.4;
@@ -36,17 +42,23 @@ const style = {
     display: flex;
     align-items: center;
     justify-content: center;
+    @media (max-width: 600px) {
+      flex: 1;
+    }
   `,
   profileImage: css`
     width: 300px;
     height: 300px;
     border-radius: 50%;
     object-fit: cover;
+    @media (max-width: 600px) {
+      width: 200px;
+      height: 200px;
+    }
   `,
   aboutInfoDiv: css`
     flex: 0.6;
     padding: 16px 28px;
-    // font-family: 'VT323', monospace !important;
     font-family: 'Julius Sans One', sans-serif;
   `,
   titleHeading: css`
@@ -55,6 +67,17 @@ const style = {
     text-align: left;
     color: #fff;
     font-family: 'Julius Sans One', sans-serif;
+    @media (max-width: 600px){
+      text-align: center;
+    }
+    `,
+  titlePosition: css`
+  text-align: left;
+  color: #fff;
+  font-family: 'Julius Sans One', sans-serif;
+  @media (max-width: 600px) {
+    text-align: center;
+  }
   `,
   aboutTextDiv: css`
     padding-top: 28px;
@@ -62,6 +85,9 @@ const style = {
     p {
       color: #fff;
       background: transparent;
+    }
+    @media (max-width: 600px) {
+      text-align: center;
     }
   `,
   aboutText: css`
@@ -88,7 +114,7 @@ export default function About1() {
             <div>
               <h1 css={style.titleHeading}>Rajdeep Rathore</h1>
               <h3 
-              css={css`text-align: left; color: #fff; font-family: 'Julius Sans One', sans-serif;`}
+              css={style.titlePosition}
               >
                 Creative Director
               </h3>
@@ -101,13 +127,7 @@ export default function About1() {
                 assumenda, laudantium excepturi, qui, modi sit veniam at
                 possimus. Molestias repellendus neque eos architecto error natus
                 autem, consectetur enim fuga ducimus nulla! Asperiores iste vel
-                non quibusdam incidunt laudantium placeat excepturi. Quia enim
-                ad reiciendis facere amet aspernatur neque eius eum vitae esse
-                officiis sunt aliquam odit nihil, perspiciatis possimus cum
-                dolores aliquid nam ullam dolorum nesciunt iusto cupiditate.
-                Beatae, eos ratione provident iusto sint neque perferendis animi
-                et expedita ab ipsa esse temporibus consequuntur dolor repellat,
-                numquam maiores natus sed magnam quaerat odit?
+                non quibusdam incidunt laudantium placeat excepturi.
               </p>
             </div>
           </div>

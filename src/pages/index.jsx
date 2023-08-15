@@ -1,10 +1,11 @@
 /* eslint-disable react/no-unknown-property */
 import React from 'react';
-import Carousel from '../components/Carousel';
+// import Carousel from '../components/Carousel';
 import About from '../components/About';
 import Categories from '../components/Categories';
 import Testimonial from '../components/Testimonial/index';
 import About1 from '../components/About/About';
+import ImageSlider from '../components/ImageSlider';
 import { css } from '@emotion/react';
 
 const Home = () => {
@@ -22,7 +23,8 @@ const Home = () => {
   return (
     flag ? (
       <React.Fragment>
-        <Carousel />
+        {/* <Carousel /> */}
+        <ImageSlider />
         <Categories />
         <About1 />
         <Testimonial />
