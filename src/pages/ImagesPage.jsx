@@ -10,7 +10,7 @@ const ImagesPage = () => {
   React.useEffect(() => {
     setTimeout(() => {
       setFlag(true);
-    }, 1000);
+    }, 500);
     return () => {
       console.log("hello");
     };

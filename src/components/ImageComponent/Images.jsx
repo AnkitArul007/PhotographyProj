@@ -5,7 +5,7 @@ import ImagesCards from "./components/ImagesCards";
 import { useEffect } from "react";
 import { css } from "@emotion/react";
 import SectionHeaders from "../../commonComponents/SectionHeaders";
-import { IKImage, IKVideo, IKContext, IKUpload } from 'imagekitio-react'
+
 
 const Images = () => {
   const [images, setImages] = useState([]);

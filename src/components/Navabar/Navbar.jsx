@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 /* eslint-disable react/no-unknown-property */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
@@ -111,8 +112,13 @@ import navTabsData from "../../database/navbar/navTabsData.json";
 import { css } from "@emotion/react";
 import "../../App.css";
 
+import { GiHamburgerMenu } from "react-icons/gi";
+
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
+  const [mobileDropdownInnerChild, setMobileDropdownInnerChild] =
+    useState(false);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -164,6 +170,10 @@ const Navbar = () => {
           className="navigation-tabs-container"
           css={css`
             background: transparent;
+            display: none;
+            @media (min-width: 990px) {
+              display: block;
+            }
           `}>
           <ul
             css={css`
@@ -265,12 +275,12 @@ const Navbar = () => {
                     </Link>
                   </li>
                   <li
-                  className="bg-transparent"
+                    className="bg-transparent"
                     css={css`
                       margin-bottom: 10px;
                     `}>
                     <Link
-                    className="bg-transparent"
+                      className="bg-transparent"
                       to="#"
                       css={css`
                         text-decoration: none;
@@ -280,12 +290,12 @@ const Navbar = () => {
                     </Link>
                   </li>
                   <li
-                  className="bg-transparent"
+                    className="bg-transparent"
                     css={css`
                       margin-bottom: 10px;
                     `}>
                     <Link
-                    className="bg-transparent"
+                      className="bg-transparent"
                       to="#"
                       css={css`
                         text-decoration: none;
@@ -297,6 +307,204 @@ const Navbar = () => {
                 </ul>
               )}
             </li>
+          </ul>
+        </div>
+
+        {/* mobile view navbar */}
+        <div
+          className="mobile-view-navigation-tabs-container bg-transparent position-relative user-select-none"
+          css={css`
+            height: fit-content;
+            width: fit-content;
+            @media (min-width: 990px) {
+              display: none !important ;
+            }
+          `}
+          onClick={(e) => {
+            setMobileDropdownOpen(!mobileDropdownOpen);
+            console.log(mobileDropdownOpen);
+          }}>
+          <span
+            css={css`
+              font-size: 28px;
+              background: transparent;
+
+              &:hover {
+                cursor: pointer;
+              }
+            `}>
+            {/* custom burger icon */}
+            <div className="burgerContainer d-flex flex-column gap-2 bg-transparent">
+              <div
+                css={css`
+                  height: 3px;
+                  width: 30px;
+                  color: white;
+                  border: 2px solid white;
+                `}></div>
+              <div
+                css={css`
+                  height: 3px;
+                  width: 30px;
+                  color: white;
+                  border: 2px solid white;
+                `}></div>
+              <div
+                css={css`
+                  height: 3px;
+                  width: 30px;
+                  color: white;
+                  border: 2px solid white;
+                `}></div>
+            </div>
+          </span>
+
+          <ul
+            className="nav-options-cont position-absolute"
+            css={css`
+              top: 150%;
+              right: 0%;
+              list-style: none;
+              padding: 0;
+              min-width: 200px;
+              transition: all 1s ease-in-out;
+              display: ${mobileDropdownOpen ? "block" : "none"};
+            `}>
+            {navTabsData.slice(0, 8).map((ele, id) => {
+              return (
+                <Link
+                  key={id}
+                  to={"#"}
+                  css={css`
+                    text-decoration: none;
+                  `}>
+                  <li
+                    css={css`
+                      background: transparent;
+                      // color: #fff;
+                      padding: 5px 10px;
+                      font-size: 14px;
+                      letter-spacing: 1px;
+                      transition: all 0.3s ease !important ;
+
+                      &:hover {
+                        color: #fff;
+                        cursor: pointer;
+                      }
+                    `}>
+                    {ele}
+                  </li>
+                </Link>
+              );
+            })}
+
+            <div
+              onMouseEnter={(e) => setMobileDropdownInnerChild(true)}
+              onMouseLeave={(e) => setMobileDropdownInnerChild(false)}
+              className="position-relative"
+              css={css`
+                background: transparent;
+                padding: 5px 10px;
+                font-size: 14px;
+                letter-spacing: 1px;
+                transition: all 0.3s ease !important ;
+
+                &:hover {
+                  color: #fff;
+                  cursor: pointer;
+                }
+              `}>
+              <p
+                className="d-flex gap-2"
+                css={css`
+                  &:hover {
+                    color: #fff;
+                    cursor: pointer;
+                  }
+                `}>
+                <span>◀</span>
+                <span>connect</span>
+              </p>
+
+              {/* extra cont */}
+              <ul
+                className="position-absolute"
+                css={css`
+                  top: 0;
+                  left: -100%;
+                  list-style: none;
+                  min-width: 200px;
+                  padding: 0;
+                  display: ${mobileDropdownInnerChild ? "block" : "none"};
+                `}>
+                <Link
+                  to={"#"}
+                  css={css`
+                    text-decoration: none;
+                  `}>
+                  <li
+                    css={css`
+                      background: transparent;
+                      // color: #fff;
+                      padding: 5px 10px;
+                      font-size: 14px;
+                      letter-spacing: 1px;
+                      transition: all 0.3s ease !important ;
+
+                      &:hover {
+                        color: #fff;
+                        cursor: pointer;
+                      }
+                    `}>
+                    Option 1
+                  </li>
+                </Link>
+                <Link
+                  to={"#"}
+                  css={css`
+                    text-decoration: none;
+                  `}>
+                  <li
+                    css={css`
+                      background: transparent;
+                      // color: #fff;
+                      padding: 5px 10px;
+                      font-size: 14px;
+                      letter-spacing: 1px;
+                      transition: all 0.3s ease !important ;
+
+                      &:hover {
+                        color: #fff;
+                        cursor: pointer;
+                      }
+                    `}>
+                    Option 1
+                  </li>
+                </Link>
+                <Link
+                  to={"#"}
+                  css={css`
+                    text-decoration: none;
+                  `}>
+                  <li
+                    css={css`
+                      background: transparent;
+                      // color: #fff;
+                      padding: 5px 10px;
+                      font-size: 14px;
+                      letter-spacing: 1px;
+                      transition: all 0.3s ease !important ;
+
+                      &:hover {
+                        color: #fff;
+                        cursor: pointer;
+                      }
+                    `}>
+                    Option 1
+                  </li>
+                </Link>
+              </ul>
+            </div>
           </ul>
         </div>
       </div>
