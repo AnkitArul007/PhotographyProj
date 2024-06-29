@@ -18,6 +18,8 @@ import ImagesPage from "./pages/ImagesPage";
 import Story from "./components/Stories/Story/index";
 import ContactForm from "./components/ContactUS";
 import Faqs from "./components/FAQs";
+import Films from "./components/Fims";
+import Wedding from "./components/Wedding";
 // import About from "./components/About";
 // import Carousel from "./components/Carousel";
 // import Categories from "./components/Categories";
@@ -33,6 +35,9 @@ function App() {
         <Route index path="/story" element={<Story />} />
         <Route index path="/contact" element={<ContactForm />} />
         <Route index path="/faqs" element={<Faqs />} />
+        <Route index path="/films" element={<Films />} />
+        <Route path="/wedding" element={<Wedding />} />
+        <Route path="/wedding/:wedding-name" element={<></>} />
       </Route>  
     )
   );
