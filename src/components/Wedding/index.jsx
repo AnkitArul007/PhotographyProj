@@ -27,7 +27,6 @@ const Wedding = () => {
     <section css={Style.sectionMain}>
         <div css={Style.divMain}>
             <SectionHeaders pagetitle={"WEDDINGS"} />
-            
             <VideoPlayer />
             <div css={css`width: 100%;`}>
                 <WeddingGrid />
@@ -37,4 +36,4 @@ const Wedding = () => {
   )
 }
 
-export default Wedding
+export default Wedding;
