@@ -1,51 +1,51 @@
 /* eslint-disable react/no-unknown-property */
-import React from 'react';
+import React from "react";
 // import Carousel from '../components/Carousel';
-import About from '../components/About';
-import Categories from '../components/Categories';
-import Testimonial from '../components/Testimonial/index';
-import About1 from '../components/About/About';
-import ImageSlider from '../components/ImageSlider';
-import { css } from '@emotion/react';
+import About from "../components/About";
+import Categories from "../components/Categories";
+import Testimonial from "../components/Testimonial/index";
+import About1 from "../components/About/About";
+import ImageSlider from "../components/ImageSlider";
+import { css } from "@emotion/react";
 
 const Home = () => {
-    // laoder falg
-    const [flag, setFlag] = React.useState(false);
+  // laoder falg
+  const [flag, setFlag] = React.useState(false);
 
-    React.useEffect(() => {
-      setTimeout(() => {
-        setFlag(true);
-      }, 1000);
-      return () => {
-        console.log("hello");
-      };
-    }, []);
-  return (
-    flag ? (
-      <React.Fragment>
-        {/* <Carousel /> */}
-        <ImageSlider />
-        <Categories />
-        <About1 />
-        <Testimonial />
+  React.useEffect(() => {
+    setTimeout(() => {
+      setFlag(true);
+    }, 1000);
+    return () => {
+      console.log("hello");
+    };
+  }, []);
+  return flag ? (
+    <React.Fragment>
+      {/* <Carousel /> */}
+      <ImageSlider />
+      <Categories />
+      <About1 />
+      <Testimonial />
     </React.Fragment>
-    ): (
-      // eslint-disable-next-line no-undef
-      <div css={css`
-    width: 100%;
-    height: 90vh;
-    display: grid;
-    place-items: center;
-    `}>
+  ) : (
+    // eslint-disable-next-line no-undef
+    <div
+      css={css`
+        width: 100%;
+        height: 90vh;
+        display: grid;
+        place-items: center;
+      `}
+    >
       <div css={style.spinner}>
-      <div css={style.spinner1}></div>
+        <div css={style.spinner1}></div>
+      </div>
     </div>
-    </div>
-    )
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
 
 const style = {
   spinner: css`

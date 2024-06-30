@@ -5,21 +5,28 @@ import SectionHeaders from "../../commonComponents/SectionHeaders";
 
 const style = {
   mainDiv: css`
-  display: flex;
-  flex-direction: row;
+  // display: flex;
+  // flex-direction: row;
+  // align-items: center;
+  // justify-content: space-between;
+  // gap: 18px;
+  // flex-wrap: wrap;
+  border-radius: 5px;
+  display: grid;
   align-items: center;
   justify-content: space-between;
-  gap: 18px;
-  flex-wrap: wrap;
-  border-radius: 5px;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  grid-template-rows: auto;
+  column-gap: 2rem;
+  row-gap: 2rem;
   `,
 
   card: css`
   position: relative !important;
   margin: 20px;
   // padding: 0.1rem;
-  // width: 270px;
   width: auto;
+  width: 270px;
   height: auto;
   background: linear-gradient(0deg, rgb(0, 0, 0), rgb(44,43,43));
   z-index: 1;
@@ -43,13 +50,13 @@ const style = {
   height: 270px;
   width: 270px;
   border-radius: 5px;
-  object-fit: contain;
   `,
   categoryImage: css`
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   width: 100%;
   height: 100%;
+  object-fit: cover;
   // border-radius: 50%;
   // border-radius: 2rem;
   overflow: hidden;
