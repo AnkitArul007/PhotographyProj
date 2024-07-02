@@ -54,10 +54,12 @@ const style = {
 };
 
 const BlogCard = ({ weddingInfo }) => {
+  const blogLink = `/wedding/${weddingInfo?.bride.toLowerCase()}-${weddingInfo?.groom.toLowerCase()}` 
+
   return (
     <div css={style.wCardMain}>
       <div css={css`margin-bottom: 1rem;`}>
-        <Link to="#" css={style.imgLink}>
+        <Link to={blogLink} css={style.imgLink}>
           <img
             src={`/images/${weddingInfo.img}`}
             alt="wedding-blog"
@@ -65,14 +67,14 @@ const BlogCard = ({ weddingInfo }) => {
         </Link>
       </div>
       <div>
-        <Link to="#" css={style.duoLink}>
+        <Link to={blogLink} css={style.duoLink}>
           {weddingInfo.bride}-{weddingInfo.groom}
         </Link>
         <p css={style.destination}>{`${weddingInfo.city}, ${weddingInfo.country}`}</p>
       </div>
 
       <div css={css`margin-top: 1.5rem;`}>
-        <Link to="#" css={style.seeMore}>READ MORE <span>&#9654;</span></Link>
+        <Link to={blogLink} css={style.seeMore}>SEE MORE <span>&#9654;</span></Link>
       </div>
     </div>
   );
