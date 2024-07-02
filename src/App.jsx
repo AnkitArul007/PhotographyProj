@@ -20,6 +20,7 @@ import ContactForm from "./components/ContactUS";
 import Faqs from "./components/FAQs";
 import Films from "./components/Fims";
 import Wedding from "./components/Wedding";
+import WeddingBlog from "./components/Wedding/WeddingBlog";
 // import About from "./components/About";
 // import Carousel from "./components/Carousel";
 // import Categories from "./components/Categories";
@@ -37,7 +38,7 @@ function App() {
         <Route index path="/faqs" element={<Faqs />} />
         <Route index path="/films" element={<Films />} />
         <Route path="/wedding" element={<Wedding />} />
-        <Route path="/wedding/:wedding-name" element={<></>} />
+        <Route path="/wedding/:weddingName" element={<WeddingBlog />} />
       </Route>  
     )
   );
