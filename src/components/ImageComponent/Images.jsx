@@ -10,8 +10,15 @@ import SectionHeaders from "../../commonComponents/SectionHeaders";
 const Images = () => {
   const [images, setImages] = useState([]);
   const imageFetch = async () => {
-    const url = "https://jsonplaceholder.typicode.com/photos";
-    const res = await fetch(url);
+    const url = "http://localhost:8002/api/v1/images/get";
+    const res = await fetch(url, { 
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ w: 500 })
+    
+    });
     const data = await res.json();
     return data;
   };
@@ -19,7 +26,7 @@ const Images = () => {
   useEffect(() => {
     const fetchData = async () => {
       const data = await imageFetch();
-      setImages(data);
+      setImages(data._data.data);
     };
 
     fetchData();
@@ -34,8 +41,8 @@ const Images = () => {
         min-height: 100vh;
         `}
         >
-          {images.slice(0, 101).map((item, id) => (
-            <ImagesCards key={id} url={"https://ik.imagekit.io/7snzcosbh/default-image.jpg?updatedAt=1684176736985"} />
+          {images.map((image) => (
+            <ImagesCards key={image.id} url={image.image_url} />
           ))}
         </div>
       </div>

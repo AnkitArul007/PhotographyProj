@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { css } from "@emotion/react";
 import "bootstrap/dist/css/bootstrap.css";
 import SectionHeaders from "../../commonComponents/SectionHeaders";
-import StoryCards from "./components/storyCards";
+import StoryCards from "./components/StoryCards";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 // importing Data
 import StoryData from "./data/stories.json";

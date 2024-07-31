@@ -35,7 +35,7 @@ export default function Story() {
           SIDDHARTH & AKKI
         </p>
         <p style={{ fontSize: `var(--xs-text)`, letterSpacing: "1px" }}>
-          Dec 2050 | Gwalior, India
+          Dec 2028 | Gwalior, India
         </p>
       </div>
 
