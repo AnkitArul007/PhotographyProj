@@ -21,6 +21,7 @@ import Faqs from "./components/FAQs";
 import Films from "./components/Fims";
 import Wedding from "./components/Wedding";
 import WeddingBlog from "./components/Wedding/WeddingBlog";
+import { NotificationProvider } from "./components/toast/index.jsx"
 // import About from "./components/About";
 // import Carousel from "./components/Carousel";
 // import Categories from "./components/Categories";
@@ -29,7 +30,7 @@ import WeddingBlog from "./components/Wedding/WeddingBlog";
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route path="/" element={<Root />}> 
+      <Route path="/" element={<Root />}>
         <Route index path="/home" element={<Home />} />
         <Route index path="/stories" element={<Stories />} />
         <Route index path="/images" element={<ImagesPage />} />
@@ -39,7 +40,7 @@ function App() {
         <Route index path="/films" element={<Films />} />
         <Route path="/wedding" element={<Wedding />} />
         <Route path="/wedding/:weddingName" element={<WeddingBlog />} />
-      </Route>  
+      </Route>
     )
   );
   return <RouterProvider router={router} />;
@@ -49,22 +50,28 @@ export default App;
 
 const Root = () => {
   const location = useLocation();
-  return location.pathname !== "/home" ? (
-    <>
-      <div
-        css={css`
-          margin-bottom: 100px;
-        `}>
-        <Navbar />
-      </div>
-      <Outlet />
-      <Footer />
-    </>
-  ) : (
-    <>
-      <Navbar />
-      <Outlet />
-      <Footer />
-    </>
-  );
+  return <>
+    <NotificationProvider>
+      {
+        location.pathname !== "/home" ? (
+          <>
+            <div
+              css={css`
+            margin-bottom: 100px;
+          `}>
+              <Navbar />
+            </div>
+            <Outlet />
+            <Footer />
+          </>
+        ) : (
+          <>
+            <Navbar />
+            <Outlet />
+            <Footer />
+          </>
+        )
+      }
+    </NotificationProvider>
+  </>
 };

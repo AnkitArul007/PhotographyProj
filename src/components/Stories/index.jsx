@@ -7,60 +7,59 @@ import StoryCards from "./components/StoryCards";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 // importing Data
 import StoryData from "./data/stories.json";
+import { useFetch } from "../../hooks/useFetch";
 
 export default function Stories() {
   // using states to set the active card
   // const [isActiveCard, setIsActiveCard] = useState(0);
 
-    // laoder falg
-    const [flag, setFlag] = React.useState(false);
+  const { data, loading, getData, error } = useFetch()
 
-    React.useEffect(() => {
-      setTimeout(() => {
-        setFlag(true);
-      }, 1000);
-      return () => {
-        console.log("hello");
-      };
-    }, []);
+  // 300, 500, 1000,1500
+  const fetchData = () => {
+    const url = `${import.meta.env.VITE_ROOT_URL}/story/`
+    getData(url , {body:  json.stringify({w: "300"})})
+  }
+  useEffect(() => {
 
+  }, [])
   return (
-    flag ? (
+    loading ? (
       <>
-      <div className="container py-5 d-flex flex-column align-content-center justify-content-center">
-        <SectionHeaders pagetitle={"stories"} />
-        <div className="cardsWrapper  position-relative mt-5">
-          <div
-            className="cardsContainer row d-flex gap-5 justify-content-around"
-            css={css`
+        <div className="container py-5 d-flex flex-column align-content-center justify-content-center">
+          <SectionHeaders pagetitle={"stories"} />
+          <div className="cardsWrapper  position-relative mt-5">
+            <div
+              className="cardsContainer row d-flex gap-5 justify-content-around"
+              css={css`
               scroll-behavior: smooth;
             `}>
-            {StoryData.map((item, id) => (
-              <StoryCards
-                key={id}
-                title={item.title}
-                clientName={item.clientData}
-                story={item.story}
-                url={item.url}
-                id={id}
-              />
-            ))}
+              {StoryData.map((item, id) => (
+                <StoryCards
+                  key={id}
+                  title={item.title}
+                  clientName={item.clientData}
+                  story={item.story}
+                  url={item.url}
+                  id={id}
+                />
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-    </>
+      </>
     ) : (
       <div
-      css={css`
+        css={css`
         width: 100%;
         height: 90vh;
         display: grid;
         place-items: center;
       `}>
-      <div css={style.spinner}>
-        <div css={style.spinner1}></div>
+        <div css={style.spinner}>
+          <div css={style.spinner1}></div>
+        </div>
       </div>
-    </div>
     )
   );
 }
