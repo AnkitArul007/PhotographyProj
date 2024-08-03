@@ -69,6 +69,18 @@ const style = {
   color: #fff;
   font-weight: 800;
   white-space: wrap;
+  span.Typewriter__wrapper {
+  font-family: 'Dancing Script', cursiv !important;
+  line-height: 76px;
+  font-size: 76px;
+  fonnt-weight: 500;
+  }
+  span.Typewriter__cursor{
+    font-family: 'Dancing Script', cursiv !important;
+  line-height: 76px;
+  font-size: 76px;
+  fonnt-weight: 500;
+  }
   `,
   overlayText: css`
   background: transparent !important;
@@ -92,7 +104,7 @@ const ImageSlider = () => {
       <div css={style.textOverlay}>
         <div css={style.textOverlayInner}>
           <Typewriter
-            style={{ background: "transparent !important" }}
+            style={{ background: "transparent !important", fontFamily: "'Dancing Script', cursive" }}
             options={{
               strings: [
                 "Welcome to Rushal Creation",
