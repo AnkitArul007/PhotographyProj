@@ -60,8 +60,10 @@ const StoryCards = ({title, clientName, story, url, id}) => {
                     <p className='text-center' css={css`
                     font-size:var(--xs-text);
                     font-family:'Dancing Script', cursive;
-                    
-                    `}>{story}</p>
+                    overflow : hidden;
+                    height : 100px;
+                    `}>{story}
+                    </p>
                 </div>
             </div>
 

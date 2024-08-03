@@ -5,19 +5,20 @@ import { css } from "@emotion/react";
 import SectionHeaders from "../../commonComponents/SectionHeaders";
 import TestimonialCard from "./components/TestimonialCard";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
+import { useFetch } from "../../hooks/useFetch";
 
 const Testimonial = () => {
-    // laoder falg
-    const [flag, setFlag] = React.useState(false);
+  // laoder falg
+  const [flag, setFlag] = React.useState(false);
 
-    useEffect(()=>{
-        setTimeout(()=>{
-            setFlag(true)
-        }, 3000)
-        return ()=>{
-            console.log("hello")
-        }
-    })
+  useEffect(() => {
+    setTimeout(() => {
+      setFlag(true)
+    }, 3000)
+    return () => {
+      console.log("hello")
+    }
+  })
 
   const cardsContainer = useRef(null);
 
@@ -34,6 +35,13 @@ const Testimonial = () => {
       behavior: "smooth",
     });
   };
+
+  const { data, error, getData, loading } = useFetch()
+
+  useEffect(() => {
+    const url = `${import.meta.env.VITE_ROOT_URL}/testimonial`
+    getData(url)
+  }, [])
 
   return (
     <React.Fragment>
@@ -56,7 +64,7 @@ const Testimonial = () => {
             `}
           >
             <div
-            className="bg-transparent"
+              className="bg-transparent"
               css={css`
                 flex: 0 0 calc(50% - 100px);
               `}
@@ -64,7 +72,7 @@ const Testimonial = () => {
               <TestimonialCard />
             </div>
             <div
-            className="bg-transparent"
+              className="bg-transparent"
               css={css`
                 flex: 0 0 calc(50% - 100px);
               `}
@@ -72,7 +80,7 @@ const Testimonial = () => {
               <TestimonialCard />
             </div>
             <div
-            className="bg-transparent"
+              className="bg-transparent"
               css={css`
                 flex: 0 0 calc(50% - 100px);
               `}
@@ -80,7 +88,7 @@ const Testimonial = () => {
               <TestimonialCard />
             </div>
             <div
-            className="bg-transparent"
+              className="bg-transparent"
               css={css`
                 flex: 0 0 calc(50% - 100px);
               `}
@@ -88,7 +96,7 @@ const Testimonial = () => {
               <TestimonialCard />
             </div>
             <div
-            className="bg-transparent"
+              className="bg-transparent"
               css={css`
                 flex: 0 0 calc(50% - 100px);
               `}
@@ -96,7 +104,7 @@ const Testimonial = () => {
               <TestimonialCard />
             </div>
             <div
-            className="bg-transparent"
+              className="bg-transparent"
               css={css`
                 flex: 0 0 calc(50% - 100px);
               `}
@@ -104,7 +112,7 @@ const Testimonial = () => {
               <TestimonialCard />
             </div>
             <div
-                className="bg-transparent"
+              className="bg-transparent"
               css={css`
                 flex: 0 0 calc(50% - 100px);
               `}
@@ -191,7 +199,7 @@ const style = {
   filter: blur(1px);
   box-shadow: 0px -5px 20px 0px rgb(186, 66, 255), 0px 5px 20px 0px rgb(0, 225, 255);
   `,
-  spinner1:css`
+  spinner1: css`
   background-color: rgb(36, 36, 36);
   width: 100px;
   height: 100px;

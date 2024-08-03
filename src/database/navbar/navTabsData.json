@@ -1,12 +1,10 @@
 [
     "stories",
     "images",
-    "wedding",
     "pre-wedding",
     "films",
     "kids",
     "sports",
-    "events",
     {
         "connect": [
             "option 1",
