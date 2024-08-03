@@ -8,23 +8,27 @@ import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 // importing Data
 import StoryData from "./data/stories.json";
 import { useFetch } from "../../hooks/useFetch";
+import useListenScreenSize from "../../hooks/useListenScreenSize";
 
 export default function Stories() {
   // using states to set the active card
   // const [isActiveCard, setIsActiveCard] = useState(0);
-
-  const { data, loading, getData, error } = useFetch()
+  const { screenWidth, suggestImageWidthToTake } = useListenScreenSize()
+  const { data, loading, postData, error } = useFetch()
 
   // 300, 500, 1000,1500
   const fetchData = () => {
-    const url = `${import.meta.env.VITE_ROOT_URL}/story/`
-    getData(url , {body:  json.stringify({w: "300"})})
+    console.log(suggestImageWidthToTake())
+    const url = `${import.meta.env.VITE_ROOT_URL}/story/get`
+    postData(url, { 'w': suggestImageWidthToTake() })
   }
-  useEffect(() => {
 
-  }, [])
+  useEffect(() => {
+    fetchData()
+  }, [screenWidth])
+
   return (
-    loading ? (
+    !loading ? (
       <>
         <div className="container py-5 d-flex flex-column align-content-center justify-content-center">
           <SectionHeaders pagetitle={"stories"} />
@@ -34,13 +38,13 @@ export default function Stories() {
               css={css`
               scroll-behavior: smooth;
             `}>
-              {StoryData.map((item, id) => (
+              {data?._data?.result.map((item, id) => (
                 <StoryCards
                   key={id}
                   title={item.title}
-                  clientName={item.clientData}
-                  story={item.story}
-                  url={item.url}
+                  clientName={item.client_name}
+                  story={item.description}
+                  url={item.thumbnail}
                   id={id}
                 />
               ))}

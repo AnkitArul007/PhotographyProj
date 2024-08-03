@@ -188,7 +188,7 @@ const Navbar = () => {
               text-transform: uppercase;
               background: transparent;
             `}>
-            {navTabsData?.slice(0, 8).map((ele, id) => {
+            {navTabsData?.slice(0, 6).map((ele, id) => {
               return (
                 <li
                   key={id}
@@ -370,7 +370,7 @@ const Navbar = () => {
               transition: all 1s ease-in-out;
               display: ${mobileDropdownOpen ? "block" : "none"};
             `}>
-            {navTabsData.slice(0, 8).map((ele, id) => {
+            {navTabsData.slice(0, 6).map((ele, id) => {
               return (
                 <Link
                   key={id}

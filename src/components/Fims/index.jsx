@@ -3,6 +3,8 @@ import React from 'react';
 import { css } from '@emotion/react';
 import SectionHeaders from '../../commonComponents/SectionHeaders';
 import VideoTile from './VideoTile';
+import PageWrapper from '../Common/PageWrapper';
+import { useFetch } from '../../hooks/useFetch';
 
 const styles = {
     pageTitle: css`
@@ -13,8 +15,10 @@ const styles = {
 }
 
 const Films = () => {
+    const { loading } = useFetch()
   return (
     <>
+    <PageWrapper isLoading={loading}>
         <div className="container py-5">
             {/* page title */}
             <div css={styles.pageTitle} className="pb-5 mb-2">
@@ -34,6 +38,7 @@ const Films = () => {
                 </div>
             </div>
         </div>    
+    </PageWrapper>
     </>
   )
 }
