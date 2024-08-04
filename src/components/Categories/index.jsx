@@ -10,20 +10,20 @@ import { useNavigate } from "react-router-dom";
 
 const style = {
   mainDiv: css`
-  // display: flex;
-  // flex-direction: row;
-  // align-items: center;
-  // justify-content: space-between;
-  // gap: 18px;
-  // flex-wrap: wrap;
-  border-radius: 5px;
-  display: grid;
-  align-items: center;
-  justify-content: space-between;
-  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-  grid-template-rows: auto;
-  column-gap: 2rem;
-  row-gap: 2rem;
+    // display: flex;
+    // flex-direction: row;
+    // align-items: center;
+    // justify-content: space-between;
+    // gap: 18px;
+    // flex-wrap: wrap;
+    border-radius: 5px;
+    display: grid;
+    align-items: center;
+    justify-content: space-between;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    grid-template-rows: auto;
+    column-gap: 2rem;
+    row-gap: 2rem;
   `,
 }
 
@@ -45,7 +45,7 @@ export default function Categories() {
         css={css`
           display: block;
           padding: 60px;
-          font-family: 'Julius Sans One', sans-serif !important;
+          font-family: "Julius Sans One", sans-serif !important;
         `}
       >
         <div className="pb-5">

@@ -112,7 +112,7 @@ export default function About1() {
           <div css={style.aboutInfoDiv}>
             {/* name and position */}
             <div>
-              <h1 css={style.titleHeading}>Rajdeep Rathore</h1>
+              <h1 css={style.titleHeading}>Siddharth Gupta</h1>
               <h3 
               css={style.titlePosition}
               >
