@@ -1,41 +1,63 @@
 /* eslint-disable react/no-unknown-property */
-import React from 'react'
+import React , { useEffect } from 'react'
 import { css } from '@emotion/react'
 import "../../../App.css"
+import { useFetch } from "../../../hooks/useFetch";
 
 const TestimonialCard = () => {
-  return (
-    <React.Fragment>
-        <div className="card mt-5 position-relative" css={style.card}>
-            <div className="img-cont bg-transparent position-absolute" css={style.imagecont}>
-                <img css={style.image} src="https://images.unsplash.com/photo-1689163928284-ccd49ac5248a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=60" alt="image" height={"80px"} width="80px" />
-            </div>
+    const { data, error, getData, loading } = useFetch()
 
-            {/* description */}
-            <div className='bg-transparent mt-5'>
-                <p 
-                className='bg-transparent' 
-                css={
-                css`color: #fff;
+    useEffect(() => {
+        const url = `${import.meta.env.VITE_ROOT_URL}/testimonial`
+        getData(url)
+    }, [])
+
+    return (
+        <>
+            {
+                 Array.isArray(data?._data?.data) && data?._data?.data?.map((testimony) => {
+                    return (
+                        <div
+                        className="bg-transparent"
+                        css={css`
+                          flex: 0 0 calc(50% - 100px);
+                        `}
+                      >
+                    <div key={testimony.id} className="card mt-5 position-relative" css={style.card}>
+                        <div className="img-cont bg-transparent position-absolute" css={style.imagecont}>
+                            <img css={style.image}
+                             src="https://images.unsplash.com/photo-1689163928284-ccd49ac5248a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=60" alt="image" height={"80px"} width="80px" />
+                        </div>
+
+                        {/* description */}
+                        <div className='bg-transparent mt-5'>
+                            <p
+                                className='bg-transparent'
+                                css={
+                                    css`color: #fff;
                 letter-spacing: 1px;
                 `}>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur facilis at, voluptates corporis mollitia repellendus, nesciunt eligendi saepe tenetur, beatae dolor eos ullam non adipisci exercitationem molestiae quam aliquam culpa aspernatur officiis? Quam accusamus assumenda excepturi iusto facilis quasi nostrum, animi, libero doloremque delectus ab, officiis cupiditate. Ipsam, dolorem voluptate?
-                </p>
-            </div>
+                                {testimony?.description ?? ""}
+                            </p>
+                        </div>
 
-            {/* person details */}
-            <div className='bg-transparent d-flex flex-wrap justify-content-between'>
-                <div className="name-details bg-transparent">
-                    <p className='bg-transparent' css={css`font-size: 12px; color: #fff;`}>Austin wade</p>
-                    <p className='bg-transparent' css={css`font-size: 8px; color:#fff;`}>photographer</p>
-                </div>
-                <div className='bg-transparent'>
-                    <p className='neon-grad' css={css`font-size: 12px; font-weight: bold;`}>Rushal Creation</p>
-                </div>
-            </div>
-        </div>
-    </React.Fragment>
-  )
+                        {/* person details */}
+                        <div className='bg-transparent d-flex flex-wrap justify-content-between'>
+                            <div className="name-details bg-transparent">
+                                <p className='bg-transparent' css={css`font-size: 12px; color: #fff;`}>{testimony?.photographer_name}</p>
+                                <p className='bg-transparent' css={css`font-size: 8px; color:#fff;`}>photographer</p>
+                            </div>
+                            <div className='bg-transparent'>
+                                <p className='neon-grad' css={css`font-size: 12px; font-weight: bold;`}>Rushal Creation</p>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    )
+                })
+            }
+        </>
+    )
 }
 
 export default TestimonialCard
@@ -69,7 +91,7 @@ const style = {
     border-image-source: linear-gradient(90deg, #f81ce5, #7928ca, #eb367f);
     border-image-slice: 1;
     `,
-    image:css`
+    image: css`
     border-radius: 50%;
     object-fit: cover;
     `,
