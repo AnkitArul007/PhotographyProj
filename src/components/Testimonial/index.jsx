@@ -5,20 +5,8 @@ import { css } from "@emotion/react";
 import SectionHeaders from "../../commonComponents/SectionHeaders";
 import TestimonialCard from "./components/TestimonialCard";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
-import { useFetch } from "../../hooks/useFetch";
 
 const Testimonial = () => {
-  // laoder falg
-  const [flag, setFlag] = React.useState(false);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setFlag(true)
-    }, 3000)
-    return () => {
-      console.log("hello")
-    }
-  })
 
   const cardsContainer = useRef(null);
 
@@ -35,13 +23,6 @@ const Testimonial = () => {
       behavior: "smooth",
     });
   };
-
-  const { data, error, getData, loading } = useFetch()
-
-  useEffect(() => {
-    const url = `${import.meta.env.VITE_ROOT_URL}/testimonial`
-    getData(url)
-  }, [])
 
   return (
     <React.Fragment>
@@ -63,7 +44,8 @@ const Testimonial = () => {
               scroll-padding: 0 50px;
             `}
           >
-            <div
+              <TestimonialCard />
+            {/* <div
               className="bg-transparent"
               css={css`
                 flex: 0 0 calc(50% - 100px);
@@ -110,15 +92,7 @@ const Testimonial = () => {
               `}
             >
               <TestimonialCard />
-            </div>
-            <div
-              className="bg-transparent"
-              css={css`
-                flex: 0 0 calc(50% - 100px);
-              `}
-            >
-              <TestimonialCard />
-            </div>
+            </div> */}
           </div>
         </div>
 

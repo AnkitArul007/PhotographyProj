@@ -106,19 +106,28 @@
 
 // export default Navbar
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import navTabsData from "../../database/navbar/navTabsData.json";
 import { css } from "@emotion/react";
 import "../../App.css";
 
 import { GiHamburgerMenu } from "react-icons/gi";
+import { useFetch } from "../../hooks/useFetch";
+import useListenScreenSize from "../../hooks/useListenScreenSize";
 
 const Navbar = () => {
+  const { screenWidth, suggestImageWidthToTake } = useListenScreenSize()
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
-  const [mobileDropdownInnerChild, setMobileDropdownInnerChild] =
-    useState(false);
+  const [mobileDropdownInnerChild, setMobileDropdownInnerChild] = useState(false);
+
+  const { data, error, postData, loading } = useFetch()
+  useEffect(() => {
+    const url = `${import.meta.env.VITE_ROOT_URL}/category/get`
+    postData(url, { 'w': suggestImageWidthToTake() })
+  }, [screenWidth])
+
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -188,7 +197,7 @@ const Navbar = () => {
               text-transform: uppercase;
               background: transparent;
             `}>
-            {navTabsData?.slice(0, 6).map((ele, id) => {
+            {navTabsData?.slice(0, 4).map((ele, id) => {
               return (
                 <li
                   key={id}
@@ -234,7 +243,7 @@ const Navbar = () => {
                     font-weight: bold;
                     cursor: pointer;
                   `}>
-                  connect ▼
+                  Category ▼
                 </p>
               </Link>
               {isDropdownOpen && (
@@ -259,51 +268,25 @@ const Navbar = () => {
                     perspective: 1000;
                     box-shadow: 0px 0px 7px 0.5px lightgray;
                   `}>
-                  <li
-                    className="bg-transparent"
-                    css={css`
-                      margin-bottom: 10px;
-                    `}>
-                    <Link
-                      to="#"
-                      className="bg-transparent"
-                      css={css`
-                        text-decoration: none;
-                        color: white;
-                      `}>
-                      Option 1
-                    </Link>
-                  </li>
-                  <li
-                    className="bg-transparent"
-                    css={css`
-                      margin-bottom: 10px;
-                    `}>
-                    <Link
-                      className="bg-transparent"
-                      to="#"
-                      css={css`
-                        text-decoration: none;
-                        color: white;
-                      `}>
-                      Option 2
-                    </Link>
-                  </li>
-                  <li
-                    className="bg-transparent"
-                    css={css`
-                      margin-bottom: 10px;
-                    `}>
-                    <Link
-                      className="bg-transparent"
-                      to="#"
-                      css={css`
-                        text-decoration: none;
-                        color: white;
-                      `}>
-                      Option 3
-                    </Link>
-                  </li>
+                  {
+                    data?._data?.data?.map((category) => {
+                      return <li
+                        className="bg-transparent"
+                        css={css`
+                          margin-bottom: 10px;
+                        `}>
+                        <Link
+                          to={`/${category?.id}`}
+                          className="bg-transparent"
+                          css={css`
+                            text-decoration: none;
+                            color: white;
+                          `}>
+                          {category?.category_name }
+                        </Link>
+                      </li>
+                    })
+                  }
                 </ul>
               )}
             </li>
@@ -370,7 +353,7 @@ const Navbar = () => {
               transition: all 1s ease-in-out;
               display: ${mobileDropdownOpen ? "block" : "none"};
             `}>
-            {navTabsData.slice(0, 6).map((ele, id) => {
+            {navTabsData.slice(0, 4).map((ele, id) => {
               return (
                 <Link
                   key={id}
@@ -423,7 +406,7 @@ const Navbar = () => {
                   }
                 `}>
                 <span>◀</span>
-                <span>connect</span>
+                <span>Category</span>
               </p>
 
               {/* extra cont */}
@@ -437,72 +420,25 @@ const Navbar = () => {
                   padding: 0;
                   display: ${mobileDropdownInnerChild ? "block" : "none"};
                 `}>
-                <Link
-                  to={"#"}
-                  css={css`
-                    text-decoration: none;
-                  `}>
-                  <li
-                    css={css`
-                      background: transparent;
-                      // color: #fff;
-                      padding: 5px 10px;
-                      font-size: 14px;
-                      letter-spacing: 1px;
-                      transition: all 0.3s ease !important ;
-
-                      &:hover {
-                        color: #fff;
-                        cursor: pointer;
-                      }
-                    `}>
-                    Option 1
-                  </li>
-                </Link>
-                <Link
-                  to={"#"}
-                  css={css`
-                    text-decoration: none;
-                  `}>
-                  <li
-                    css={css`
-                      background: transparent;
-                      // color: #fff;
-                      padding: 5px 10px;
-                      font-size: 14px;
-                      letter-spacing: 1px;
-                      transition: all 0.3s ease !important ;
-
-                      &:hover {
-                        color: #fff;
-                        cursor: pointer;
-                      }
-                    `}>
-                    Option 1
-                  </li>
-                </Link>
-                <Link
-                  to={"#"}
-                  css={css`
-                    text-decoration: none;
-                  `}>
-                  <li
-                    css={css`
-                      background: transparent;
-                      // color: #fff;
-                      padding: 5px 10px;
-                      font-size: 14px;
-                      letter-spacing: 1px;
-                      transition: all 0.3s ease !important ;
-
-                      &:hover {
-                        color: #fff;
-                        cursor: pointer;
-                      }
-                    `}>
-                    Option 1
-                  </li>
-                </Link>
+                  {
+                    data?._data?.data?.map((category) => {
+                      return <li
+                        className="bg-transparent"
+                        css={css`
+                          margin-bottom: 10px;
+                        `}>
+                        <Link
+                          to={`/${category?.id}`}
+                          className="bg-transparent"
+                          css={css`
+                            text-decoration: none;
+                            color: white;
+                          `}>
+                          {category?.category_name}
+                        </Link>
+                      </li>
+                    })
+                  }
               </ul>
             </div>
           </ul>
