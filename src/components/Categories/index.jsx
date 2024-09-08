@@ -9,22 +9,28 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const style = {
+  categorySec: css`
+  display: block;
+  padding: 60px;
+  font-family: "Julius Sans One", sans-serif !important;
+  @media screen and (max-width:1080px) {
+  padding: 30px;
+  }
+  @media screen and (max-width:768px) {
+  padding: 16px;
+  }
+`,
   mainDiv: css`
-    // display: flex;
-    // flex-direction: row;
-    // align-items: center;
-    // justify-content: space-between;
-    // gap: 18px;
-    // flex-wrap: wrap;
-    border-radius: 5px;
+    margin: 0 auto;
     display: grid;
     align-items: center;
-    justify-content: space-between;
+    justify-content: start;
     grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
     grid-template-rows: auto;
     column-gap: 2rem;
     row-gap: 2rem;
   `,
+
 }
 
 
@@ -42,11 +48,7 @@ export default function Categories() {
     <>
       <section
         className="my-5"
-        css={css`
-          display: block;
-          padding: 60px;
-          font-family: "Julius Sans One", sans-serif !important;
-        `}
+        css={style.categorySec}
       >
         <div className="pb-5">
           <SectionHeaders pagetitle={"Categories"} />
@@ -59,7 +61,7 @@ export default function Categories() {
                 imageUrl={category?.thumbnail ?? ""}
                 key={index}
                 categoryName={category?.category_name ?? ""}
-              />
+                />
             );
           })}
         </div>

@@ -15,15 +15,14 @@ const Footer = () => {
   return (
     <React.Fragment>
       <section css={style.section} className="mt-5 pt-5 py-3">
-        <div className="container position-relative" css={style.container}>
-          <div className="col1">
+        <div className="container px-0" css={style.container}>
+          <div>
             <h3 className="neon-grad fs-1">Rushal Creation</h3>
             <p>49, Image Garderns,</p>
             <p>By-pass road</p>
             <p>Bhagalpur, Bihar- 812001</p>
           </div>
-
-          <div className="col2">
+          <div>
             <h3>Services</h3>
             {services.map((ele, id) => {
               return (
@@ -32,7 +31,8 @@ const Footer = () => {
                     to={ele.url}
                     css={css`
                       text-decoration: none;
-                    `}>
+                    `}
+                  >
                     <span css={style.links}>{ele.name}</span>
                   </Link>
                 </p>
@@ -40,7 +40,7 @@ const Footer = () => {
             })}
           </div>
 
-          <div className="col3">
+          <div>
             <h3>Quick links</h3>
             {quickLinks.map((ele, id) => {
               return (
@@ -49,7 +49,8 @@ const Footer = () => {
                     to={ele.url}
                     css={css`
                       text-decoration: none;
-                    `}>
+                    `}
+                  >
                     <span css={style.links}>{ele.name}</span>
                   </Link>
                 </p>
@@ -57,7 +58,7 @@ const Footer = () => {
             })}
           </div>
 
-          <div className="col4">
+          <div>
             <h3>Follow us</h3>
             <div className="social-media-icons" css={style.socialmediaIcons}>
               <Link>
@@ -79,12 +80,16 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className=" text-center py-3" css={style.border}>
+        <div className="text-center py-3" css={style.border}>
           <p css={style.text}>&copy;Rushal Creation All rights reserved.</p>
-          <p css={css`
-          font-size: 10px;
-          font-family: "Julius Sans One", sans-serif;
-          `}>Designed and developed by - Ankit Arul and Rajdeep Rathore</p>
+          <p
+            css={css`
+              font-size: 10px;
+              font-family: "Julius Sans One", sans-serif;
+            `}
+          >
+            Designed and developed by - Ankit Arul and Rajdeep Rathore
+          </p>
         </div>
       </section>
     </React.Fragment>
@@ -130,6 +135,7 @@ const style = {
   container: css`
     display: flex;
     justify-content: space-between;
+    gap: 1rem;
     margin-bottom: 50px;
     div {
       h3 {
@@ -154,19 +160,26 @@ const style = {
       cursor: pointer;
       color: #fff;
     }
-    `,
-    socialmediaIcons: css`
+  `,
+  socialmediaIcons: css`
     display: flex;
     gap: 10px;
     font-size: 18px;
-    `,
-    text: css`
+  `,
+  text: css`
     font-family: "Julius Sans One", sans-serif;
     font-size: 14px;
   `,
   border: css`
-  border-block-start: 1.5px solid;
-  border-image-source: linear-gradient(90deg, transparent, #f81ce5, #7928ca, #eb367f, transparent 100%);
-  border-image-slice: 1;
-  `
+    border-block-start: 1.5px solid;
+    border-image-source: linear-gradient(
+      90deg,
+      transparent,
+      #f81ce5,
+      #7928ca,
+      #eb367f,
+      transparent 100%
+    );
+    border-image-slice: 1;
+  `,
 };
