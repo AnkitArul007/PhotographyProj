@@ -73,19 +73,19 @@ const style = {
 
 
 
-const VideoTile = () => {
+const VideoTile = ({title , url}) => {
   return (
     <>
         <div css={style.video}>
             <Link 
             css={style.link}
-            to="https://www.youtube.com/embed/pOhl6oVpEes?autoplay=1&controls=0&showinfo=0&color=white&rel=0">
+            to={url}>
                 <figure css={style.figure} style={{backgroundImage: `url(/images/banner1.jpg)`}}>
                     <img 
                     css={style.image} 
                     src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/50598/video-thumb-placeholder-16-9.png" 
                     alt="" />
-                    <figcaption css={style.caption}>A nice video</figcaption>
+                    <figcaption css={style.caption}>{title}</figcaption>
                 </figure>
             </Link>
         </div>
