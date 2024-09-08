@@ -1,5 +1,4 @@
 /* eslint-disable react/no-unknown-property */
-import React from "react";
 import { css, keyframes } from "@emotion/react";
 import Typewriter from "typewriter-effect";
 import "./typewriter.css";
@@ -21,7 +20,8 @@ const slide = keyframes`
 
 const style = {
   main: css`
-    width: 100%;
+    min-width: 100vw;
+    min-height: 100vh;
     height: 100vh;
     overflow: hidden;
     position: relative;
@@ -30,7 +30,13 @@ const style = {
       width: 100%;
       height: 100%;
       background-size: cover;
+      backgorund-position: center;
+      background-repeat: no-repeat;
       position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
       animation: ${slide} 25s infinite;
       opacity: 0;
       &:nth-child(2) {
@@ -48,44 +54,89 @@ const style = {
     }
   `,
   textOverlay: css`
-  background: transparent;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  margin: auto auto;
-  color: #fff;
-  font-size: 4.5rem;;
-  overflow: visible;
-  display: flex;
-  align-items: end;
-  justify-content: center;
+    background: transparent;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    color: #fff;
+    font-size: 4.5rem;
+    overflow: visible;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   `,
   textOverlayInner: css`
-  width: 50%;
-  height: 50%;
-  margin-left:  0 auto;
-  background:rgba(0,0,0,0);
-  color: #fff;
-  font-weight: 800;
-  white-space: wrap;
-  span.Typewriter__wrapper {
-  font-family: 'Dancing Script', cursiv !important;
-  line-height: 76px;
-  font-size: 76px;
-  fonnt-weight: 500;
-  }
-  span.Typewriter__cursor{
-    font-family: 'Dancing Script', cursiv !important;
-  line-height: 76px;
-  font-size: 76px;
-  fonnt-weight: 500;
-  }
+    width: 50%;
+    height: 50%;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0);
+    color: #fff;
+    font-weight: 800;
+    white-space: wrap;
+    span.Typewriter__wrapper {
+      font-family: "Dancing Script", cursiv !important;
+      line-height: 76px;
+      font-size: 76px;
+      font-weight: 500;
+    }
+    span.Typewriter__cursor {
+      font-family: "Dancing Script", cursiv !important;
+      line-height: 64px;
+      font-size: 64px;
+      fonnt-weight: 500;
+    }
+
+    @media screen and (max-width: 768px) {
+      span.Typewriter__wrapper {
+        line-height: 56px;
+        font-size: 56px;
+        font-weight: 500;
+      }
+
+      span.Typewriter__cursor {
+        line-height: 64px;
+        font-size: 64px;
+        fonnt-weight: 500;
+      }
+    }
+
+    @media screen and (max-width: 640px) {
+      span.Typewriter__wrapper {
+        line-height: 48px;
+        font-size: 48px;
+        font-weight: 400;
+      }
+
+      span.Typewriter__cursor {
+        line-height: 48px;
+        font-size: 48px;
+        fonnt-weight: 400;
+      }
+    }
+
+    @media screen and (max-width: 360px) {
+      span.Typewriter__wrapper {
+        line-height: 36px;
+        font-size: 36px;
+        font-weight: 400;
+      }
+
+      span.Typewriter__cursor {
+        line-height: 36px;
+        font-size: 36px;
+        fonnt-weight: 500;
+      }
+    }
   `,
   overlayText: css`
-  background: transparent !important;
-  color: #fff;
-  font-weight: 800;
+    background: transparent !important;
+    color: #fff;
+    font-weight: 800;
   `,
 };
 
@@ -104,7 +155,10 @@ const ImageSlider = () => {
       <div css={style.textOverlay}>
         <div css={style.textOverlayInner}>
           <Typewriter
-            style={{ background: "transparent !important", fontFamily: "'Dancing Script', cursive" }}
+            style={{
+              background: "transparent !important",
+              fontFamily: "'Dancing Script', cursive",
+            }}
             options={{
               strings: [
                 "Welcome to Rushal Creation",

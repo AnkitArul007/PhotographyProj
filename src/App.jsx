@@ -23,6 +23,7 @@ import WeddingBlog from "./components/Wedding/WeddingBlog";
 import { NotificationProvider } from "./components/toast/index.jsx"
 import PreWedding from "./pages/PreWedding.jsx";
 import IndividualCategory from "./pages/IndividualCategory.jsx";
+import AboutUsPage from "./pages/AboutUsPage.jsx";
 // import About from "./components/About";
 // import Carousel from "./components/Carousel";
 // import Categories from "./components/Categories";
@@ -42,8 +43,8 @@ function App() {
         <Route index path="/films" element={<Films />} />
         <Route path="/wedding" element={<Wedding />} />
         <Route path="/wedding/:weddingName" element={<WeddingBlog />} />
-        
         <Route index path="/:id" element={<IndividualCategory />} />
+        {/* <Route index path="/about" element={<AboutUsPage />} /> */}
       </Route>
     )
   );

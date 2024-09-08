@@ -5,10 +5,9 @@ import { useNavigate } from 'react-router-dom';
 const style = {
     card: css`
     position: relative !important;
-    margin: 20px;
-    // padding: 0.1rem;
+    margin: 0 auto;
     width: auto;
-    width: 270px;
+    max-width: 270px;
     height: auto;
     background: linear-gradient(0deg, rgb(0, 0, 0), rgb(44,43,43));
     z-index: 1;
@@ -39,8 +38,6 @@ const style = {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    // border-radius: 50%;
-    // border-radius: 2rem;
     overflow: hidden;
     `,
 
