@@ -22,7 +22,7 @@ export const useFetch = () => {
     } catch (e) {
       if (e.name === "AbortError") return;
       setError(true);
-      console.log(e);
+      console.error("handleGet", e);
     } finally {
       setLoading(false);
     }
@@ -45,7 +45,7 @@ export const useFetch = () => {
     } catch (e) {
       if (e.name === "AbortError") return;
       setError(true);
-      console.log(e);
+      console.error("handlePost",e);
     } finally {
       setLoading(false);
     }
@@ -68,7 +68,7 @@ export const useFetch = () => {
     } catch (e) {
       if(e.name === "AbortError") return;
       setError(true);
-      console.log(e);
+      console.error("handleDelete",e);
     } finally {
       setLoading(false);
     }
