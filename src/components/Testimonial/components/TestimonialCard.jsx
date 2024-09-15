@@ -15,9 +15,10 @@ const TestimonialCard = () => {
     return (
         <>
             {
-                 Array.isArray(data?._data?.data) && data?._data?.data?.map((testimony) => {
+                 Array.isArray(data?._data?.data) && data?._data?.data?.map((testimony, index) => {
                     return (
                         <div
+                        key={index}
                         className="bg-transparent"
                         css={css`
                           flex: 0 0 calc(50% - 100px);

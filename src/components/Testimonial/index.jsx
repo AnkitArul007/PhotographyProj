@@ -7,7 +7,6 @@ import TestimonialCard from "./components/TestimonialCard";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 
 const Testimonial = () => {
-
   const cardsContainer = useRef(null);
 
   const handleLeftNavigationClick = () => {
@@ -44,7 +43,7 @@ const Testimonial = () => {
               scroll-padding: 0 50px;
             `}
           >
-              <TestimonialCard />
+            <TestimonialCard />
             {/* <div
               className="bg-transparent"
               css={css`
@@ -99,18 +98,7 @@ const Testimonial = () => {
         <div className="navigation-switches">
           <div
             className="leftArrow d-flex justify-content-center align-items-center"
-            css={css`
-              position: absolute;
-              top: calc(50% - 50px);
-              left: 30px;
-              width: fit-content;
-              height: fit-content;
-              padding: 1rem;
-              border-radius: 50%;
-              font-size: var(--large-text);
-              background: rgba(255, 255, 255, 0.3);
-              cursor: pointer;
-            `}
+            css={style.arrowLeft}
             onClick={handleLeftNavigationClick}
           >
             <AiOutlineArrowLeft
@@ -123,18 +111,7 @@ const Testimonial = () => {
 
           <div
             className="rightArrow d-flex justify-content-center align-items-center"
-            css={css`
-              position: absolute;
-              top: calc(50% - 50px);
-              right: 30px;
-              width: fit-content;
-              height: fit-content;
-              padding: 1rem;
-              border-radius: 50%;
-              font-size: var(--large-text);
-              background: rgba(255, 255, 255, 0.3);
-              cursor: pointer;
-            `}
+            css={style.arrowRight}
             onClick={handleRightNavigationClick}
           >
             <AiOutlineArrowRight
@@ -155,36 +132,72 @@ export default Testimonial;
 const style = {
   section: css`
     min-height: 60vh;
-    background: url("https://r4.wallpaperflare.com/wallpaper/242/181/187/abstract-lines-shapes-digital-art-wallpaper-b940c8bd111a1ddb569788cf00d1e6ed.jpg");
-    background: url("https://c4.wallpaperflare.com/wallpaper/130/63/655/abstract-art-background-colorful-wallpaper-preview.jpg");
-    background: url("https://wallpapercrafter.com/th800/152721-yellow-blue-electric-waves-spectrum-colorful-black-black-background-green.jpg");
+    // background: url("https://r4.wallpaperflare.com/wallpaper/242/181/187/abstract-lines-shapes-digital-art-wallpaper-b940c8bd111a1ddb569788cf00d1e6ed.jpg");
+    // background: url("https://c4.wallpaperflare.com/wallpaper/130/63/655/abstract-art-background-colorful-wallpaper-preview.jpg");
+    background: url("/images/spectrum.jpg");
     background-attachment: scroll;
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
   `,
   spinner: css`
-  background-image: linear-gradient(rgb(186, 66, 255) 35%,rgb(0, 225, 255));
-  width: 100px;
-  height: 100px;
-  animation: spinning82341 1.7s linear infinite;
-  text-align: center;
-  border-radius: 50px;
-  filter: blur(1px);
-  box-shadow: 0px -5px 20px 0px rgb(186, 66, 255), 0px 5px 20px 0px rgb(0, 225, 255);
+    background-image: linear-gradient(rgb(186, 66, 255) 35%, rgb(0, 225, 255));
+    width: 100px;
+    height: 100px;
+    animation: spinning82341 1.7s linear infinite;
+    text-align: center;
+    border-radius: 50px;
+    filter: blur(1px);
+    box-shadow: 0px -5px 20px 0px rgb(186, 66, 255),
+      0px 5px 20px 0px rgb(0, 225, 255);
   `,
   spinner1: css`
-  background-color: rgb(36, 36, 36);
-  width: 100px;
-  height: 100px;
-  border-radius: 50px;
-  filter: blur(10px);
+    background-color: rgb(36, 36, 36);
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    filter: blur(10px);
 
-  @keyframes spinning82341 {
-    to {
-      transform: rotate(360deg);
+    @keyframes spinning82341 {
+      to {
+        transform: rotate(360deg);
+      }
     }
-  }
-  `
+  `,
+  arrowLeft: css`
+    position: absolute;
+    top: calc(50% - 50px);
+    left: 30px;
+    width: fit-content;
+    height: fit-content;
+    padding: 1rem;
+    border-radius: 50%;
+    font-size: var(--large-text);
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    @media (max-width: 768px) {
+      font-size: var(--mid-text);
+    }
+    @media (max-width: 480px) {
+      font-size: var(--small-text);
+    }
+  `,
+  arrowRight: css`
+    position: absolute;
+    top: calc(50% - 50px);
+    right: 30px;
+    width: fit-content;
+    height: fit-content;
+    padding: 1rem;
+    border-radius: 50%;
+    font-size: var(--large-text);
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    @media (max-width: 768px) {
+      font-size: var(--mid-text);
+    }
+    @media (max-width: 480px) {
+      font-size: var(--small-text);
+    }
+  `,
 };
-
