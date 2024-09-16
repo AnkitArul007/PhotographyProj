@@ -8,7 +8,7 @@ const Footer = () => {
     <section css={style.section} className="mt-5 py-3">
       <div css={style.container} className="container">
         <div css={style.rushalk}>
-          <h3 className="neon-grad fs-1">Rushal Creation</h3>
+          <h3 className="neon-grad fs-1">RusalkCreation</h3>
           <p>49, Image Gardens,</p>
           <p>By-pass road</p>
           <p>Bhagalpur, Bihar- 812001</p>
@@ -29,7 +29,7 @@ const Footer = () => {
           linkHeading={"Quick Links"}
           links={[
             { address: "#", name: "About Us" },
-            { address: "#", name: "Partner with us" },
+            { address: "/contact", name: "Contact Us" },
           ]}
         />
 

@@ -67,7 +67,7 @@ const Navbar = () => {
                 font-family: "Julius Sans One", sans-serif;
                 font-weight: bold;
               `}>
-              Rushal Creation
+              RusalkCreation
             </h2>
           </Link>
         </div>
