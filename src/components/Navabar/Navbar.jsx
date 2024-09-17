@@ -14,17 +14,17 @@ import { useFetch } from "../../hooks/useFetch";
 import useListenScreenSize from "../../hooks/useListenScreenSize";
 
 const Navbar = () => {
-  const { screenWidth, suggestImageWidthToTake } = useListenScreenSize()
+  const { screenWidth, suggestImageWidthToTake } = useListenScreenSize();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
-  const [mobileDropdownInnerChild, setMobileDropdownInnerChild] = useState(false);
+  const [mobileDropdownInnerChild, setMobileDropdownInnerChild] =
+    useState(false);
 
-  const { data, error, postData, loading } = useFetch()
+  const { data, error, postData, loading } = useFetch();
   useEffect(() => {
-    const url = `${import.meta.env.VITE_ROOT_URL}/category/get`
-    postData(url, { 'w': suggestImageWidthToTake() })
-  }, [screenWidth])
-
+    const url = `${import.meta.env.VITE_ROOT_URL}/category/get`;
+    postData(url, { w: suggestImageWidthToTake() });
+  }, [screenWidth]);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -49,24 +49,28 @@ const Navbar = () => {
           -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
           perspective: 1000;
-        `}>
+        `}
+      >
         <div
           className="logo d-flex align-items-center"
           css={css`
             background: transparent;
-          `}>
+          `}
+        >
           <Link
             to="/home"
             css={css`
               text-decoration: none;
               background: transparent;
-            `}>
+            `}
+          >
             <h2
               className="neon-grad"
               css={css`
                 font-family: "Julius Sans One", sans-serif;
                 font-weight: bold;
-              `}>
+              `}
+            >
               RusalkCreation
             </h2>
           </Link>
@@ -80,7 +84,8 @@ const Navbar = () => {
             @media (min-width: 990px) {
               display: block;
             }
-          `}>
+          `}
+        >
           <ul
             css={css`
               display: flex;
@@ -93,7 +98,8 @@ const Navbar = () => {
               font-weight: bold;
               text-transform: uppercase;
               background: transparent;
-            `}>
+            `}
+          >
             {navTabsData?.slice(0, 4).map((ele, id) => {
               return (
                 <li
@@ -101,19 +107,24 @@ const Navbar = () => {
                   css={css`
                     margin-right: 15px;
                     background: transparent;
-                  `}>
+                  `}
+                >
                   <Link
                     to={`/${ele}`}
                     css={css`
                       text-decoration: none;
                       background: transparent;
-                    `}>
+                    `}
+                  >
                     <p
                       className="bg-transparent text-light"
                       css={css`
                         font-family: "Julius Sans One", sans-serif;
                         font-weight: bold;
-                      `}>
+                        margin: 0;
+                        padding: 0;
+                      `}
+                    >
                       {ele}
                     </p>
                   </Link>
@@ -122,24 +133,29 @@ const Navbar = () => {
             })}
             <li
               css={css`
-                margin-right: 15px;
+                // margin-right: 15px;
                 position: relative;
                 background: transparent;
-              `}>
+              `}
+            >
               <Link
                 to="#"
                 css={css`
                   text-decoration: none;
                   background: transparent;
                 `}
-                onClick={toggleDropdown}>
+                onClick={toggleDropdown}
+              >
                 <p
                   className="text-light bg-transparent"
                   css={css`
                     font-family: "Julius Sans One", sans-serif;
                     font-weight: bold;
                     cursor: pointer;
-                  `}>
+                    margin: 0;
+                    padding: 0;
+                  `}
+                >
                   Category ▼
                 </p>
               </Link>
@@ -151,7 +167,8 @@ const Navbar = () => {
                     top: 200%;
                     right: 0;
                     width: 200px;
-                    height: 200px;
+                    // height: 200px;
+                    height: fit-content;
                     display: block;
                     list-style: none;
                     margin: 0;
@@ -164,26 +181,29 @@ const Navbar = () => {
                     backface-visibility: hidden;
                     perspective: 1000;
                     box-shadow: 0px 0px 7px 0.5px lightgray;
-                  `}>
-                  {
-                    data?._data?.data?.map((category) => {
-                      return <li
+                  `}
+                >
+                  {data?._data?.data?.map((category) => {
+                    return (
+                      <li
                         className="bg-transparent"
                         css={css`
                           margin-bottom: 10px;
-                        `}>
+                        `}
+                      >
                         <Link
                           to={`/${category?.id}`}
                           className="bg-transparent"
                           css={css`
                             text-decoration: none;
                             color: white;
-                          `}>
-                          {category?.category_name }
+                          `}
+                        >
+                          {category?.category_name}
                         </Link>
                       </li>
-                    })
-                  }
+                    );
+                  })}
                 </ul>
               )}
             </li>
@@ -203,7 +223,8 @@ const Navbar = () => {
           onClick={(e) => {
             setMobileDropdownOpen(!mobileDropdownOpen);
             console.log(mobileDropdownOpen);
-          }}>
+          }}
+        >
           <span
             css={css`
               font-size: 28px;
@@ -212,7 +233,8 @@ const Navbar = () => {
               &:hover {
                 cursor: pointer;
               }
-            `}>
+            `}
+          >
             {/* custom burger icon */}
             <div className="burgerContainer d-flex flex-column gap-2 bg-transparent">
               <div
@@ -221,21 +243,24 @@ const Navbar = () => {
                   width: 30px;
                   color: white;
                   border: 2px solid white;
-                `}></div>
+                `}
+              ></div>
               <div
                 css={css`
                   height: 3px;
                   width: 30px;
                   color: white;
                   border: 2px solid white;
-                `}></div>
+                `}
+              ></div>
               <div
                 css={css`
                   height: 3px;
                   width: 30px;
                   color: white;
                   border: 2px solid white;
-                `}></div>
+                `}
+              ></div>
             </div>
           </span>
 
@@ -249,7 +274,8 @@ const Navbar = () => {
               min-width: 200px;
               transition: all 1s ease-in-out;
               display: ${mobileDropdownOpen ? "block" : "none"};
-            `}>
+            `}
+          >
             {navTabsData.slice(0, 4).map((ele, id) => {
               return (
                 <Link
@@ -257,7 +283,8 @@ const Navbar = () => {
                   to={`/${ele}`}
                   css={css`
                     text-decoration: none;
-                  `}>
+                  `}
+                >
                   <li
                     css={css`
                       background: transparent;
@@ -271,7 +298,8 @@ const Navbar = () => {
                         color: #fff;
                         cursor: pointer;
                       }
-                    `}>
+                    `}
+                  >
                     {ele}
                   </li>
                 </Link>
@@ -293,7 +321,8 @@ const Navbar = () => {
                   color: #fff;
                   cursor: pointer;
                 }
-              `}>
+              `}
+            >
               <p
                 className="d-flex gap-2"
                 css={css`
@@ -301,7 +330,8 @@ const Navbar = () => {
                     color: #fff;
                     cursor: pointer;
                   }
-                `}>
+                `}
+              >
                 <span>◀</span>
                 <span>Category</span>
               </p>
@@ -316,26 +346,29 @@ const Navbar = () => {
                   min-width: 200px;
                   padding: 0;
                   display: ${mobileDropdownInnerChild ? "block" : "none"};
-                `}>
-                  {
-                    data?._data?.data?.map((category) => {
-                      return <li
+                `}
+              >
+                {data?._data?.data?.map((category) => {
+                  return (
+                    <li
+                      className="bg-transparent"
+                      css={css`
+                        margin-bottom: 10px;
+                      `}
+                    >
+                      <Link
+                        to={`/${category?.id}`}
                         className="bg-transparent"
                         css={css`
-                          margin-bottom: 10px;
-                        `}>
-                        <Link
-                          to={`/${category?.id}`}
-                          className="bg-transparent"
-                          css={css`
-                            text-decoration: none;
-                            color: white;
-                          `}>
-                          {category?.category_name}
-                        </Link>
-                      </li>
-                    })
-                  }
+                          text-decoration: none;
+                          color: white;
+                        `}
+                      >
+                        {category?.category_name}
+                      </Link>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           </ul>

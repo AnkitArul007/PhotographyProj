@@ -24,7 +24,7 @@ const style = {
     letter-spacing: 5px;
     text-transform: capitalize;
 
-    @media (max-width: 360px) {
+    @media (max-width: 480px) {
       font-size: var(--mid-text);
     }
   `,

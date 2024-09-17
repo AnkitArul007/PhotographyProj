@@ -10,7 +10,7 @@ import SectionHeaders from "../../commonComponents/SectionHeaders";
 const Images = () => {
   const [images, setImages] = useState([]);
   const imageFetch = async () => {
-    const url = "http://localhost:8002/api/v1/images/get";
+    const url = `${import.meta.env.VITE_ROOT_URL}/images/get`;
     const res = await fetch(url, { 
       method: "POST",
       headers: {
