@@ -30,7 +30,7 @@ const style = {
       width: 100%;
       height: 100%;
       background-size: cover;
-      backgorund-position: center;
+      background-position: center;
       background-repeat: no-repeat;
       position: absolute;
       top: 0;
@@ -138,17 +138,56 @@ const style = {
     color: #fff;
     font-weight: 800;
   `,
+  banner1: css`
+  background-image: url("/images/banner1.jpg");
+  @media screen and (max-width: 480px) {
+  background-image: url("/images/banner1-sm.jpg");
+  }
+  `,
+  banner2: css`
+  background-image: url("/images/banner2.jpg");
+  @media screen and (max-width: 480px) {
+  background-image: url("/images/banner2-sm.jpg");
+  }
+  
+  `,
+  banner3: css`
+  background-image: url("/images/banner3.jpg");
+  @media screen and (max-width: 480px) {
+  background-image: url("/images/banner3-sm.jpg");
+  }
+  `,
+  banner4: css`
+  background-image: url("/images/banner4.jpg");
+  @media screen and (max-width: 480px) {
+  background-image: url("/images/banner4-sm.jpg");
+  }
+  `,
+  banner5: css`
+  background-image: url("/images/banner5.jpg");
+  @media screen and (max-width: 480px) {
+  background-image: url("/images/banner5-sm.jpg");
+  }
+  `,
+  banner6: css`
+  background-image: url("/images/banner6.jpg");
+  @media screen and (max-width: 480px) {
+  background-image: url("/images/banner6-sm.jpg");
+  }
+  `,
+
 };
 
 const ImageSlider = () => {
   return (
     <>
       <div css={style.main}>
-        <div style={{ backgroundImage: `url("/images/banner1.jpg")` }}></div>
-        <div style={{ backgroundImage: `url("/images/banner2.jpg")` }}></div>
-        <div style={{ backgroundImage: `url("/images/banner3.jpg")` }}></div>
-        <div style={{ backgroundImage: `url("/images/banner4.jpg")` }}></div>
-        <div style={{ backgroundImage: `url("/images/banner5.jpg")` }}></div>
+        <div css={style.banner1}></div>
+        <div css={style.banner2}></div>
+        <div css={style.banner3}></div>
+        <div css={style.banner4}></div>
+        <div css={style.banner5}></div>
+        <div css={style.banner6}></div>
       </div>
 
       {/* typer writer effect */}
@@ -161,8 +200,11 @@ const ImageSlider = () => {
             }}
             options={{
               strings: [
-                "Welcome to Rushal Creation",
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+                "Welcome to Rushalk Creation",
+                "Where Every Picture Tells a Story",
+                "Moments Captured, Emotions Preserved",
+                "We Craft Visual Narratives for Every Occasion",
+                "Your Story, Captured Through Our Lens",
               ],
               autoStart: true,
               loop: true,

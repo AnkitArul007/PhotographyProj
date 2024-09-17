@@ -20,7 +20,7 @@ import Faqs from "./components/FAQs";
 import Films from "./components/Fims";
 import Wedding from "./components/Wedding";
 import WeddingBlog from "./components/Wedding/WeddingBlog";
-import { NotificationProvider } from "./components/toast/index.jsx"
+import { NotificationProvider } from "./components/toast/index.jsx";
 import PreWedding from "./pages/PreWedding.jsx";
 import IndividualCategory from "./pages/IndividualCategory.jsx";
 import AboutUsPage from "./pages/AboutUsPage.jsx";
@@ -55,15 +55,16 @@ export default App;
 
 const Root = () => {
   const location = useLocation();
-  return <>
-    <NotificationProvider>
-      {
-        location.pathname !== "/home" ? (
+  return (
+    <>
+      <NotificationProvider>
+        {location.pathname !== "/home" ? (
           <>
             <div
               css={css`
-            margin-bottom: 100px;
-          `}>
+                margin-bottom: 100px;
+              `}
+            >
               <Navbar />
             </div>
             <Outlet />
@@ -75,8 +76,8 @@ const Root = () => {
             <Outlet />
             <Footer />
           </>
-        )
-      }
-    </NotificationProvider>
-  </>
+        )}
+      </NotificationProvider>
+    </>
+  );
 };
