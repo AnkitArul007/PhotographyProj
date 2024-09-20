@@ -58,7 +58,7 @@ const Navbar = () => {
           `}
         >
           <Link
-            to="/home"
+            to="/"
             css={css`
               text-decoration: none;
               background: transparent;
@@ -229,7 +229,6 @@ const Navbar = () => {
             css={css`
               font-size: 28px;
               background: transparent;
-
               &:hover {
                 cursor: pointer;
               }
