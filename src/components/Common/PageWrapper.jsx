@@ -1,4 +1,4 @@
-import React from "react";
+/* eslint-disable react/no-unknown-property */
 import { css } from "@emotion/react";
 
 const PageWrapper = ({ children, isLoading }) => {

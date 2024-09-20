@@ -1,7 +1,8 @@
+import AboutUs from "../components/AboutUs"
 
 const AboutUsPage = () => {
   return (
-    <div>AboutUsPage</div>
+    <AboutUs />
   )
 }
 

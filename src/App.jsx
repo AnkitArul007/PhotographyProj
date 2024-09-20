@@ -33,18 +33,18 @@ function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<Root />}>
-        <Route index path="/home" element={<Home />} />
-        <Route index path="/stories" element={<Stories />} />
-        <Route index path="/images" element={<ImagesPage />} />
-        <Route index path="/pre-wedding" element={<PreWedding />} />
-        <Route index path="/story" element={<Story />} />
-        <Route index path="/contact" element={<ContactForm />} />
-        <Route index path="/faqs" element={<Faqs />} />
-        <Route index path="/films" element={<Films />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/stories" element={<Stories />} />
+        <Route path="/images" element={<ImagesPage />} />
+        <Route path="/pre-wedding" element={<PreWedding />} />
+        <Route path="/story" element={<Story />} />
+        <Route path="/contact" element={<ContactForm />} />
+        <Route path="/faqs" element={<Faqs />} />
+        <Route path="/films" element={<Films />} />
         <Route path="/wedding" element={<Wedding />} />
         <Route path="/wedding/:weddingName" element={<WeddingBlog />} />
-        <Route index path="/:id" element={<IndividualCategory />} />
-        {/* <Route index path="/about" element={<AboutUsPage />} /> */}
+        <Route path="/:id" element={<IndividualCategory />} />
+        <Route index path="/about-us" element={<AboutUsPage />} />
       </Route>
     )
   );
@@ -58,7 +58,7 @@ const Root = () => {
   return (
     <>
       <NotificationProvider>
-        {location.pathname !== "/home" ? (
+        {location.pathname !== "/" ? (
           <>
             <div
               css={css`
