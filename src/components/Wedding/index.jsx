@@ -22,11 +22,11 @@ const Style = {
 }
 
 
-const Wedding = () => {
+const PreWedding = () => {
   return (
     <section css={Style.sectionMain}>
         <div css={Style.divMain}>
-            <SectionHeaders pagetitle={"WEDDINGS"} />
+            <SectionHeaders pagetitle={"Pre-Weddings"} />
             <VideoPlayer />
             <div css={css`width: 100%;`}>
                 <WeddingGrid />
@@ -36,4 +36,4 @@ const Wedding = () => {
   )
 }
 
-export default Wedding;
+export default PreWedding;
