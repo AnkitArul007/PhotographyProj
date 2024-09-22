@@ -22,6 +22,7 @@ import WeddingBlog from "./components/Wedding/WeddingBlog";
 import { NotificationProvider } from "./components/toast/index.jsx";
 // import PreWedding from "./pages/PreWedding.jsx";
 import IndividualCategory from "./pages/IndividualCategory.jsx";
+import AboutUs from "./components/AboutUs/index.jsx";
 
 function App() {
   const router = createBrowserRouter(
@@ -38,7 +39,7 @@ function App() {
         <Route path="/pre-wedding" element={<PreWedding />} />
         <Route path="/pre-wedding/:weddingName" element={<WeddingBlog />} />
         <Route index path="/:id" element={<IndividualCategory />} />
-        {/* <Route index path="/about" element={<AboutUsPage />} /> */}
+        <Route index path="/about-us" element={<AboutUs />} />
       </Route>
     )
   );
@@ -64,8 +65,12 @@ const Root = () => {
       <>
         <NotificationProvider>
           <>
-            <Navbar />
-            <Outlet />
+            <div className="mb-5">
+              <Navbar />
+            </div>
+            <div className="mt-5 py-5">
+              <Outlet />
+            </div>
             <Footer />
           </>
         </NotificationProvider>

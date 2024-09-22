@@ -157,14 +157,8 @@ const ContactForm = () => {
                 </div>
                 {/* contact us form texts */}
                 <div css={styles.pageTitle} className="py-3 mx-5 text-center">
-                    <p className="fs-4">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus blanditiis dolores hic corrupti ipsum obcaecati fugiat soluta voluptas laudantium quam!
-                    </p>
-                    <p className="fs-4">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi facere exercitationem cumque nihil dolore magnam hic explicabo culpa eum optio! Vero, similique numquam recusandae itaque aspernatur nesciunt voluptates at maxime necessitatibus commodi cum voluptatum neque autem eveniet laborum corporis fuga iusto perspiciatis sunt eaque eos consequuntur facilis dicta. Consequuntur quas modi recusandae voluptatem nesciunt adipisci consequatur. Adipisci deserunt neque doloribus corrupti, ipsa vero cum aliquam eum rem, animi, odit commodi quae at impedit harum provident quam eveniet asperiores culpa sequi nesciunt pariatur! Provident, praesentium officiis. Perspiciatis et maiores quam, similique minima voluptatum qui, iusto id, omnis deleniti architecto autem error?
-                    </p>
-                    <p className="fs-4">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit beatae amet numquam velit praesentium harum adipisci ab magnam asperiores, atque architecto reprehenderit blanditiis, distinctio repellendus animi exercitationem nihil fuga. Expedita, odio quibusdam. Vero totam doloribus placeat dignissimos asperiores. Deleniti ad accusamus consectetur odit, ex quae nisi sunt exercitationem ratione maxime nam expedita neque iste distinctio totam in dignissimos vero quas incidunt recusandae laudantium at laborum! Quas explicabo, modi molestias molestiae expedita necessitatibus recusandae maxime voluptatem laudantium assumenda dolores quibusdam cumque?
+                    <p className="fs-3">
+                    Welcome to the "Contact Us" page of Rusalk Creation! We are excited to hear from you. Whether you're interested in our photography or filmmaking services, have questions, or want to discuss your upcoming project, we’re here to help. Please fill out the form below with your details, and our team will get back to you as soon as possible. Your vision matters to us, and we look forward to collaborating with you to create unforgettable memories. Thank you for considering Rusalk Creation for your special moments!
                     </p>
                 </div>
 

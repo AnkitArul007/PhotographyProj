@@ -17,17 +17,17 @@ const SocialMediaLinks = () => {
         Follow us
       </h3>
       <div className="social-media-icons" css={style.socialmediaIcons}>
-        <Link>
+        <Link to={"https://www.instagram.com/rusalkcreation?igsh=Z2Y1ZHlwdnp6eGow"} target="_blank">
           <span className="fs-3" css={style.links}>
             <AiFillInstagram />
           </span>
         </Link>
-        <Link>
+        <Link to={"https://www.facebook.com/profile.php?id=100009450957884&mibextid=LQQJ4d"} target="_blank">
           <span className="fs-3" css={style.links}>
             <FaFacebookF />
           </span>
         </Link>
-        <Link>
+        <Link to={"https://youtu.be/qhhCgxZLKbw?si=UjKg3jm5-UJusVdx"} target="_blank">
           <span className="fs-3" css={style.links}>
             <AiFillYoutube />
           </span>

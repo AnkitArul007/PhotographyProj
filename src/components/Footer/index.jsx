@@ -8,14 +8,16 @@ const Footer = () => {
     <section css={style.section} className="mt-5 py-3">
       <div css={style.container} className="container">
         <div css={style.rushalk}>
-          <h3 className="neon-grad fs-1">RusalkCreation</h3>
-          <p>49, Image Gardens,</p>
-          <p>By-pass road</p>
+          <h3 className="neon-grad fs-1">Rusalk Creation</h3>
+          <p>Rusalk Creation Studio,</p>
+          <p>Behind Shivam Aryan Fuel Services</p>
+          <p>Before new St. Teresa School</p>
+          <p>Bypass Road</p>
           <p>Bhagalpur, Bihar- 812001</p>
         </div>
 
         {/* services */}
-        <FooterLink
+        {/* <FooterLink
           linkHeading={"Services"}
           links={[
             { address: "#", name: "Service1" },
@@ -23,12 +25,12 @@ const Footer = () => {
             { address: "#", name: "Service3" },
             { address: "#", name: "Service4" },
           ]}
-        />
+        /> */}
 
         <FooterLink
           linkHeading={"Quick Links"}
           links={[
-            { address: "#", name: "About Us" },
+            { address: "/about-us", name: "About Us" },
             { address: "/contact", name: "Contact Us" },
           ]}
         />
@@ -37,7 +39,7 @@ const Footer = () => {
       </div>
 
       <div className="text-center py-3" css={style.border}>
-        <p css={style.text}>&copy;Rushal Creation All rights reserved.</p>
+        <p css={style.text}>&copy;Rusalk Creation All rights reserved.</p>
         <p
           css={css`
             font-size: 10px;

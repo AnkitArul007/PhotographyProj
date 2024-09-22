@@ -24,11 +24,7 @@ const AboutUs = () => {
               </div>
               <div css={style.aboutText}>
                 <p css={style.aboutTextPara}>
-                  Lorem ipsum dolor sit amet, pro ei justo mnesarchum, ad partem
-                  epicurei quo, iusto errem no cum. Idque minim his ut. Ut cum
-                  legendos similique, quo an tantas aliquip graecis. Nec et
-                  consul voluptatum, mel ex solum facete consequat. Cu eos
-                  lucilius gubergren, ad sale definitionem his.
+                Rusalk Creation is a dynamic photography and filmmaking company specializing in capturing the magic of weddings through stunning visuals and cinematic storytelling. With a passion for preserving cherished moments, they also excel in pre-weddings, birthday parties, maternity shoots, corporate events, model portfolios, product photography, sports, advertisements, music videos, films, and documentaries. Their highly skilled team of photographers and filmmakers delivers high-quality, customized experiences for clients, ensuring every occasion is beautifully documented. Rusalk Creation blends creativity, technical expertise, and meticulous attention to detail, making them a versatile choice for all photography and filmmaking needs.
                 </p>
               </div>
             </div>
@@ -36,7 +32,7 @@ const AboutUs = () => {
 
           <div css={style.aboutRight}>
             <div css={style.aboutImageDiv}>
-              <img src="/images/w2.jpg" alt="ruslak-creation" />
+              <img src="/images/aboutUsService.jpg" alt="ruslak-creation" />
             </div>
           </div>
         </div>
@@ -66,7 +62,7 @@ const style = {
     overflow: hidden;
     margin-bottom: 58px;
     width: 100%;
-    background-image: url("/images/top-bg.jpg");
+    background-image: url("/images/lm.jpg");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -77,7 +73,7 @@ const style = {
     margin-bottom: 98px;
   `,
   aboutInfoDiv: css`
-    max-width: 1040px;;
+    max-width: 1040px;
     margin: 0 auto;
     padding: 0;
     display: flex;
@@ -94,14 +90,16 @@ const style = {
   aboutHeading: css`
     font-weight: 700;
     line-height: 1.4em;
-    font-size: 48px;
+    font-size: 44px;
+    text-align: center;
   `,
   aboutTextDiv: css`
     width: 100%;
   `,
   aboutTextPara: css`
-    line-height: 1.7em;
-    font-size: 16px;
+    line-height: 1.5em;
+    font-size: 15px;
+    text-align: center;
   `,
   aboutRight: css`
     width: 50%;

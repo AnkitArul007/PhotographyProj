@@ -62,25 +62,25 @@ const style = {
   `,
   aboutInfoDiv: css`
     padding: 1rem;
-    font-family: 'Julius Sans One', sans-serif;
+    font-family: "Julius Sans One", sans-serif;
   `,
   titleHeading: css`
     font-weight: 600;
     letter-spacing: 4px;
     text-align: left;
     color: #fff;
-    font-family: 'Julius Sans One', sans-serif;
-    @media (max-width: 600px){
+    font-family: "Julius Sans One", sans-serif;
+    @media (max-width: 600px) {
       text-align: center;
     }
-    `,
+  `,
   titlePosition: css`
-  text-align: left;
-  color: #fff;
-  font-family: 'Julius Sans One', sans-serif;
-  @media (max-width: 600px) {
-    text-align: center;
-  }
+    text-align: left;
+    color: #fff;
+    font-family: "Julius Sans One", sans-serif;
+    @media (max-width: 600px) {
+      text-align: center;
+    }
   `,
   aboutTextDiv: css`
     padding-top: 28px;
@@ -94,44 +94,76 @@ const style = {
     }
   `,
   aboutText: css`
-  margin: 0;
-    font-size: 12px;
+    margin: 0;
+    font-size: 13px;
+    font-weight: bold;
+    word-spacing: 1px;
+    letter-spacing: 0.5px;
+    text-align: justify;
     line-height: 200%;
-    font-family: 'Julius Sans One', sans-serif;
+    font-family: "Julius Sans One", sans-serif;
   `,
 };
 
 export default function About() {
   return (
     <>
-      {/* main division */}
       <div css={style.mainDiv}>
-        {/* profile container div */}
         <div css={style.profileDiv}>
-          {/* profile image div */}
           <div css={style.profileImageDiv}>
-            <img css={style.profileImage} src="/images/profile.png" alt="propfile-image" srcSet="" />
+            <img
+              css={style.profileImage}
+              src="/images/rk_profileimage.jpg"
+              alt="propfile-image"
+              srcSet=""
+            />
           </div>
-          {/* profile info div */}
           <div css={style.aboutInfoDiv}>
-            {/* name and position */}
             <div>
-              <h1 css={style.titleHeading}>Siddharth Gupta</h1>
-              <h3 
-              css={style.titlePosition}
-              >
-                Creative Director
-              </h3>
+              <h1 css={style.titleHeading}>Rusalk Anand</h1>
+              <h3 css={style.titlePosition}>Director & Founder</h3>
             </div>
-            {/* about text */}
             <div css={style.aboutTextDiv}>
               <p css={style.aboutText}>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum,
-                voluptate voluptas. Ipsum perspiciatis delectus fugiat magni
-                assumenda, laudantium excepturi, qui, modi sit veniam at
-                possimus. Molestias repellendus neque eos architecto error natus
-                autem, consectetur enim fuga ducimus nulla! Asperiores iste vel
-                non quibusdam incidunt laudantium placeat excepturi.
+                A passionate storyteller, filmmaker, writer, photographer, and
+                cinematographer, Anand's creative vision has brought numerous
+                narratives to life. From the outset of his career, he embraced
+                the art of filmmaking, driven by a deep love for visual
+                storytelling and a profound appreciation for the transformative
+                power of cinema. With over 15 years of experience in the film
+                and television industry, his journey began with a focus on
+                [specific areas of expertise, e.g., direction, cinematography,
+                screenwriting], quickly evolving into a versatile filmmaker
+                skilled in multiple facets of production.
+
+                
+                In addition to his roles as director, associate director, and
+                director of photography, Anand also takes on the
+                responsibilities of producer for various films, short films,
+                music videos, and documentaries. Anand serves as the official
+                chief photographer for Star Sports, capturing the excitement of
+                major sporting events, including the IPL, Kabaddi, Futsal, TNPL,
+                badminton, snooker, advertisement films, and corporate events.
+                His ability to connect with audiences through compelling
+                narratives has made him a sought-after talent in the industry.
+
+                
+                Throughout his career, Anand has collaborated with various
+                production houses and independent filmmakers, gaining invaluable
+                insights and refining his craft. His films have been recognized
+                at numerous film festivals, celebrated for their innovative
+                storytelling and striking visuals. What sets Anand apart is his
+                unique ability to blend creativity with technical expertise.
+                With 15 years of experience in wedding films, he has crafted
+                stories that deeply resonate with viewers, believing that every
+                frame tells a story.
+
+                
+                In addition to his filmmaking endeavors, Anand is dedicated to
+                mentoring emerging filmmakers, sharing his knowledge, and
+                fostering a community of passionate creators. With a commitment
+                to pushing artistic boundaries, he continues to explore new
+                horizons in the ever-evolving landscape of cinema.
               </p>
             </div>
           </div>

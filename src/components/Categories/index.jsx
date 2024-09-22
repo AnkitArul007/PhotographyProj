@@ -21,6 +21,7 @@ const style = {
   }
 `,
   mainDiv: css`
+    width: 80;
     margin: 0 auto;
     display: grid;
     align-items: center;

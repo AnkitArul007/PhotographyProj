@@ -1,7 +1,7 @@
 import { css } from "@emotion/react";
 import { FaCamera, FaVideo, FaPaintBrush } from "react-icons/fa";
 
-const ServiceCard = ({ icon, serviceName }) => {
+const ServiceCard = ({ icon, serviceName, text }) => {
   return (
     <div css={style.cardMain}>
       <div css={style.cardInner}>
@@ -16,9 +16,7 @@ const ServiceCard = ({ icon, serviceName }) => {
         </div>
         <div css={style.serviceTextDiv}>
           <p css={style.servicetext}>
-            Constituto percipitur ius, cu platonem mnesarchum nam. Nostrum
-            vituperatoribus mea et, eu duo autem adipisci rationibus, eu nec
-            assum aeterno omnesque.
+            {text}
           </p>
         </div>
       </div>
@@ -32,6 +30,12 @@ const style = {
   cardMain: css`
     width: 33.333%;
     margin: 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    // &:hover {
+    //     transform: scale(1.05);
+    //     box-shadow: 0 0 30px rgba(0, 0, 0, 0.2), 0 0 20px rgba(255, 255, 255, 0.6);
+    // }
   `,
   cardInner: css`
     width: 100%;
