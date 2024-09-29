@@ -6,7 +6,7 @@ export const useFetch = () => {
   const [data, setData] = useState(null);
   const abortControllerRef = useRef(null);
 
-  const handleGet = async (url, body) => {
+  const handleGet = async (url) => {
     setLoading(true);
     try {
       const options = {

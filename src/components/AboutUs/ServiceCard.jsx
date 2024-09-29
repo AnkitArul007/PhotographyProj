@@ -1,5 +1,5 @@
 import { css } from "@emotion/react";
-import { FaCamera, FaVideo, FaPaintBrush } from "react-icons/fa";
+import { FaCamera, FaVideo, FaFilm } from "react-icons/fa";
 
 const ServiceCard = ({ icon, serviceName, text }) => {
   return (
@@ -8,7 +8,7 @@ const ServiceCard = ({ icon, serviceName, text }) => {
         <div css={style.cardIcon}>
           {icon === "camera" && <FaCamera size={50} css={style.icon} />}
           {icon === "video" && <FaVideo size={50} css={style.icon} />}
-          {icon === "brush" && <FaPaintBrush size={50} css={style.icon} />}
+          {icon === "film" && <FaFilm size={50} css={style.icon} />}
         </div>
 
         <div css={style.serviceName}>

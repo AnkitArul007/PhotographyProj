@@ -1,4 +1,4 @@
-import React from 'react'
+/* eslint-disable react/no-unknown-property */
 import { MdErrorOutline } from 'react-icons/md'
 import { IoWarningOutline } from 'react-icons/io5'
 import { IoIosInformationCircleOutline } from 'react-icons/io'
@@ -47,7 +47,6 @@ const Notification = ({ message, type }) => {
         "SUCCESS": <CiCircleCheck css={style[type]} size={25} style={{ color: 'white' }} />
     }
 
-    
     return (
         <div css={[style.outerDiv, style[type]]}>
             <span css={style[type]}>

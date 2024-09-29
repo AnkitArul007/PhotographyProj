@@ -1,70 +1,77 @@
 /* eslint-disable react/no-unknown-property */
-import React, { useState, useEffect, useRef } from "react";
+import { useEffect } from "react";
 import { css } from "@emotion/react";
 import "bootstrap/dist/css/bootstrap.css";
 import SectionHeaders from "../../commonComponents/SectionHeaders";
 import StoryCards from "./components/StoryCards";
-import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
-// importing Data
-import StoryData from "./data/stories.json";
 import { useFetch } from "../../hooks/useFetch";
 import useListenScreenSize from "../../hooks/useListenScreenSize";
 
 export default function Stories() {
   // using states to set the active card
   // const [isActiveCard, setIsActiveCard] = useState(0);
-  const { screenWidth, suggestImageWidthToTake } = useListenScreenSize()
-  const { data, loading, postData, error } = useFetch()
+  const { screenWidth, suggestImageWidthToTake } = useListenScreenSize();
+  const { data, loading, postData } = useFetch();
 
   // 300, 500, 1000,1500
   const fetchData = () => {
-    console.log(suggestImageWidthToTake())
-    const url = `${import.meta.env.VITE_ROOT_URL}/story/get`
-    postData(url, { 'w': suggestImageWidthToTake() })
-  }
+    const url = `${import.meta.env.VITE_ROOT_URL}/story/get`;
+    postData(url, { w: suggestImageWidthToTake() });
+  };
 
   useEffect(() => {
-    fetchData()
-  }, [screenWidth])
+    let demoVar = true;
+    if (demoVar) {
+      fetchData();
+    }
+    return (demoVar = false);
+  }, []);
 
-  return (
-    !loading ? (
-      <>
-        <div className="container py-5 d-flex flex-column align-content-center justify-content-center">
-          <SectionHeaders pagetitle={"stories"} />
-          <div className="cardsWrapper  position-relative mt-5">
-            <div
-              className="cardsContainer row d-flex gap-5 justify-content-around"
-              css={css`
+  useEffect(() => {
+    fetchData();
+  }, [screenWidth]);
+
+  return !loading ? (
+    <>
+      <div className="container py-5 d-flex flex-column align-content-center justify-content-center">
+        <SectionHeaders pagetitle={"stories"} />
+        <div className="cardsWrapper  position-relative mt-5">
+          <div
+            className="cardsContainer row d-flex gap-5 justify-content-around"
+            css={css`
               scroll-behavior: smooth;
-            `}>
-              {data?._data?.result.map((item, id) => (
-                <StoryCards
-                  key={id}
-                  title={item.title}
-                  clientName={item.client_name}
-                  story={item.description}
-                  url={item.thumbnail}
-                  id={id}
-                />
-              ))}
-            </div>
+            `}
+          >
+            {data?._data?.result.map((item, id) => (
+              <StoryCards
+                key={id}
+                title={item.title}
+                clientName={item.client_name}
+                city={item.city}
+                country={item.country}
+                story={item.description}
+                highlightImageURL={item.highlight_image}
+                url={item.thumbnail}
+                id={id}
+              />
+            ))}
           </div>
         </div>
-      </>
-    ) : (
-      <div
-        css={css`
+      </div>
+    </>
+  ) : (
+    <div
+      css={css`
         width: 100%;
         height: 90vh;
         display: grid;
         place-items: center;
-      `}>
-        <div css={style.spinner}>
-          <div css={style.spinner1}></div>
-        </div>
+      `}
+    >
+      <div css={style.spinner}>
+        <div css={style.spinner1}></div>
       </div>
-    )
+    </div>
   );
 }
 
@@ -94,4 +101,3 @@ const style = {
     }
   `,
 };
-
