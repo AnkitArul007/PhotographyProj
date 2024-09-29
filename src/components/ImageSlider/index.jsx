@@ -2,6 +2,9 @@
 import { css, keyframes } from "@emotion/react";
 import Typewriter from "typewriter-effect";
 import "./typewriter.css";
+import useListenScreenSize from "../../hooks/useListenScreenSize";
+import { useEffect, useMemo, useState } from "react";
+import { useFetch } from "../../hooks/useFetch";
 
 const slide = keyframes`
 10% {
@@ -26,32 +29,6 @@ const style = {
     overflow: hidden;
     position: relative;
     background-color: #000;
-    div {
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      animation: ${slide} 25s infinite;
-      opacity: 0;
-      &:nth-child(2) {
-        animation-delay: 5s;
-      }
-      &:nth-child(3) {
-        animation-delay: 10s;
-      }
-      &:nth-child(4) {
-        animation-delay: 15s;
-      }
-      &:nth-child(5) {
-        animation-delay: 20s;
-      }
-    }
   `,
   textOverlay: css`
     background: transparent;
@@ -133,61 +110,127 @@ const style = {
       }
     }
   `,
+  animationDiv: css`
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+  `,
+  div: css`
+    animation: ${slide} 25s infinite;
+    &:nth-child(2) {
+      animation-delay: 5s;
+    }
+    &:nth-child(3) {
+      animation-delay: 10s;
+    }
+    &:nth-child(4) {
+      animation-delay: 15s;
+    }
+    &:nth-child(5) {
+      animation-delay: 20s;
+    }
+  `,
   overlayText: css`
     background: transparent !important;
     color: #fff;
     font-weight: 800;
   `,
   banner1: css`
-  background-image: url("/images/banner1.jpg");
-  @media screen and (max-width: 480px) {
-  background-image: url("/images/banner1-sm.jpg");
-  }
+    background-image: url("/images/banner1.jpg");
+    @media screen and (max-width: 480px) {
+      background-image: url("/images/banner1-sm.jpg");
+    }
   `,
   banner2: css`
-  background-image: url("/images/banner2.jpg");
-  @media screen and (max-width: 480px) {
-  background-image: url("/images/banner2-sm.jpg");
-  }
-  
+    background-image: url("/images/banner2.jpg");
+    @media screen and (max-width: 480px) {
+      background-image: url("/images/banner2-sm.jpg");
+    }
   `,
   banner3: css`
-  background-image: url("/images/banner3.jpg");
-  @media screen and (max-width: 480px) {
-  background-image: url("/images/banner3-sm.jpg");
-  }
+    background-image: url("/images/banner3.jpg");
+    @media screen and (max-width: 480px) {
+      background-image: url("/images/banner3-sm.jpg");
+    }
   `,
   banner4: css`
-  background-image: url("/images/banner4.jpg");
-  @media screen and (max-width: 480px) {
-  background-image: url("/images/banner4-sm.jpg");
-  }
+    background-image: url("/images/banner4.jpg");
+    @media screen and (max-width: 480px) {
+      background-image: url("/images/banner4-sm.jpg");
+    }
   `,
   banner5: css`
-  background-image: url("/images/banner5.jpg");
-  @media screen and (max-width: 480px) {
-  background-image: url("/images/banner5-sm.jpg");
-  }
+    background-image: url("/images/banner5.jpg");
+    @media screen and (max-width: 480px) {
+      background-image: url("/images/banner5-sm.jpg");
+    }
   `,
   banner6: css`
-  background-image: url("/images/banner6.jpg");
-  @media screen and (max-width: 480px) {
-  background-image: url("/images/banner6-sm.jpg");
-  }
+    background-image: url("/images/banner6.jpg");
+    @media screen and (max-width: 480px) {
+      background-image: url("/images/banner6-sm.jpg");
+    }
   `,
-
 };
 
 const ImageSlider = () => {
+  const { data: HeroImagesData, loading, postData } = useFetch();
+  const { screenWidth, suggestImageWidthToTake } = useListenScreenSize();
+  const [count, setCount] = useState(0);
+
+  const fetchImages = () => {
+    const url = `${import.meta.env.VITE_ROOT_URL}/carousel/getAll`;
+    postData(url, { w: suggestImageWidthToTake }, "POST");
+  };
+
+  const animate = useMemo(() => {
+    return {
+      div: childAnimationDelay(count),
+    };
+  }, [count]);
+
+  useEffect(() => {
+    let demoVar = true;
+    if (demoVar) {
+      fetchImages();
+    }
+    return (demoVar = false);
+  }, [screenWidth]);
+
+  useEffect(() => {
+    if (HeroImagesData !== null && HeroImagesData["_success"]) {
+      setCount(HeroImagesData?._data?.data?.length);
+    }
+  }, [HeroImagesData]);
+
   return (
     <>
       <div css={style.main}>
-        <div css={style.banner1}></div>
+        {!loading && HeroImagesData !== null && (
+          <>
+            {HeroImagesData?._data?.data.map((image) => (
+              <div
+                key={image.id}
+                css={[style.animationDiv, animate]}
+                style={{ backgroundImage: `url(${image.image_url})` }}
+              ></div>
+            ))}
+          </>
+        )}
+        {/* <div css={style.banner1}></div>
         <div css={style.banner2}></div>
         <div css={style.banner3}></div>
         <div css={style.banner4}></div>
         <div css={style.banner5}></div>
-        <div css={style.banner6}></div>
+        <div css={style.banner6}></div> */}
       </div>
 
       {/* typer writer effect */}
@@ -217,3 +260,16 @@ const ImageSlider = () => {
 };
 
 export default ImageSlider;
+
+const childAnimationDelay = (count) => css`
+  animation: ${slide} 25s infinite;
+
+  ${Array.from({ length: count }, (_, i) => {
+    const delay = (i + 1) * 5;
+    return `
+      &:nth-child(${i + 2}) {
+        animation-delay: ${delay}s;
+      }
+    `;
+  }).join('')}
+`;

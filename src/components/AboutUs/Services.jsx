@@ -1,5 +1,4 @@
 /* eslint-disable react/no-unknown-property */
-import React from "react";
 import { css } from "@emotion/react";
 import ServiceCard from "./ServiceCard";
 
@@ -16,14 +15,14 @@ const Services = () => {
         />
         <ServiceCard
           serviceName={"Films"}
-          icon={"video"}
+          icon={"film"}
           text={
             "Anand's filmmaking expertise brings compelling stories to life with a perfect blend of creativity and technical mastery. His diverse experience spans short films, documentaries, and music videos, delivering captivating, visually stunning narratives."
           }
         />
         <ServiceCard
           serviceName={"Documentaries"}
-          icon={"brush"}
+          icon={"video"}
           text={
             "Anand's documentary work showcases real-life stories with depth and authenticity. His keen eye for detail and storytelling ability create powerful narratives that resonate deeply, making complex subjects engaging and visually compelling."
           }
