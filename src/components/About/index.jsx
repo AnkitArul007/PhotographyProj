@@ -15,12 +15,13 @@ const style = {
   `,
   profileDiv: css`
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
     max-width: 1520px;
     width: 100%;
-    margin: 0 auto;
+    margin: 24px auto;
     height: 100%;
     background: transparent;
     padding: 28px;
@@ -67,7 +68,7 @@ const style = {
   titleHeading: css`
     font-weight: 600;
     letter-spacing: 4px;
-    text-align: left;
+    text-align: center;
     color: #fff;
     font-family: "Julius Sans One", sans-serif;
     @media (max-width: 600px) {
@@ -75,7 +76,7 @@ const style = {
     }
   `,
   titlePosition: css`
-    text-align: left;
+    text-align: center;
     color: #fff;
     font-family: "Julius Sans One", sans-serif;
     @media (max-width: 600px) {
@@ -116,7 +117,7 @@ export default function About() {
               src="/images/rk_profileimage.jpg"
               alt="propfile-image"
               srcSet=""
-            />
+            />  
           </div>
           <div css={style.aboutInfoDiv}>
             <div>
@@ -126,7 +127,7 @@ export default function About() {
             <div css={style.aboutTextDiv}>
               <p css={style.aboutText}>
                 A passionate storyteller, filmmaker, writer, photographer, and
-                cinematographer, Anand's creative vision has brought numerous
+                cinematographer, Anand&apos;s creative vision has brought numerous
                 narratives to life. From the outset of his career, he embraced
                 the art of filmmaking, driven by a deep love for visual
                 storytelling and a profound appreciation for the transformative

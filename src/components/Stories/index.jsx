@@ -24,7 +24,7 @@ export default function Stories() {
     if (demoVar) {
       fetchData();
     }
-    return (demoVar = false);
+    return () => demoVar = false;
   }, []);
 
   useEffect(() => {

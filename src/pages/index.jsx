@@ -6,7 +6,6 @@ import Testimonial from "../components/Testimonial/index";
 import About from "../components/About";
 import ImageSlider from "../components/ImageSlider";
 import { css } from "@emotion/react";
-import AboutUs from "../components/AboutUs";
 import WhatWeDo from "../components/WhatWeDo";
 
 const Home = () => {

@@ -6,21 +6,18 @@ const useListenScreenSize = () => {
     let LARGE = 1000
     let MEDIUM = 500
     let SMALL = 300
-
-
-    console.log("useListenScreenSize")
-
     const suggestImageWidthToTake = () => {
         if (screenWidth >= EXTRA_LARGE) {
             return EXTRA_LARGE
         }
-        else if (screenWidth >= LARGE) {
+        else if (screenWidth >= LARGE && screenWidth < EXTRA_LARGE) {
             return LARGE
-        }
-        if (screenWidth >= MEDIUM) {
+        } else if (screenWidth >= MEDIUM && screenWidth < LARGE) {
             return MEDIUM
+        } else {
+            return SMALL
         }
-        return SMALL
+        // return Math.ceil(screenWidth);
     }
     useEffect(() => {
         setScreenWidth(window?.innerWidth)

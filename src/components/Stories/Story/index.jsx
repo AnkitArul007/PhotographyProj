@@ -44,7 +44,7 @@ export default function Story() {
     if (demoVar) {
       getAllStoryImages();
     }
-    return (demoVar = false);
+    return () => demoVar = false;
   }, [screenWidth]);
 
 
@@ -86,6 +86,7 @@ export default function Story() {
           <div className="p-5">
             <p
               css={css`
+                text-align: center;
                 font-family: "Julius Sans One", sans-serif;
                 font-size: var(--xs-text);
               `}
