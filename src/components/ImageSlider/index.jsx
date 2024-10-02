@@ -182,8 +182,8 @@ const ImageSlider = () => {
                   bottom: 0;
                   left: 0;
                   opacity: 0;
-                  animation: ${slide} ${arr.length * 3}s infinite;
-                  animation-delay: ${i * 3}s;
+                  animation: ${slide} ${arr.length * 5}s infinite;
+                  animation-delay: ${i * 5}s;
                 `}
                 style={{ backgroundImage: `url(${image.image_url})` }}
               ></div>

@@ -12,14 +12,14 @@ const style = {
   `,
 };
 
-export default function ImageGroup({ title, images }) {
+export default function ImageGroup({ label, images }) {
   return (
     <>
       {/* Story images */}
       <div className="mt-3">
         {/* Event title */}
         <div className="py-5">
-          <h1 className="text-center">{title}</h1>
+          <h1 className="text-center text-white">{label}</h1>
         </div>
         {/* Event images */}
         <div css={style.imgDiv} className="p-3">
