@@ -28,7 +28,7 @@ const style = {
 const BlogInfo = ({info}) => {
   return (
     <div css={style.titleMain}>
-      <h3 css={style.title}>{info.bride} & {info.groom}</h3>
+      <h3 css={style.title}>{info?.title}</h3>
       <p css={style.dateVenue}>{info.date} | {info.city}, {info.country}</p>
     </div>
   )

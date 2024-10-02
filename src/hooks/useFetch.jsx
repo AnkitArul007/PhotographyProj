@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
 export const useFetch = () => {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   const [data, setData] = useState(null);
   const abortControllerRef = useRef(null);
@@ -28,11 +28,11 @@ export const useFetch = () => {
     }
   };
 
-  const handlePost = async (url, body, method) => {
+  const handlePost = async (url, body, method = "POST") => {
     setLoading(true);
     try {
       const options = {
-        method: method ? method : "POST",
+        method: method,
         headers: {
         "Content-Type": "application/json",
         },

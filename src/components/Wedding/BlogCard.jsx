@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable react/no-unknown-property */
 import { css } from "@emotion/react";
 import { Link } from "react-router-dom";
 
@@ -54,23 +56,24 @@ const style = {
 };
 
 const BlogCard = ({ weddingInfo }) => {
-  const blogLink = `/wedding/${weddingInfo?.bride.toLowerCase()}-${weddingInfo?.groom.toLowerCase()}` 
+  const blogLink = `/pre-wedding/${weddingInfo?.id}` 
+  console.warn(weddingInfo)
 
   return (
     <div css={style.wCardMain}>
       <div css={css`margin-bottom: 1rem;`}>
         <Link to={blogLink} css={style.imgLink}>
           <img
-            src={`/images/${weddingInfo.img}`}
+            src={weddingInfo?.thumbnail}
             alt="wedding-blog"
           />
         </Link>
       </div>
       <div>
         <Link to={blogLink} css={style.duoLink}>
-          {weddingInfo.bride}-{weddingInfo.groom}
+          {weddingInfo?.title}
         </Link>
-        <p css={style.destination}>{`${weddingInfo.city}, ${weddingInfo.country}`}</p>
+        <p css={style.destination}>{`${weddingInfo?.city}, ${weddingInfo?.country}`}</p>
       </div>
 
       <div css={css`margin-top: 1.5rem;`}>
