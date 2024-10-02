@@ -1,6 +1,56 @@
+/* eslint-disable react/no-unknown-property */
 import { css } from "@emotion/react";
 import BlogInfo from "./BlogInfo";
 import BlogImage from "./BlogImage";
+import { useLocation } from "react-router-dom";
+import { useFetch } from "../../../hooks/useFetch";
+import { useEffect } from "react";
+
+const mockImages = [
+  "https://images.squarespace-cdn.com/content/v1/5c9dc168c46f6d4367f37a90/1658503551838-SS4KQM7NDJFQ43QF114T/02_1a+59+OMK09247.jpg",
+  "https://images.squarespace-cdn.com/content/v1/5c9dc168c46f6d4367f37a90/1658502514323-NKXZUZHT0C33DM61AAIA/04_1a+103+SOM04066.jpg",
+  "https://images.squarespace-cdn.com/content/v1/5c9dc168c46f6d4367f37a90/1658502630691-9ZYZCTB2H92CMGZ4LPO7/06_1a+7+OMK09651.jpg",
+  "https://images.squarespace-cdn.com/content/v1/5c9dc168c46f6d4367f37a90/1658504906888-B1AMXG3TET5130NQH8G4/Untitled.jpg",
+  "https://images.squarespace-cdn.com/content/v1/5c9dc168c46f6d4367f37a90/1658502577987-9SOUCY0HQPBHWMXTLTND/16_1a+17+SOM04606.jpg"
+];
+
+const WeddingBlog = () => {
+  const location = useLocation()
+  const { data, loading, error, postData } = useFetch();
+
+  useEffect(()=>{
+    const body = {
+      w: 1000
+    }
+    postData(`${import.meta.env.VITE_ROOT_URL}/pre-wedding/${location.pathname.split('/')[4]}`, body)
+  }, [])
+  return (
+    <section css={style.blogSection} className="container">
+      <div css={style.blogContainer}>
+        <BlogInfo
+          info={{
+            title: data?._data?.data?.title,
+            date: data?._data?.data?.date,
+            city: data?._data?.data?.city,
+            country: data?._data?.data?.country,
+          }}
+        />
+
+        <div css={style.blogGallery}>
+          <hr
+            css={style.rule}
+          />
+          {data?._data?.data?.image_url?.map((image) => (
+            <BlogImage key={image?.id} src={image} />
+          ))}
+          <hr css={style.rule} />
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default WeddingBlog;
 
 const style = {
   blogSection: css`
@@ -38,44 +88,3 @@ const style = {
     border-image-slice: 1;
   `,
 };
-
-const mockImages = [
-  "https://images.squarespace-cdn.com/content/v1/5c9dc168c46f6d4367f37a90/1658503551838-SS4KQM7NDJFQ43QF114T/02_1a+59+OMK09247.jpg",
-  "https://images.squarespace-cdn.com/content/v1/5c9dc168c46f6d4367f37a90/1658502514323-NKXZUZHT0C33DM61AAIA/04_1a+103+SOM04066.jpg",
-  "https://images.squarespace-cdn.com/content/v1/5c9dc168c46f6d4367f37a90/1658502630691-9ZYZCTB2H92CMGZ4LPO7/06_1a+7+OMK09651.jpg",
-  "https://images.squarespace-cdn.com/content/v1/5c9dc168c46f6d4367f37a90/1658504906888-B1AMXG3TET5130NQH8G4/Untitled.jpg",
-  "https://images.squarespace-cdn.com/content/v1/5c9dc168c46f6d4367f37a90/1658502577987-9SOUCY0HQPBHWMXTLTND/16_1a+17+SOM04606.jpg"
-];
-
-const WeddingBlog = () => {
-  return (
-    <section css={style.blogSection} className="container">
-      <div css={style.blogContainer}>
-        {/* blog info */}
-        <BlogInfo
-          info={{
-            bride: "Simran",
-            groom: "Harmit",
-            date: "September 2023",
-            city: "Udaipur",
-            country: "India",
-          }}
-        />
-
-        {/* blog gallery */}
-
-        <div css={style.blogGallery}>
-          <hr
-            css={style.rule}
-          />
-          {mockImages.map((image) => (
-            <BlogImage src={image} />
-          ))}
-          <hr css={style.rule} />
-        </div>
-      </div>
-    </section>
-  );
-};
-
-export default WeddingBlog;

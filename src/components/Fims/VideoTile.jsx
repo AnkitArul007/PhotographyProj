@@ -73,14 +73,14 @@ const style = {
 
 
 
-const VideoTile = ({title , url}) => {
+const VideoTile = ({title , url, thumbnail}) => {
   return (
     <>
         <div css={style.video}>
             <Link 
             css={style.link}
             to={url}>
-                <figure css={style.figure} style={{backgroundImage: `url(/images/banner1.jpg)`}}>
+                <figure css={style.figure} style={{backgroundImage: `url(${thumbnail})`}}>
                     <img 
                     css={style.image} 
                     src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/50598/video-thumb-placeholder-16-9.png" 

@@ -37,7 +37,7 @@ function App() {
         <Route index path="/faqs" element={<Faqs />} />
         <Route index path="/films" element={<Films />} />
         <Route path="/pre-wedding" element={<PreWedding />} />
-        <Route path="/pre-wedding/:weddingName" element={<WeddingBlog />} />
+        <Route path="/pre-wedding/:id" element={<WeddingBlog />} />
         <Route index path="/:id" element={<IndividualCategory />} />
         <Route index path="/about-us" element={<AboutUs />} />
       </Route>

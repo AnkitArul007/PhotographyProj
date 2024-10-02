@@ -1,5 +1,8 @@
+/* eslint-disable react/no-unknown-property */
 import { css } from "@emotion/react"
 import BlogCard from "./BlogCard"
+import { useFetch } from "../../hooks/useFetch"
+import { useEffect } from "react"
 
 const style = {
   wdGridMain: css`
@@ -86,11 +89,24 @@ const mockData  = [
 ]
 
 const WeddingGrid = () => {
+  const {data, loading, error, postData} = useFetch();
+
+  useEffect(()=>{
+    let body = {
+      w: 300
+    }
+    postData(`${import.meta.env.VITE_ROOT_URL}/pre-wedding/get`, body);
+
+    return ()=>{
+      body = {}
+      console.log('data fetched successfully');
+    }
+  }, [])
   return (
     <div css={style.wdGridMain}>
       <div css={style.wdGridContainer}>
         {
-          mockData.map((info) => (
+          data?._data?.data?.map((info) => (
             <BlogCard key={info.id} weddingInfo={info} />
           ))
         }
