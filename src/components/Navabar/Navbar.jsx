@@ -103,7 +103,7 @@ const Navbar = () => {
             {navTabsData?.slice(0, 4).map((ele, id) => {
               return (
                 <li
-                  key={id}
+                  key={`${ele}${id}`}
                   css={css`
                     margin-right: 15px;
                     background: transparent;
@@ -183,9 +183,10 @@ const Navbar = () => {
                     box-shadow: 0px 0px 7px 0.5px lightgray;
                   `}
                 >
-                  {data?._data?.data?.map((category) => {
+                  {data?._data?.data?.map((category, index) => {
                     return (
                       <li
+                        key={`${index}_${category.category_name}`}
                         className="bg-transparent"
                         css={css`
                           margin-bottom: 10px;
@@ -278,7 +279,7 @@ const Navbar = () => {
             {navTabsData.slice(0, 4).map((ele, id) => {
               return (
                 <Link
-                  key={id}
+                  key={`${id}_${ele}`}
                   to={`/${ele}`}
                   css={css`
                     text-decoration: none;
@@ -347,9 +348,10 @@ const Navbar = () => {
                   display: ${mobileDropdownInnerChild ? "block" : "none"};
                 `}
               >
-                {data?._data?.data?.map((category) => {
+                {data?._data?.data?.map((category, index) => {
                   return (
                     <li
+                      key={`${category.category_name}${index}`}
                       className="bg-transparent"
                       css={css`
                         margin-bottom: 10px;

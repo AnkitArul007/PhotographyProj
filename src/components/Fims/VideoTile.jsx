@@ -79,7 +79,7 @@ const VideoTile = ({title , url, thumbnail}) => {
         <div css={style.video}>
             <Link 
             css={style.link}
-            to={url}>
+            to={url} target="_blank">
                 <figure css={style.figure} style={{backgroundImage: `url(${thumbnail})`}}>
                     <img 
                     css={style.image} 
