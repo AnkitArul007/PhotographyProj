@@ -1,5 +1,5 @@
 // NotificationContext.js
-import React, { createContext, useCallback, useEffect, useRef, useState } from 'react';
+import { createContext, useCallback, useEffect, useRef, useState } from 'react';
 import Notification from './notification'
 import { css } from "@emotion/react";
 

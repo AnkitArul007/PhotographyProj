@@ -96,13 +96,17 @@ const style = {
   `,
   aboutText: css`
     margin: 0;
-    font-size: 13px;
-    font-weight: bold;
-    word-spacing: 1px;
+    font-family: "Julius Sans One", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    // word-spacing: 1px;
     letter-spacing: 0.5px;
     text-align: justify;
-    line-height: 200%;
-    font-family: "Julius Sans One", sans-serif;
+    line-height: 2;
+    @media (max-width: 480px) {
+      font-size: 12px;
+      line-height: 1.8;
+    }
   `,
 };
 

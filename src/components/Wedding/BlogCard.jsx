@@ -5,18 +5,20 @@ import { Link } from "react-router-dom";
 
 const style = {
   wCardMain: css`
-    max-width: 410px;
-    height: 440px;
+    width: 300px;
+    height: 410px;
+    margin: 0 auto;
+
   `,
   imgLink: css`
   display: block;
   text-decoration: none;
-  max-width: 410px;
-  max-height: 410px;
+  width: 300px;
+  height: 300px;
   overflow: hidden;
   img {
     width: 100%;
-    max-heigt: 410px;
+    height: 100%;
     object-fit: cover;
   }
   `,
