@@ -7,7 +7,6 @@ const style = {
   vidMain: css`
     width: 100%;
     max-width: 920px;
-    min-width: 920px;
     height: auto;
     max-height: 520px;
     margin: 0 auto;

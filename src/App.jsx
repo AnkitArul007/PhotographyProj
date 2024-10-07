@@ -23,6 +23,7 @@ import { NotificationProvider } from "./components/toast/index.jsx";
 // import PreWedding from "./pages/PreWedding.jsx";
 import IndividualCategory from "./pages/IndividualCategory.jsx";
 import AboutUs from "./components/AboutUs/index.jsx";
+import ScrollToTop from "./components/Common/ScrollToTop.jsx";
 
 function App() {
   const router = createBrowserRouter(
@@ -31,7 +32,6 @@ function App() {
         {/* <Route index path="/home" element={<Home />} /> */}
         <Route index path="/stories" element={<Stories />} />
         <Route index path="/images" element={<ImagesPage />} />
-        <Route index path="/pre-wedding" element={<PreWedding />} />
         <Route index path="/story" element={<Story />} />
         <Route index path="/contact" element={<ContactForm />} />
         <Route index path="/faqs" element={<Faqs />} />
@@ -58,6 +58,7 @@ const Root = () => {
           <Home />
           <Footer />
         </NotificationProvider>
+        <ScrollToTop />
       </>
     );
   } else {
@@ -73,6 +74,7 @@ const Root = () => {
             </div>
             <Footer />
           </>
+          <ScrollToTop />
         </NotificationProvider>
       </>
     );

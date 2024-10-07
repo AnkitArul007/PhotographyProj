@@ -5,18 +5,20 @@ import { Link } from "react-router-dom";
 
 const style = {
   wCardMain: css`
-    max-width: 410px;
-    height: 440px;
+    width: 300px;
+    height: 410px;
+    margin: 0 auto;
+
   `,
   imgLink: css`
   display: block;
   text-decoration: none;
-  max-width: 410px;
-  max-height: 410px;
+  width: 300px;
+  height: 300px;
   overflow: hidden;
   img {
     width: 100%;
-    max-heigt: 410px;
+    height: 100%;
     object-fit: cover;
   }
   `,
@@ -56,13 +58,12 @@ const style = {
 };
 
 const BlogCard = ({ weddingInfo }) => {
-  const blogLink = `/pre-wedding/${weddingInfo?.id}` 
-  console.warn(weddingInfo)
+  const blogLink = `/pre-wedding/${weddingInfo?.id}`
 
   return (
     <div css={style.wCardMain}>
       <div css={css`margin-bottom: 1rem;`}>
-        <Link to={blogLink} css={style.imgLink}>
+        <Link to={blogLink} state={weddingInfo} css={style.imgLink}>
           <img
             src={weddingInfo?.thumbnail}
             alt="wedding-blog"
@@ -70,14 +71,14 @@ const BlogCard = ({ weddingInfo }) => {
         </Link>
       </div>
       <div>
-        <Link to={blogLink} css={style.duoLink}>
+        <Link to={blogLink} state={weddingInfo} css={style.duoLink}>
           {weddingInfo?.title}
         </Link>
         <p css={style.destination}>{`${weddingInfo?.city}, ${weddingInfo?.country}`}</p>
       </div>
 
       <div css={css`margin-top: 1.5rem;`}>
-        <Link to={blogLink} css={style.seeMore}>SEE MORE <span>&#9654;</span></Link>
+        <Link to={blogLink} state={weddingInfo} css={style.seeMore}>SEE MORE <span>&#9654;</span></Link>
       </div>
     </div>
   );

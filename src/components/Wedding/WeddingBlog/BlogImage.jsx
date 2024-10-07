@@ -5,7 +5,7 @@ const BlogImage = ({src}) => {
   return (
     <div css={css`
     max-width: 920px;
-    min-width: 328px;
+    min-width: 300px;
     height: auto;
     overflow: hidden;
     margin-bottom: 20px;

@@ -1,7 +1,6 @@
 /* eslint-disable react/no-unknown-property */
 import React, { useEffect } from "react";
 import { css } from "@emotion/react";
-import { imageGroupData } from "../../../database/stories/groupImageData";
 import ImageGroup from "../Imagegroup";
 import { useLocation } from "react-router-dom";
 import useListenScreenSize from "../../../hooks/useListenScreenSize";
@@ -9,6 +8,7 @@ import { useFetch } from "../../../hooks/useFetch";
 
 export default function Story() {
   const { state } = useLocation();
+  console.log("State", state);
   // laoder falg
   const [flag, setFlag] = React.useState(false);
   const { screenWidth, suggestImageWidthToTake } = useListenScreenSize();
@@ -35,8 +35,8 @@ export default function Story() {
   // }, [screenWidth]);
 
   const getAllStoryImages = () => {
-    const url = `${import.meta.env.VITE_ROOT_URL}/story-images/get/${state.id}`;
-    postData(url, { w: suggestImageWidthToTake });
+    const url = `${import.meta.env.VITE_ROOT_URL}/story/story-images/get/${state.id}`;
+    postData(url, { w: suggestImageWidthToTake() }, "POST");
   };
 
   useEffect(() => {
@@ -44,7 +44,7 @@ export default function Story() {
     if (demoVar) {
       getAllStoryImages();
     }
-    return (demoVar = false);
+    return () => demoVar = false;
   }, [screenWidth]);
 
 
@@ -86,6 +86,7 @@ export default function Story() {
           <div className="p-5">
             <p
               css={css`
+                text-align: center;
                 font-family: "Julius Sans One", sans-serif;
                 font-size: var(--xs-text);
               `}
@@ -101,7 +102,7 @@ export default function Story() {
               return (
                 <ImageGroup
                   key={index}
-                  title={item.title}
+                  label={item.label}
                   images={item.images}
                 />
               );

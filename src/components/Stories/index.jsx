@@ -24,7 +24,7 @@ export default function Stories() {
     if (demoVar) {
       fetchData();
     }
-    return (demoVar = false);
+    return () => demoVar = false;
   }, []);
 
   useEffect(() => {
@@ -42,9 +42,9 @@ export default function Stories() {
               scroll-behavior: smooth;
             `}
           >
-            {data?._data?.result.map((item, id) => (
+            {data?._data?.result.map((item, index) => (
               <StoryCards
-                key={id}
+                key={`${item.id}${index}`}
                 title={item.title}
                 clientName={item.client_name}
                 city={item.city}
@@ -52,7 +52,7 @@ export default function Stories() {
                 story={item.description}
                 highlightImageURL={item.highlight_image}
                 url={item.thumbnail}
-                id={id}
+                id={item.id}
               />
             ))}
           </div>

@@ -63,7 +63,7 @@ const styles = {
 };
 
 const ContactForm = () => {
-    const { data, loading, error, postData } = useFetch()
+    const { data, loading, error, postData } = useFetch();
     const firstName = useRef("")
     const lastName = useRef("")
     const date = useRef("")
@@ -158,7 +158,7 @@ const ContactForm = () => {
                 {/* contact us form texts */}
                 <div css={styles.pageTitle} className="py-3 mx-5 text-center">
                     <p className="fs-3">
-                    Welcome to the "Contact Us" page of Rusalk Creation! We are excited to hear from you. Whether you're interested in our photography or filmmaking services, have questions, or want to discuss your upcoming project, we’re here to help. Please fill out the form below with your details, and our team will get back to you as soon as possible. Your vision matters to us, and we look forward to collaborating with you to create unforgettable memories. Thank you for considering Rusalk Creation for your special moments!
+                    Welcome to the &quot;Contact Us&quot; page of Rusalk Creation! We are excited to hear from you. Whether you're interested in our photography or filmmaking services, have questions, or want to discuss your upcoming project, we’re here to help. Please fill out the form below with your details, and our team will get back to you as soon as possible. Your vision matters to us, and we look forward to collaborating with you to create unforgettable memories. Thank you for considering Rusalk Creation for your special moments!
                     </p>
                 </div>
 
@@ -167,8 +167,6 @@ const ContactForm = () => {
                     <form action="" className="mx-5 px-3"
                         onSubmit={(e) => {
                             e.preventDefault()
-                            if (loading) return
-
                             const url = `${import.meta.env.VITE_ROOT_URL}/contact-us`
                             console.log(url)
                             const body = {
@@ -180,7 +178,7 @@ const ContactForm = () => {
                                 message: message?.current?.value,
                                 preferred_contact_method: contactModeRef?.current?.value,
                             }
-                            postData(url, body)
+                            postData(url, body, "POST");
                         }}
                     >
                         <div className="d-flex align-items-center justify-content-between mb-3" css={css`margin: 0 36px 28px;`}>
@@ -257,7 +255,7 @@ const ContactForm = () => {
 
                         <div className="d-flex align-items-center justify-content-between mb-3" css={css`margin: 0 36px 28px;`}>
                             <button css={styles.submitBtn} type="submit">
-                                {loading ? "Loading" : "Submit"}
+                                {"Submit"}
                             </button>
                         </div>
                     </form>

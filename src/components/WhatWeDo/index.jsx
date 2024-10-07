@@ -44,7 +44,6 @@ const style = {
       transparent 100%
     );
     border-image-slice: 1;
-
     @media (max-width: 768px) {
       border-width: 1px;
     }
@@ -56,7 +55,11 @@ const style = {
     word-spacing: 1px;
     letter-spacing: 0.5px;
     text-align: justify;
-    line-height: 200%;
+    line-height: 2;
     font-family: "Julius Sans One", sans-serif;
+    @media (max-width: 480px) {
+    font-size: 12px;
+    line-height: 1.8;
+    }
   `,
 };

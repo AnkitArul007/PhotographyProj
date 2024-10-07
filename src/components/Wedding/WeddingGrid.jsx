@@ -11,13 +11,14 @@ const style = {
   max-width: 1400px;
   `,
   wdGridContainer: css`
+  margin: 0 auto;
   display: grid;
   align-items: center;
   justify-content: center;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   grid-template-rows: auto;
-  column-gap: 3rem;
-  row-gap: 3rem;
+  column-gap: 2rem;
+  row-gap: 2rem;
   `,
 }
 
