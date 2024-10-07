@@ -30,7 +30,6 @@ const Navbar = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
-  console.log(navTabsData);
   return (
     <React.Fragment>
       <div
