@@ -9,16 +9,15 @@ import navTabsData from "../../database/navbar/navTabsData.json";
 import { css } from "@emotion/react";
 import "../../App.css";
 
-import { GiHamburgerMenu } from "react-icons/gi";
 import { useFetch } from "../../hooks/useFetch";
 import useListenScreenSize from "../../hooks/useListenScreenSize";
+
 
 const Navbar = () => {
   const { screenWidth, suggestImageWidthToTake } = useListenScreenSize();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
-  const [mobileDropdownInnerChild, setMobileDropdownInnerChild] =
-    useState(false);
+  const [mobileDropdownInnerChild, setMobileDropdownInnerChild] = useState(false);
 
   const { data, error, postData, loading } = useFetch();
   useEffect(() => {

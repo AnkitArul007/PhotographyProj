@@ -15,9 +15,7 @@ const ServiceCard = ({ icon, serviceName, text }) => {
           <h3 css={style.serviceHeading}>{serviceName}</h3>
         </div>
         <div css={style.serviceTextDiv}>
-          <p css={style.servicetext}>
-            {text}
-          </p>
+          <p css={style.servicetext}>{text}</p>
         </div>
       </div>
     </div>
@@ -31,11 +29,9 @@ const style = {
     width: 33.333%;
     margin: 0;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-    // &:hover {
-    //     transform: scale(1.05);
-    //     box-shadow: 0 0 30px rgba(0, 0, 0, 0.2), 0 0 20px rgba(255, 255, 255, 0.6);
-    // }
+    @media (max-width: 568px) {
+    width: 80%;
+    }
   `,
   cardInner: css`
     width: 100%;
@@ -53,7 +49,7 @@ const style = {
     text-align: center;
   `,
   icon: css`
-  color: #fff !important;
+    color: #fff !important;
   `,
   serviceName: css`
     width: 100%;
@@ -64,17 +60,23 @@ const style = {
     font-weight: 700;
     font-size: 24px;
     line-height: 1.4;
+    @media (max-width: 768px) {
+      font-size: 20px;
+    }
   `,
   serviceTextDiv: css`
-  flex-grow: 1;
-  width: 100%;
-  text-align: center;
+    flex-grow: 1;
+    width: 100%;
+    text-align: center;
   `,
   servicetext: css`
-  width: 100%;
-  text-align: center;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.8;
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.8;
+    @media (max-width: 768px) {
+      font-size: 13px;
+    }
   `,
 };

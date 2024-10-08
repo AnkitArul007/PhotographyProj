@@ -38,6 +38,8 @@ const style = {
   serviceSection: css`
     margin: 0 auto;
     margin-bottom: 98px;
+    @media (max-width: 768px) {
+    margin-bottom: 36px;}
   `,
   servicesContainer: css`
     width: 100%;
@@ -46,5 +48,10 @@ const style = {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+
+    @media (max-width: 568px) {
+    flex-direction: column;
+    align-items: center;
+    }
   `,
 };
