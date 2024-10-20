@@ -127,7 +127,7 @@ const AboutSection = () => {
 
         <div css={style.aboutRight}>
           <div css={style.aboutImageDiv}>
-            <img src="/images/aboutUsService.jpg" alt="ruslak-creation" />
+            <img src="https://imagedelivery.net/ETcXcLWKuHAK7leb3ufefw/017a2995-ae10-4575-e5ef-8830b890bb00/w=800,f=webp" alt="ruslak-creation" />
           </div>
         </div>
       </div>

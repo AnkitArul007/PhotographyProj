@@ -132,9 +132,7 @@ export default Testimonial;
 const style = {
   section: css`
     min-height: 60vh;
-    // background: url("https://r4.wallpaperflare.com/wallpaper/242/181/187/abstract-lines-shapes-digital-art-wallpaper-b940c8bd111a1ddb569788cf00d1e6ed.jpg");
-    // background: url("https://c4.wallpaperflare.com/wallpaper/130/63/655/abstract-art-background-colorful-wallpaper-preview.jpg");
-    background: url("/images/spectrum.jpg");
+    background: url("https://imagedelivery.net/ETcXcLWKuHAK7leb3ufefw/b607ef5f-8981-4a78-67f5-ffc395f10e00/w=1000,f=webp");
     background-attachment: scroll;
     background-position: center;
     background-size: contain;

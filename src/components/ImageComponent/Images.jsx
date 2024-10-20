@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import ImagesCards from "./components/ImagesCards";
 import { useEffect } from "react";
-import { css } from "@emotion/react";
 import SectionHeaders from "../../commonComponents/SectionHeaders";
 import ImageViewer from "./ImageViewer";
 import useListenScreenSize from "../../hooks/useListenScreenSize";
@@ -53,7 +52,7 @@ const Images = () => {
   };
 
   const imageFetch = async () => {
-    const url = `${import.meta.env.VITE_ROOT_URL}/images/get`;
+    const url = `${import.meta.env.VITE_ROOT_URL}/best-images/getAll`;
     const res = await fetch(url, {
       method: "POST",
       headers: {
