@@ -52,7 +52,7 @@ export default function Story() {
   return flag ? (
     <>
       {/* detailed story */}
-      <div>
+      <div className="container mx-auto">
         {/* story title */}
         <div className="text-center mx-auto mt-2 p-3">
           <h1 className="metallic-text-grad pt-2">{state.title}</h1>
@@ -78,7 +78,7 @@ export default function Story() {
                 width: 100%;
                 object-fit: cover;
               `}
-              src={state.highlightImageURL}
+              src={`${state.highlightImageURL.split("w=")[0]}w=${suggestImageWidthToTake()},f=webp`}
               alt="story banner"
             />
           </div>
