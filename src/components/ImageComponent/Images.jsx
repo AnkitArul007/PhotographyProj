@@ -29,22 +29,48 @@ const Images = () => {
   }
 
   const handleNext = () => {
+    // setCurrentIdx((idx) => {
+    //   const newIdx = idx < images.length - 1 ? idx + 1 : images.length - 1;
+    //   setCurrentImageURL(() => updateURL(images[newIdx].image_url));  // Use newIdx
+    //   return newIdx;
+    // });
+
     if (currentIdx < images.length - 1) {
-      setCurrentIdx(idx => idx + 1);
-    } else {
-      setCurrentIdx(images.length - 1);
+      setCurrentIdx((prevIdx) => prevIdx + 1);
     }
-    setCurrentImageURL(() => updateURL(images[currentIdx].image_url));
+
+    // if (currentIdx < images.length - 1) {
+    //   setCurrentIdx(idx => idx + 1);
+    // } else {
+    //   setCurrentIdx(images.length - 1);
+    // }
+    // setCurrentImageURL(() => updateURL(images[currentIdx].image_url));
   };
 
   const handlePrevious = () => {
+    // setCurrentIdx((idx) => {
+    //   const newIdx = idx > 0 ? idx - 1 : 0;
+    //   setCurrentImageURL(() => updateURL(images[newIdx].image_url));  // Use newIdx
+    //   return newIdx;
+    // });
+
     if (currentIdx > 0) {
-      setCurrentIdx(idx => idx - 1);
-    } else {
-      setCurrentIdx(0);
+      setCurrentIdx((prevIdx) => prevIdx - 1);
     }
-    setCurrentImageURL(() => updateURL(images[currentIdx].image_url));
+
+    // if (currentIdx > 0) {
+    //   setCurrentIdx(idx => idx - 1);
+    // } else {
+    //   setCurrentIdx(0);
+    // }
+    // setCurrentImageURL(() => updateURL(images[currentIdx].image_url));
   };
+
+  useEffect(() => {
+    if (currentIdx !== null && images.length > 0) {
+      setCurrentImageURL(updateURL(images[currentIdx].image_url));
+    }
+  }, [currentIdx, images]);
 
   const closeImageView = () => {
     setViewImage(false);
@@ -72,6 +98,9 @@ const Images = () => {
 
     fetchData();
   }, []);
+
+  console.log(currentIdx)
+
   return (
     <React.Fragment>
       <div className="container my-5">
