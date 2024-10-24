@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
 
 const useListenScreenSize = () => {
-    const [screenWidth, setScreenWidth] = useState(0)
+    const [screenWidth, setScreenWidth] = useState(
+        typeof window !== "undefined" ? window.innerWidth : 500
+    )
     let EXTRA_LARGE = 1500
     let LARGE = 1000
     let MEDIUM = 500
@@ -9,8 +11,7 @@ const useListenScreenSize = () => {
     const suggestImageWidthToTake = () => {
         if (screenWidth >= EXTRA_LARGE) {
             return 1800
-        }
-        else if (screenWidth >= LARGE && screenWidth < EXTRA_LARGE) {
+        } else if (screenWidth >= LARGE && screenWidth < EXTRA_LARGE) {
             return 1200
         } else if (screenWidth >= MEDIUM && screenWidth < LARGE) {
             return 800
@@ -20,14 +21,14 @@ const useListenScreenSize = () => {
         // return Math.ceil(screenWidth);
     }
     useEffect(() => {
-        setScreenWidth(window?.innerWidth)
-        window.addEventListener("resize", () => {
-            setScreenWidth(window?.innerWidth)
-        })
+        const updateWidth = () => setScreenWidth(window?.innerWidth)
+        
+        window.addEventListener("resize", updateWidth)
+        
+        updateWidth()
+        
         return () => {
-            window.removeEventListener("resize", () => {
-                setScreenWidth(0)
-            })
+            window.removeEventListener("resize", updateWidth)
         }
     }, [])
     return {
