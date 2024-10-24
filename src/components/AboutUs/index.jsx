@@ -36,7 +36,7 @@ const style = {
     overflow: hidden;
     margin-bottom: 58px;
     width: 100%;
-    background-image: url("/images/lm.jpg");
+    background-image: url("https://imagedelivery.net/ETcXcLWKuHAK7leb3ufefw/0fc29308-c384-4c90-404b-3e25510d0000/w=1400,f=webp");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;

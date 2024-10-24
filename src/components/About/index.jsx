@@ -1,12 +1,11 @@
 /* eslint-disable react/no-unknown-property */
-import React from "react";
 import { css } from "@emotion/react";
 
 const style = {
   mainDiv: css`
     width: 100%;
     height: auto;
-    background: url("/images/about_image.jpg");
+    background: url("https://imagedelivery.net/ETcXcLWKuHAK7leb3ufefw/c4f5d45c-ca47-4bd7-e5c7-38c3f6b08000/w=1500,f=webp");
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
@@ -118,7 +117,7 @@ export default function About() {
           <div css={style.profileImageDiv}>
             <img
               css={style.profileImage}
-              src="/images/rk_profileimage.jpg"
+              src="https://imagedelivery.net/ETcXcLWKuHAK7leb3ufefw/e87b2645-ce1b-4471-85ce-ddd3cf959500/w=500,f=webp"
               alt="propfile-image"
               srcSet=""
             />  

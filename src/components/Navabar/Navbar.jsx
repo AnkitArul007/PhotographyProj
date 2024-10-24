@@ -8,16 +8,15 @@ import { Link } from "react-router-dom";
 import navTabsData from "../../database/navbar/navTabsData.json";
 import { css } from "@emotion/react";
 import "../../App.css";
-
 import { useFetch } from "../../hooks/useFetch";
 import useListenScreenSize from "../../hooks/useListenScreenSize";
-
 
 const Navbar = () => {
   const { screenWidth, suggestImageWidthToTake } = useListenScreenSize();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
-  const [mobileDropdownInnerChild, setMobileDropdownInnerChild] = useState(false);
+  const [mobileDropdownInnerChild, setMobileDropdownInnerChild] =
+    useState(false);
 
   const { data, error, postData, loading } = useFetch();
   useEffect(() => {
@@ -39,7 +38,7 @@ const Navbar = () => {
           left: 0;
           width: 100%;
           height: 60px;
-          padding: 40px 50px;
+          padding: 40px 40px;
           background: rgba(0, 0, 0, 0.3);
           z-index: 11;
           -webkit-backdrop-filter: saturate(180%) blur(20px);
@@ -47,6 +46,12 @@ const Navbar = () => {
           -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
           perspective: 1000;
+          @media (max-width: 360px) {
+            padding: 36px 16px;
+          }
+          @media (max-width: 720px) {
+            padding: 36px 24px;
+          }
         `}
       >
         <div
@@ -69,7 +74,7 @@ const Navbar = () => {
                 font-weight: bold;
               `}
             >
-              RusalkCreation
+              Rusalk Creation
             </h2>
           </Link>
         </div>

@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 import { css } from "@emotion/react";
 import { useNavigate } from "react-router-dom";
 
@@ -11,7 +12,6 @@ const style = {
     background: linear-gradient(0deg, rgb(0, 0, 0), rgb(44, 43, 43));
     z-index: 1;
     border-radius: 5px;
-    position: realtive;
     &:after {
       content: "";
       position: absolute;
@@ -36,6 +36,9 @@ const style = {
     height: 270px;
     width: 270px;
     border-radius: 5px;
+    @media (max-width: 360px) {
+    width: 230px;
+    }
   `,
   categoryImage: css`
     border-top-left-radius: 5px;

@@ -6,6 +6,7 @@ import SectionHeaders from "../../commonComponents/SectionHeaders";
 import VideoTile from "./VideoTile";
 import PageWrapper from "../Common/PageWrapper";
 import { useFetch } from "../../hooks/useFetch";
+import useListenScreenSize from "../../hooks/useListenScreenSize";
 
 const styles = {
   pageTitle: css`
@@ -23,14 +24,11 @@ const styles = {
 };
 
 const Films = () => {
-  const { data, loading, error, postData } = useFetch();
+  const { data, loading, postData } = useFetch();
 
   useEffect(() => {
-    const body = {
-      w: 300,
-    };
     const url = `${import.meta.env.VITE_ROOT_URL}/video/get`;
-    postData(url, body);
+    postData(url, {w: 800});
   }, []);
 
   return (

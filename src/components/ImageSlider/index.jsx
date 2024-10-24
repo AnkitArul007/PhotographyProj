@@ -48,9 +48,11 @@ const style = {
     justify-content: center;
   `,
   textOverlayInner: css`
-    width: 50%;
-    height: 50%;
+    width: 60%;
+    height: auto;
     margin: 0 auto;
+    position: absolute;
+    top: 60%;
     background: rgba(0, 0, 0, 0);
     color: #fff;
     font-weight: 800;
@@ -69,6 +71,7 @@ const style = {
     }
 
     @media screen and (max-width: 768px) {
+      width: 75%;
       span.Typewriter__wrapper {
         line-height: 56px;
         font-size: 56px;
@@ -83,6 +86,7 @@ const style = {
     }
 
     @media screen and (max-width: 640px) {
+      width: 80%;
       span.Typewriter__wrapper {
         line-height: 48px;
         font-size: 48px;
@@ -97,6 +101,7 @@ const style = {
     }
 
     @media screen and (max-width: 360px) {
+      width: 80%;
       span.Typewriter__wrapper {
         line-height: 36px;
         font-size: 36px;
@@ -159,7 +164,7 @@ const ImageSlider = () => {
     if (demoVar) {
       fetchImages();
     }
-    return () => demoVar = false;
+    return () => (demoVar = false);
   }, [screenWidth]);
 
   return (

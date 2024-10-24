@@ -13,7 +13,6 @@ export default function Stories() {
   const { screenWidth, suggestImageWidthToTake } = useListenScreenSize();
   const { data, loading, postData } = useFetch();
 
-  // 300, 500, 1000,1500
   const fetchData = () => {
     const url = `${import.meta.env.VITE_ROOT_URL}/story/get`;
     postData(url, { w: suggestImageWidthToTake() });
