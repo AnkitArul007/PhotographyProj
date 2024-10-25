@@ -1,12 +1,11 @@
 /* eslint-disable react/jsx-key */
 /* eslint-disable react/no-unknown-property */
-import React, { useEffect, useMemo } from "react";
+import { useEffect } from "react";
 import { css } from "@emotion/react";
 import SectionHeaders from "../../commonComponents/SectionHeaders";
 import VideoTile from "./VideoTile";
 import PageWrapper from "../Common/PageWrapper";
 import { useFetch } from "../../hooks/useFetch";
-import useListenScreenSize from "../../hooks/useListenScreenSize";
 
 const styles = {
   pageTitle: css`
@@ -40,11 +39,10 @@ const Films = () => {
           </div>
           <div className="container py-3">
             <div className="row">
-              {data?._data?.data.map((video) => {
+              {data?._data?.data.map((video, i) => {
                 return (
-                  <div className="col-lg-6 col-md-12">
+                  <div className="col-lg-6 col-md-12" key={`${video.id}-${i}`}>
                     <VideoTile
-                      key={video?.id}
                       title={video?.title ?? ""}
                       url={video?.video_url ?? ""}
                       thumbnail={video?.thumbnail ?? ""}

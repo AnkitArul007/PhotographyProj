@@ -99,7 +99,6 @@ const Images = () => {
     fetchData();
   }, []);
 
-  console.log(currentIdx)
 
   return (
     <React.Fragment>

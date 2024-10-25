@@ -12,7 +12,6 @@ const ImagesPage = () => {
       setFlag(true);
     }, 500);
     return () => {
-      console.log("hello");
     };
   }, []);
   return flag ? (

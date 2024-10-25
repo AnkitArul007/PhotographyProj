@@ -20,7 +20,6 @@ import Films from "./components/Fims";
 import PreWedding from "./components/Wedding";
 import WeddingBlog from "./components/Wedding/WeddingBlog";
 import { NotificationProvider } from "./components/toast/index.jsx";
-// import PreWedding from "./pages/PreWedding.jsx";
 import IndividualCategory from "./pages/IndividualCategory.jsx";
 import AboutUs from "./components/AboutUs/index.jsx";
 import ScrollToTop from "./components/Common/ScrollToTop.jsx";
