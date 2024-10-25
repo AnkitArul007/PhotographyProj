@@ -153,7 +153,7 @@ const style = {
 const ImageSlider = () => {
   const { data: HeroImagesData, loading, postData } = useFetch();
   const { screenWidth, suggestImageWidthToTake } = useListenScreenSize();
-  console.log("Screen Width", suggestImageWidthToTake());
+  // console.log("Screen Width", suggestImageWidthToTake());
   const fetchImages = () => {
     const url = `${import.meta.env.VITE_ROOT_URL}/carousel/getAll`;
     postData(url, { w: suggestImageWidthToTake() }, "POST");

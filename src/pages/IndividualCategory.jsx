@@ -24,7 +24,6 @@ const IndividualCategory = () => {
     setCurrentIdx(currIdx);
     setCurrentImageURL(() => updateURL(images[currIdx].image_url));
     setViewImage(true);
-    console.log("curr idx: ", currIdx);
   };
 
   const updateURL = (currentUrl) => {
@@ -34,29 +33,42 @@ const IndividualCategory = () => {
   };
 
   const handleNext = () => {
-    if (currentIdx < (images.length - 1)) {
-      setCurrentIdx(idx => idx + 1);
-      console.log("curr Idx", currentIdx);
-    } else {
-      setCurrentIdx(images.length - 1);
+    // if (currentIdx < (images.length - 1)) {
+    //   setCurrentIdx(idx => idx + 1);
+    //   console.log("curr Idx", currentIdx);
+    // } else {
+    //   setCurrentIdx(images.length - 1);
+    // }
+    // setCurrentImageURL(() => updateURL(images[currentIdx].image_url));
+    if (currentIdx < images.length - 1) {
+      setCurrentIdx((prevIdx) => prevIdx + 1);
     }
-    setCurrentImageURL(() => updateURL(images[currentIdx].image_url));
   };
 
   const handlePrevious = () => {
+    // if (currentIdx > 0) {
+    //   setCurrentIdx(idx => idx - 1);
+    //   console.log("curr Idx", currentIdx);
+    // } else {
+    //   setCurrentIdx(0);
+    // }
+    // setCurrentImageURL(() => updateURL(images[currentIdx].image_url));
     if (currentIdx > 0) {
-      setCurrentIdx(idx => idx - 1);
-      console.log("curr Idx", currentIdx);
-    } else {
-      setCurrentIdx(0);
+      setCurrentIdx((prevIdx) => prevIdx - 1);
     }
-    setCurrentImageURL(() => updateURL(images[currentIdx].image_url));
   };
 
   const closeImageView = () => {
       setViewImage(false);
       setCurrentIdx(null);
   };
+
+
+  useEffect(() => {
+    if (currentIdx !== null && images.length > 0) {
+      setCurrentImageURL(updateURL(images[currentIdx].image_url));
+    }
+  }, [currentIdx, images]);
 
   useEffect(() => {
     const url = `${import.meta.env.VITE_ROOT_URL}/images/get?catId=${id}`;

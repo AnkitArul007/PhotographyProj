@@ -21,11 +21,11 @@ export const NotificationProvider = ({ children }) => {
 
 
     const triggerNotification = useCallback(({ message, type }) => {
-        console.log(message, type)
+        // console.log(message, type)
         var id = Math.floor(Math.random() * 100);
         const timerId = setTimeout(() => {
-            console.log("clearing....", notifications)
-            console.log(id)
+            // console.log("clearing....", notifications)
+            // console.log(id)
             setNotifications(prev => prev.filter(notify => notify.id != id))
         }, duration)
 
@@ -54,7 +54,7 @@ export const NotificationProvider = ({ children }) => {
         transition-duration: 150ms;
     `
 
-    console.log(notifications)
+    // console.log(notifications)
     return (
         <NotificationContext.Provider value={{ setToastDuration, triggerNotification }}>
             <div

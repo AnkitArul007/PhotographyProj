@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 import { css } from "@emotion/react";
 import { FaCamera, FaVideo, FaFilm } from "react-icons/fa";
 
@@ -6,9 +7,9 @@ const ServiceCard = ({ icon, serviceName, text }) => {
     <div css={style.cardMain}>
       <div css={style.cardInner}>
         <div css={style.cardIcon}>
-          {icon === "camera" && <FaCamera size={50} css={style.icon} />}
-          {icon === "video" && <FaVideo size={50} css={style.icon} />}
-          {icon === "film" && <FaFilm size={50} css={style.icon} />}
+          {icon === "camera" && <FaCamera css={style.icon} />}
+          {icon === "video" && <FaVideo css={style.icon} />}
+          {icon === "film" && <FaFilm css={style.icon} />}
         </div>
 
         <div css={style.serviceName}>
@@ -30,7 +31,7 @@ const style = {
     margin: 0;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     @media (max-width: 568px) {
-    width: 80%;
+      width: 80%;
     }
   `,
   cardInner: css`
@@ -50,6 +51,12 @@ const style = {
   `,
   icon: css`
     color: #fff !important;
+    width: 48px;
+    height: 48px;
+    @media (max-width: 480px) {
+      width: 32px;
+      height: 32px;
+    }
   `,
   serviceName: css`
     width: 100%;
@@ -62,6 +69,9 @@ const style = {
     line-height: 1.4;
     @media (max-width: 768px) {
       font-size: 20px;
+    }
+    @media (max-width: 480px) {
+      font-size: 18px;
     }
   `,
   serviceTextDiv: css`

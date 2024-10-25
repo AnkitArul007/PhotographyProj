@@ -3,11 +3,14 @@ import { css } from "@emotion/react";
 import SectionHeaders from "../../commonComponents/SectionHeaders";
 import Services from "./Services";
 import AboutSection from "./AboutSection";
+import useListenScreenSize from "../../hooks/useListenScreenSize";
 
 const AboutUs = () => {
+  const {suggestImageWidthToTake} = useListenScreenSize();
+
   return (
     <div css={style.aboutMain}>
-      <div css={style.topBg}></div>
+      <div css={style.topBg} style={{backgroundImage: `url(https://imagedelivery.net/ETcXcLWKuHAK7leb3ufefw/0fc29308-c384-4c90-404b-3e25510d0000/w=${suggestImageWidthToTake()},f=webp)`}}></div>
       <SectionHeaders pagetitle={"About Us"} />
       <div css={style.aboutContainer}>
         <AboutSection />
@@ -36,7 +39,7 @@ const style = {
     overflow: hidden;
     margin-bottom: 58px;
     width: 100%;
-    background-image: url("https://imagedelivery.net/ETcXcLWKuHAK7leb3ufefw/0fc29308-c384-4c90-404b-3e25510d0000/w=1400,f=webp");
+    // background-image: url("https://imagedelivery.net/ETcXcLWKuHAK7leb3ufefw/0fc29308-c384-4c90-404b-3e25510d0000/w=1400,f=webp");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;

@@ -8,7 +8,6 @@ import { useFetch } from "../../../hooks/useFetch";
 
 export default function Story() {
   const { state } = useLocation();
-  console.log("State", state);
   // laoder falg
   const [flag, setFlag] = React.useState(false);
   const { screenWidth, suggestImageWidthToTake } = useListenScreenSize();
@@ -19,7 +18,7 @@ export default function Story() {
       setFlag(true);
     }, 1000);
     return () => {
-      console.log("hello");
+      console.log("--rc--");
     };
   }, []);
 
