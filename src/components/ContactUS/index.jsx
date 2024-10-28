@@ -21,6 +21,23 @@ const styles = {
     margin-right: 1rem;
     `,
 
+    clientDiv: css`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 36px 28px;
+    @media (max-width: 768px) {
+    flex-direction: column;
+    }
+    `,
+
+    clientName: css`
+    width: 49%;
+    @media (max-width: 768px) {
+    width: 100% !important;
+    }
+    `,
     requiredSpan: css`
     font-size: 12px;
     font-style: italic;
@@ -164,7 +181,7 @@ const ContactForm = () => {
 
                 {/* contact form div */}
                 <div className="mt-5 pt-5">
-                    <form action="" className="mx-5 px-3"
+                    <form action="" className=""
                         onSubmit={(e) => {
                             e.preventDefault()
                             const url = `${import.meta.env.VITE_ROOT_URL}/contact-us`
@@ -181,12 +198,12 @@ const ContactForm = () => {
                             postData(url, body, "POST");
                         }}
                     >
-                        <div className="d-flex align-items-center justify-content-between mb-3" css={css`margin: 0 36px 28px;`}>
-                            <div css={css`width: 49%`} className="mb-4">
+                        <div css={styles.clientDiv}>
+                            <div css={styles.clientName} className="mb-4">
                                 <label css={styles.labelStyle} className="fs-3 mb-2" htmlFor="firstName">First name <span css={styles.requiredSpan}>(required)</span></label><br />
                                 <input ref={firstName} css={styles.inputStyle} type="text" name="firstName" required />
                             </div>
-                            <div css={css`width: 49%`} className="mb-4">
+                            <div css={styles.clientName} className="mb-4">
                                 <label css={styles.labelStyle} className="fs-3 mb-2" htmlFor="lastName">Last name</label><br />
                                 <input ref={lastName} css={styles.inputStyle} type="text" name="lastName" />
                             </div>
