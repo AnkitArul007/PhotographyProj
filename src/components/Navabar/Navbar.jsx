@@ -4,7 +4,7 @@
 /* eslint-disable react/prop-types */
 
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import navTabsData from "../../database/navbar/navTabsData.json";
 import { css } from "@emotion/react";
 import "../../App.css";
@@ -17,6 +17,7 @@ const Navbar = () => {
   const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
   const [mobileDropdownInnerChild, setMobileDropdownInnerChild] =
     useState(false);
+  const navigate = useNavigate();
 
   const { data, error, postData, loading } = useFetch();
   useEffect(() => {
@@ -27,6 +28,17 @@ const Navbar = () => {
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
+
+  const NavigateSubMenu = (href) => {
+    toggleDropdown();
+    navigate(href);
+  }
+
+  const NavigateSubMenuMobile = (href) => {
+    mobileDropdownInnerChild(false);
+    setMobileDropdownOpen(false);
+    navigate(href);
+  }
 
   return (
     <React.Fragment>
@@ -202,6 +214,7 @@ const Navbar = () => {
                             text-decoration: none;
                             color: white;
                           `}
+                          onClick={() => NavigateSubMenu(`/${category?.id}`)}
                         >
                           {category?.category_name}
                         </Link>
@@ -224,10 +237,6 @@ const Navbar = () => {
               display: none !important ;
             }
           `}
-          onClick={(e) => {
-            setMobileDropdownOpen(!mobileDropdownOpen);
-            console.log(mobileDropdownOpen);
-          }}
         >
           <span
             css={css`
@@ -237,6 +246,10 @@ const Navbar = () => {
                 cursor: pointer;
               }
             `}
+            onClick={(e) => {
+              setMobileDropdownOpen(!mobileDropdownOpen);
+              console.log("hamberger clicked",mobileDropdownOpen);
+            }}
           >
             {/* custom burger icon */}
             <div className="burgerContainer d-flex flex-column gap-2 bg-transparent">
@@ -319,7 +332,6 @@ const Navbar = () => {
                 font-size: 14px;
                 letter-spacing: 1px;
                 transition: all 0.3s ease !important ;
-
                 &:hover {
                   color: #fff;
                   cursor: pointer;
@@ -327,7 +339,7 @@ const Navbar = () => {
               `}
             >
               <p
-                className="d-flex gap-2"
+                className="d-flex gap-2 m-0 p-0"
                 css={css`
                   &:hover {
                     color: #fff;
@@ -336,7 +348,8 @@ const Navbar = () => {
                 `}
               >
                 <span>◀</span>
-                <span>Category</span>
+                <span 
+                >Category</span>
               </p>
 
               {/* extra cont */}
@@ -344,10 +357,10 @@ const Navbar = () => {
                 className="position-absolute"
                 css={css`
                   top: 0;
-                  left: -100%;
+                  left: -150px;
                   list-style: none;
-                  min-width: 200px;
-                  padding: 0;
+                  width: 150px;
+                  padding-left: 10px;
                   display: ${mobileDropdownInnerChild ? "block" : "none"};
                 `}
               >
@@ -367,6 +380,7 @@ const Navbar = () => {
                           text-decoration: none;
                           color: white;
                         `}
+                        onClick={() => NavigateSubMenuMobile(`/${category?.id}`)}
                       >
                         {category?.category_name}
                       </Link>
