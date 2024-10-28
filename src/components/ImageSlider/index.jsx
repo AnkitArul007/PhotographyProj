@@ -155,8 +155,9 @@ const ImageSlider = () => {
   const { screenWidth, suggestImageWidthToTake } = useListenScreenSize();
   // console.log("Screen Width", suggestImageWidthToTake());
   const fetchImages = () => {
+    let width = suggestImageWidthToTake();
     const url = `${import.meta.env.VITE_ROOT_URL}/carousel/getAll`;
-    postData(url, { w: suggestImageWidthToTake() }, "POST");
+    postData(url, { w: width < 640 ? 1400 : width }, "POST");
   };
 
   useEffect(() => {
@@ -190,7 +191,7 @@ const ImageSlider = () => {
                   animation: ${slide} ${arr.length * 5}s infinite;
                   animation-delay: ${i * 5}s;
                 `}
-                style={{ backgroundImage: `url(${image.image_url})` }}
+                style={{ backgroundImage: `url(${image.image_url})`}}
               ></div>
             ))}
           </>
@@ -207,7 +208,7 @@ const ImageSlider = () => {
             }}
             options={{
               strings: [
-                "Welcome to Rushalk Creation",
+                "Welcome to Rusalk Creation",
                 "Where Every Picture Tells a Story",
                 "Moments Captured, Emotions Preserved",
                 "We Craft Visual Narratives for Every Occasion",
