@@ -12,7 +12,6 @@ const ImagesCards = ({ showImageView, imageId, url }) => {
         css={css`
           width: fit-content;
           width: 220px;
-          height: fit-content;
           height: 220px;
           border-radius: 5px;
           border-inline-start: 1px solid;
@@ -28,6 +27,10 @@ const ImagesCards = ({ showImageView, imageId, url }) => {
           );
           border-image-slice: 1;
           overflow: hidden;
+          @media (max-width: 500px) {
+            width: 250px;
+            height: 250px;
+          }
         `}
         onMouseEnter={() => setTranslateFlag(true)}
         onMouseLeave={() => setTranslateFlag(false)}
@@ -48,6 +51,10 @@ const ImagesCards = ({ showImageView, imageId, url }) => {
               object-position: center;
               border-radius: 3px;
               transition: all 0.5s;
+              @media (max-width: 500px) {
+              width: 210px;
+              height: 210px
+              }
               &:hover {
                 cursor: pointer;
                 transform: scale(1.1);

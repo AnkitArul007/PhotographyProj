@@ -360,7 +360,7 @@ const Navbar = () => {
                   left: -150px;
                   list-style: none;
                   width: 150px;
-                  padding: 0;
+                  padding-left: 10px;
                   display: ${mobileDropdownInnerChild ? "block" : "none"};
                 `}
               >
