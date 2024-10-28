@@ -76,7 +76,7 @@ const style = {
 const VideoTile = ({title , url, thumbnail}) => {
   return (
     <>
-        <div css={style.video}>
+        <div className='mx-auto' css={style.video}>
             <Link 
             css={style.link}
             to={url} target="_blank">
