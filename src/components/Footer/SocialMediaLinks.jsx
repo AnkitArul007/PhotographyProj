@@ -22,7 +22,7 @@ const SocialMediaLinks = () => {
             <AiFillInstagram />
           </span>
         </Link>
-        <Link to={"https://www.facebook.com/profile.php?id=100009450957884&mibextid=LQQJ4d"} target="_blank">
+        <Link to={"https://www.facebook.com/anandrusalk?mibextid=ZbWKwL"} target="_blank">
           <span className="fs-3" css={style.links}>
             <FaFacebookF />
           </span>
